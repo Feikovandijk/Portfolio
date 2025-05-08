@@ -1,10 +1,30 @@
+import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowLeft, Stamp as Steam, Youtube } from 'lucide-react';
 import { projects } from '../data/content';
 
-export default function ProjectDetails() {
-  const { projectId } = useParams();
+interface Project {
+  id: string;
+  title: string;
+  imageUrl: string;
+  mainRole: string;
+  supportingRole?: string;
+  timeline: string;
+  description: string;
+  process: {
+    challenge: string;
+    solution: string;
+    outcome: string;
+  };
+  links?: {
+    steam?: string;
+    youtube?: string;
+  };
+}
+
+export default function ProjectDetails(): React.ReactElement {
+  const { projectId } = useParams<{ projectId: string }>();
   const project = projects.find((p) => p.id === projectId);
 
   if (!project) {
