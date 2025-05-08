@@ -26,7 +26,7 @@ export default function Portfolio() {
             <div className="flex justify-center lg:justify-end">
               <div className="relative w-64 h-64 lg:w-80 lg:h-80">
                 <img
-                  src="https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg"
+                  src="https://images.squarespace-cdn.com/content/v1/665f0ae5b7fe1e7c8f450174/4d23a754-d90f-4bad-a50e-00cc334df3cc/Screenshot+2024-06-20+at+12.47.38.png?format=2500w"
                   alt="Profile"
                   className="absolute inset-0 w-full h-full object-cover rounded-full shadow-2xl"
                 />
@@ -47,7 +47,7 @@ export default function Portfolio() {
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">Portfolio</h2>
             <p className="text-xl text-gray-600 dark:text-gray-300">
-              A showcase of my game design projects and process
+              A showcase of my game design projects
             </p>
           </div>
 

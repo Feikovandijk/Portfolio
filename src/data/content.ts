@@ -1,9 +1,29 @@
 import { AboutContent, Project, Achievement } from '../types';
 
 export const aboutContent: AboutContent = {
-  name: "Your Name",
-  title: "Game Designer",
-  bio: "I'm a passionate game designer focused on creating meaningful player experiences. With a background in both traditional and digital games, I specialize in systems design and player-centric mechanics.",
+  name: "Hi! I'm Feiko.",
+  title: "Game & TechnicalDesigner",
+  bio: `I'm a technical and game designer who loves turning challenges into engaging experiences. I've been lucky enough to have worked on a variety of projects—from coding to crafting gameplay—and each one has taught me something new. As a generalist, I'm quick to learn, adapt, and use my diverse experience to help shape any project into something fantastic.
+
+I'm naturally curious—whether I'm solving tricky software issues or diving into hands-on challenges like car projects and home renovations (and occasionally 'fixing' something that wasn't broken keeps life interesting). Every unconventional project is an opportunity to learn something new.
+
+I also have a deep interest in understanding what makes games truly click. My Master's thesis delved into how singleplayer survival games affect our minds and how multiplayer elements change the way we play, insights that continue to shape my approach to design.
+
+I value collaboration and believe that great games are built by teams who share ideas and support each other. When I'm not immersed in game development, you'll likely find me outdoors, climbing rocks and embracing new adventures.`,
+  images: [
+    {
+      url: "/images/about-1.jpg",
+      alt: "Feiko working on game development"
+    },
+    {
+      url: "/images/about-2.jpg",
+      alt: "Feiko climbing outdoors"
+    },
+    {
+      url: "/images/about-3.jpg",
+      alt: "Feiko working on technical projects"
+    }
+  ],
   skills: [
     "Systems Design",
     "Level Design",
