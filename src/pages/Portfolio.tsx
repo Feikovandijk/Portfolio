@@ -16,7 +16,7 @@ export default function Portfolio() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <h1 className="text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-6xl mb-6">
-                Hi, I'm Your Name
+                Hi, I'm Feiko.
               </h1>
               <p className="text-lg leading-8 text-gray-600 dark:text-gray-300">
                 I'm a Technical & Game Designer from the Netherlands, passionate about creating engaging & moving experiences that bring people together.
