@@ -2,7 +2,7 @@ import { AboutContent, Project, Achievement } from '../types';
 
 export const aboutContent: AboutContent = {
   name: "Hi! I'm Feiko.",
-  title: "Game & TechnicalDesigner",
+  title: "Game & Technical Designer",
   bio: `I'm a technical and game designer who loves turning challenges into engaging experiences. I've been lucky enough to have worked on a variety of projects—from coding to crafting gameplay—and each one has taught me something new. As a generalist, I'm quick to learn, adapt, and use my diverse experience to help shape any project into something fantastic.
 
 I'm naturally curious—whether I'm solving tricky software issues or diving into hands-on challenges like car projects and home renovations (and occasionally 'fixing' something that wasn't broken keeps life interesting). Every unconventional project is an opportunity to learn something new.
