@@ -11,9 +11,9 @@ export default function Portfolio() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="relative bg-white dark:bg-gray-800 py-24 sm:py-32"
+        className="relative bg-white dark:bg-gray-800 py-32 sm:py-40"
       >
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl px-8 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <h1 className="text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-6xl mb-6 font-['Helvetica_Neue'] tracking-wide">
@@ -42,9 +42,9 @@ export default function Portfolio() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5, delay: 0.2 }}
-        className="bg-gray-50 dark:bg-gray-900 py-24"
+        className="bg-gray-50 dark:bg-gray-900 py-32"
       >
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-8 lg:px-12">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4 font-['Helvetica_Neue'] tracking-wide">Portfolio</h2>
             <p className="text-xl text-gray-600 dark:text-gray-300 font-['Arial'] tracking-wide">
@@ -65,9 +65,9 @@ export default function Portfolio() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5, delay: 0.4 }}
-        className="bg-white dark:bg-gray-800 py-12"
+        className="bg-white dark:bg-gray-800 py-24"
       >
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-8 lg:px-12">
           <div className="text-center mb-8">
             <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-2 font-['Helvetica_Neue'] tracking-wide">Achievements & Recognitions</h2>
           </div>
@@ -97,9 +97,9 @@ export default function Portfolio() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5, delay: 0.5 }}
-        className="bg-gray-50 dark:bg-gray-900 py-16"
+        className="bg-gray-50 dark:bg-gray-900 py-24"
       >
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-8 lg:px-12">
           <div className="text-center mb-12">
             <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-3 font-['Helvetica_Neue'] tracking-wide">Other Projects</h2>
             <p className="text-base text-gray-600 dark:text-gray-300 font-['Arial'] tracking-wide">
