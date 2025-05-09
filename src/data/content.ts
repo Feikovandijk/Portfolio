@@ -47,8 +47,8 @@ export const projects: Project[] = [
     description: "Development of an untitled sequel to Arid, alongside founding and expanding Viscacha Studios.",
     mainRole: "Lead Game Design, Business Development",
     supportingRole: "Technical Design",
-    timeline: "2023 - Present",
-    imageUrl: "https://images.pexels.com/photos/2004161/pexels-photo-2004161.jpeg",
+    timeline: "2023 - 2025",
+    imageUrl: "/PortfolioProject/assets/Arid2.png",
     quote: { text: "", source: "" },
     projectStats: {
       teamSize: "",
@@ -65,24 +65,6 @@ export const projects: Project[] = [
     links: {
       steam: "https://store.steampowered.com/",
       youtube: "https://youtube.com/"
-    },
-    developmentPhases: {
-      concepting: {
-        description: "Initial concept development and planning phase for Arid 2.0.",
-        screenshots: []
-      },
-      preProduction: {
-        description: "Early prototyping and technical foundation setup.",
-        screenshots: []
-      },
-      production: {
-        description: "Full-scale development of core features and systems.",
-        screenshots: []
-      },
-      release: {
-        description: "Final polish and preparation for launch.",
-        screenshots: []
-      }
     }
   },
   {
@@ -92,7 +74,7 @@ export const projects: Project[] = [
     mainRole: "Design Lead, Technical Designer",
     supportingRole: "Analytics & Marketing",
     timeline: "2020 - 2022",
-    imageUrl: "https://images.pexels.com/photos/3165335/pexels-photo-3165335.jpeg",
+    imageUrl: "/PortfolioProject/assets/Arid.png",
     quote: { 
       text: "The biggest threat to my survival in Arid, apart from the relentless sun, is my own malfunctioning brain.",
       source: "Christopher Livingstone, PCGamer"
@@ -186,24 +168,6 @@ export const projects: Project[] = [
     links: {
       steam: "https://store.steampowered.com/",
       youtube: "https://youtube.com/"
-    },
-    developmentPhases: {
-      concepting: {
-        description: "Initial concept development for Neon Nights, focusing on the cyberpunk theme and light/shadow mechanics.",
-        screenshots: []
-      },
-      preProduction: {
-        description: "Prototyping of core gameplay mechanics and level design principles.",
-        screenshots: []
-      },
-      production: {
-        description: "Full implementation of game systems and level creation.",
-        screenshots: []
-      },
-      release: {
-        description: "Final polish and optimization for release.",
-        screenshots: []
-      }
     }
   },
   {
@@ -229,24 +193,6 @@ export const projects: Project[] = [
     designDocs: [],
     links: {
       steam: "https://store.steampowered.com/"
-    },
-    developmentPhases: {
-      concepting: {
-        description: "Initial concept development for Quantum Quest, exploring quantum mechanics in gameplay.",
-        screenshots: []
-      },
-      preProduction: {
-        description: "Prototyping of physics-based puzzle mechanics.",
-        screenshots: []
-      },
-      production: {
-        description: "Implementation of core gameplay systems and puzzle design.",
-        screenshots: []
-      },
-      release: {
-        description: "Final testing and polish for release.",
-        screenshots: []
-      }
     }
   }
 ];

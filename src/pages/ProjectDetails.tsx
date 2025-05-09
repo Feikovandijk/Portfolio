@@ -31,7 +31,7 @@ export default function ProjectDetails(): React.ReactElement {
       transition={{ duration: 0.5 }}
       className="min-h-screen bg-white dark:bg-gray-800"
     >
-      <div className="max-w-7xl mx-auto px-4 py-12 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 py-12 sm:px-6 lg:px-8 pt-24">
         <Link
           to="/portfolio"
           className="inline-flex items-center text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 mb-8"

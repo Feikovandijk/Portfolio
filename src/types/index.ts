@@ -60,7 +60,7 @@ export interface AboutContent {
       steam?: string;
       youtube?: string;
     };
-    developmentPhases: DevelopmentPhases;
+    developmentPhases?: DevelopmentPhases;
   }
   
   export interface Achievement {
