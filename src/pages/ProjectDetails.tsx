@@ -30,8 +30,8 @@ export default function ProjectDetails(): React.ReactElement {
   if (!project) {
     return (
       <div className="max-w-4xl mx-auto px-4 py-24 sm:px-6 lg:px-8 text-center">
-        <h1 className="text-2xl font-bold text-gray-900 dark:text-white">Project not found</h1>
-        <Link to="/portfolio" className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 mt-4 inline-block">
+        <h1 className="text-2xl font-bold text-gray-900 dark:text-white font-['Helvetica_Neue'] tracking-wide">Project not found</h1>
+        <Link to="/portfolio" className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 mt-4 inline-block font-['Arial'] tracking-wide">
           Return to Portfolio
         </Link>
       </div>
@@ -51,7 +51,7 @@ export default function ProjectDetails(): React.ReactElement {
           className="inline-flex items-center text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 mb-8"
         >
           <ArrowLeft className="mr-2" size={20} />
-          Back to Portfolio
+          <span className="font-['Arial'] tracking-wide">Back to Portfolio</span>
         </Link>
 
         <img
@@ -63,36 +63,36 @@ export default function ProjectDetails(): React.ReactElement {
         <div className="max-w-4xl mx-auto">
           <div className="flex justify-between items-start mb-6">
             <div>
-              <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">{project.title}</h1>
+              <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-2 font-['Helvetica_Neue'] tracking-wide">{project.title}</h1>
               <div className="space-y-1">
-                <p className="text-lg font-medium text-gray-900 dark:text-white">Main Role: {project.mainRole}</p>
+                <p className="text-lg font-medium text-gray-900 dark:text-white font-['Arial'] tracking-wide">Main Role: {project.mainRole}</p>
                 {project.supportingRole && (
-                  <p className="text-lg text-gray-600 dark:text-gray-300">Supporting Role: {project.supportingRole}</p>
+                  <p className="text-lg text-gray-600 dark:text-gray-300 font-['Arial'] tracking-wide">Supporting Role: {project.supportingRole}</p>
                 )}
               </div>
             </div>
-            <span className="text-base text-gray-500 dark:text-gray-400">{project.timeline}</span>
+            <span className="text-base text-gray-500 dark:text-gray-400 font-['Arial'] tracking-wide">{project.timeline}</span>
           </div>
 
           <div className="space-y-12">
             <div>
-              <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">Overview</h2>
-              <p className="text-base leading-relaxed text-gray-700 dark:text-gray-300">{project.description}</p>
+              <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4 font-['Helvetica_Neue'] tracking-wide">Overview</h2>
+              <p className="text-base leading-relaxed text-gray-700 dark:text-gray-300 font-['Arial'] tracking-wide">{project.description}</p>
             </div>
 
             <div>
-              <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">The Challenge</h2>
-              <p className="text-base leading-relaxed text-gray-700 dark:text-gray-300">{project.process.challenge}</p>
+              <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4 font-['Helvetica_Neue'] tracking-wide">The Challenge</h2>
+              <p className="text-base leading-relaxed text-gray-700 dark:text-gray-300 font-['Arial'] tracking-wide">{project.process.challenge}</p>
             </div>
 
             <div>
-              <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">Solution</h2>
-              <p className="text-base leading-relaxed text-gray-700 dark:text-gray-300">{project.process.solution}</p>
+              <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4 font-['Helvetica_Neue'] tracking-wide">Solution</h2>
+              <p className="text-base leading-relaxed text-gray-700 dark:text-gray-300 font-['Arial'] tracking-wide">{project.process.solution}</p>
             </div>
 
             <div>
-              <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">Outcome</h2>
-              <p className="text-base leading-relaxed text-gray-700 dark:text-gray-300">{project.process.outcome}</p>
+              <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4 font-['Helvetica_Neue'] tracking-wide">Outcome</h2>
+              <p className="text-base leading-relaxed text-gray-700 dark:text-gray-300 font-['Arial'] tracking-wide">{project.process.outcome}</p>
             </div>
           </div>
 
@@ -103,10 +103,9 @@ export default function ProjectDetails(): React.ReactElement {
                   href={project.links.steam}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-4 py-2 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium"
                 >
-                  <Steam size={20} />
-                  <span>View on Steam</span>
+                  <span className="font-['Arial'] tracking-wide">Steam Page</span>
                 </a>
               )}
               {project.links?.youtube && (
@@ -114,10 +113,10 @@ export default function ProjectDetails(): React.ReactElement {
                   href={project.links.youtube}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-4 py-2 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors font-medium"
                 >
                   <Youtube size={20} />
-                  <span>Watch on YouTube</span>
+                  <span className="font-['Arial'] tracking-wide">Watch on YouTube</span>
                 </a>
               )}
             </div>
@@ -126,10 +125,10 @@ export default function ProjectDetails(): React.ReactElement {
           <div className="mt-12 text-center">
             <Link
               to="/portfolio"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition-colors font-medium"
             >
               <ArrowLeft size={20} />
-              <span>Back to Portfolio</span>
+              <span className="font-['Arial'] tracking-wide">Back to Portfolio</span>
             </Link>
           </div>
         </div>

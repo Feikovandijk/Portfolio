@@ -34,7 +34,7 @@ I value collaboration and believe that great games are built by teams who share 
     "User Research"
   ],
   contact: {
-    email: "your.email@example.com",
+    email: "mail@feiko.org",
     linkedin: "https://linkedin.com/in/yourusername",
     twitter: "https://twitter.com/yourusername"
   }
@@ -43,9 +43,9 @@ I value collaboration and believe that great games are built by teams who share 
 export const projects: Project[] = [
   {
     id: "project-1",
-    title: "Eco Warriors",
-    description: "A strategic resource management game focusing on environmental sustainability",
-    mainRole: "Lead Game Design",
+    title: "Arid 2.0",
+    description: "Development of an untitled sequel to Arid, alongside founding and expanding Viscacha Studios.",
+    mainRole: "Lead Game Design, Business Development",
     supportingRole: "Technical Design",
     timeline: "2023 - Present",
     process: {
@@ -64,8 +64,8 @@ export const projects: Project[] = [
     title: "ARID",
     description: "A gritty, exploration-survival experience set in the Atacama Desert; the driest place on earth.",
     mainRole: "Game Designer",
-    supportingRole: "Level Designer",
-    timeline: "2022 - 2023",
+    supportingRole: "Technical Designer",
+    timeline: "2020 - 2022",
     process: {
       challenge: "Balancing survival mechanics with exploration to create an engaging yet challenging experience.",
       solution: "Developed a dynamic weather system and resource distribution that encourages strategic planning and exploration.",

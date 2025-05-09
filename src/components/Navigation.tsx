@@ -15,7 +15,7 @@ export default function Navigation() {
   };
 
   return (
-    <nav className="fixed top-0 w-full bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm z-50 border-b border-gray-200 dark:border-gray-700">
+    <nav className="fixed top-0 w-full bg-white/95 dark:bg-gray-800/95 backdrop-blur-sm z-50">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex items-center">
@@ -33,7 +33,17 @@ export default function Navigation() {
                   : 'text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white'
               } transition-colors duration-200`}
             >
-              Portfolio
+              Home
+            </Link>
+            <Link
+              to="/blog"
+              className={`${
+                isActive('/blog') 
+                  ? 'text-blue-600 dark:text-blue-400' 
+                  : 'text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white'
+              } transition-colors duration-200`}
+            >
+              Blog
             </Link>
             <Link
               to="/about"
@@ -71,7 +81,18 @@ export default function Navigation() {
                 }`}
                 onClick={() => setIsMenuOpen(false)}
               >
-                Portfolio
+                Home
+              </Link>
+              <Link
+                to="/blog"
+                className={`block px-3 py-2 rounded-md ${
+                  isActive('/blog')
+                    ? 'bg-blue-50 dark:bg-blue-900/50 text-blue-600 dark:text-blue-400'
+                    : 'text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 hover:text-gray-900 dark:hover:text-white'
+                }`}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Blog
               </Link>
               <Link
                 to="/about"
