@@ -1,4 +1,4 @@
-import { AboutContent, Project, Achievement } from '../types';
+import { AboutContent, Project, Achievement, SmallProject } from '../types';
 
 export const aboutContent: AboutContent = {
   name: "Hi! I'm Feiko.",
@@ -75,6 +75,41 @@ export const projects: Project[] = [
     links: {
       steam: "https://store.steampowered.com/"
     }
+  },
+  {
+    id: "project-3",
+    title: "Neon Nights",
+    description: "A cyberpunk-themed puzzle platformer where players manipulate light and shadow to solve environmental challenges.",
+    mainRole: "Technical Designer",
+    supportingRole: "Level Designer",
+    timeline: "2021 - 2022",
+    process: {
+      challenge: "Creating an intuitive light manipulation system that feels natural while maintaining challenging puzzle complexity.",
+      solution: "Developed a modular light system that allows for dynamic shadow casting and light source manipulation. Created a visual language that helps players understand puzzle mechanics.",
+      outcome: "The game received critical acclaim for its innovative mechanics and atmospheric design. Featured in several indie game showcases and won 'Best Puzzle Game' at the Indie Game Awards 2022."
+    },
+    imageUrl: "https://images.pexels.com/photos/1037999/pexels-photo-1037999.jpeg",
+    links: {
+      steam: "https://store.steampowered.com/",
+      youtube: "https://youtube.com/"
+    }
+  },
+  {
+    id: "project-4",
+    title: "Quantum Quest",
+    description: "A physics-based puzzle game where players manipulate quantum states to solve increasingly complex challenges.",
+    mainRole: "Game Designer",
+    supportingRole: "Technical Designer",
+    timeline: "2020 - 2021",
+    process: {
+      challenge: "Making complex quantum mechanics concepts accessible and fun through gameplay.",
+      solution: "Created an abstracted version of quantum mechanics that maintains scientific accuracy while being approachable. Designed a progressive learning curve that introduces concepts gradually.",
+      outcome: "The game was praised for its educational value and engaging gameplay. Used in several physics education programs and received a special mention at the Games for Learning Awards."
+    },
+    imageUrl: "https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg",
+    links: {
+      steam: "https://store.steampowered.com/"
+    }
   }
 ];
 
@@ -108,5 +143,30 @@ export const achievements: Achievement[] = [
     title: "Aztech: Best Design @ BUas",
     description: "Aztech received the Best Design award at Breda University of Applied Sciences.",
     year: "2019"
+  }
+];
+
+export const smallProjects: SmallProject[] = [
+  {
+    id: "small-1",
+    title: "Game Jam: Pixel Adventure",
+    description: "A 48-hour game jam project exploring pixel art and retro game mechanics.",
+    tags: ["Game Jam", "Pixel Art", "Unity"],
+    link: "https://itch.io/",
+    imageUrl: "https://images.pexels.com/photos/3165335/pexels-photo-3165335.jpeg"
+  },
+  {
+    id: "small-2",
+    title: "VR Prototype: Space Explorer",
+    description: "Early prototype for a VR space exploration game focusing on zero-gravity movement.",
+    tags: ["VR", "Prototype", "Unreal"],
+    link: "https://github.com/"
+  },
+  {
+    id: "small-3",
+    title: "Mobile Game: Color Match",
+    description: "A simple but addictive color-matching puzzle game for mobile platforms.",
+    tags: ["Mobile", "Puzzle", "Unity"],
+    imageUrl: "https://images.pexels.com/photos/1037999/pexels-photo-1037999.jpeg"
   }
 ];

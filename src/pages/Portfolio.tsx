@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import ProjectCard from '../components/ProjectCard';
-import { projects, achievements } from '../data/content';
+import SmallProjectCard from '../components/SmallProjectCard';
+import { projects, achievements, smallProjects } from '../data/content';
 
 export default function Portfolio() {
   return (
@@ -86,6 +87,29 @@ export default function Portfolio() {
                 </div>
                 <p className="text-sm text-gray-600 dark:text-gray-300 mt-1 font-['Arial'] tracking-wide">{achievement.description}</p>
               </motion.div>
+            ))}
+          </div>
+        </div>
+      </motion.div>
+
+      {/* Small Projects Section */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5, delay: 0.5 }}
+        className="bg-gray-50 dark:bg-gray-900 py-16"
+      >
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-3 font-['Helvetica_Neue'] tracking-wide">Other Projects</h2>
+            <p className="text-base text-gray-600 dark:text-gray-300 font-['Arial'] tracking-wide">
+              Smaller projects and experiments
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {smallProjects.map((project) => (
+              <SmallProjectCard key={project.id} project={project} />
             ))}
           </div>
         </div>

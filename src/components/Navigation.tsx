@@ -35,16 +35,12 @@ export default function Navigation() {
             >
               Home
             </Link>
-            <Link
-              to="/blog"
-              className={`${
-                isActive('/blog') 
-                  ? 'text-blue-600 dark:text-blue-400' 
-                  : 'text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white'
-              } transition-colors duration-200`}
+            <a
+              href="https://blog.feikovandijk.com"
+              className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors duration-200"
             >
               Blog
-            </Link>
+            </a>
             <Link
               to="/about"
               className={`${
@@ -83,17 +79,13 @@ export default function Navigation() {
               >
                 Home
               </Link>
-              <Link
-                to="/blog"
-                className={`block px-3 py-2 rounded-md ${
-                  isActive('/blog')
-                    ? 'bg-blue-50 dark:bg-blue-900/50 text-blue-600 dark:text-blue-400'
-                    : 'text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 hover:text-gray-900 dark:hover:text-white'
-                }`}
+              <a
+                href="https://blog.feikovandijk.com"
+                className="block px-3 py-2 rounded-md text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 hover:text-gray-900 dark:hover:text-white"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Blog
-              </Link>
+              </a>
               <Link
                 to="/about"
                 className={`block px-3 py-2 rounded-md ${

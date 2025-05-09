@@ -1,31 +1,16 @@
-import React from 'react';
+import React, { useLayoutEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowLeft, Stamp as Steam, Youtube } from 'lucide-react';
+import { ArrowLeft, Youtube } from 'lucide-react';
 import { projects } from '../data/content';
-
-interface Project {
-  id: string;
-  title: string;
-  imageUrl: string;
-  mainRole: string;
-  supportingRole?: string;
-  timeline: string;
-  description: string;
-  process: {
-    challenge: string;
-    solution: string;
-    outcome: string;
-  };
-  links?: {
-    steam?: string;
-    youtube?: string;
-  };
-}
 
 export default function ProjectDetails(): React.ReactElement {
   const { projectId } = useParams<{ projectId: string }>();
   const project = projects.find((p) => p.id === projectId);
+
+  useLayoutEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   if (!project) {
     return (

@@ -46,7 +46,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         <div className="flex justify-between items-center">
           <Link
             to={`/project/${project.id}`}
-            className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition-colors font-medium"
+            className="inline-flex items-center justify-center px-4 py-2 bg-white dark:bg-gray-800 border-2 border-blue-600 dark:border-blue-400 text-blue-600 dark:text-blue-400 rounded-lg hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-colors font-medium"
           >
             View Details
           </Link>
