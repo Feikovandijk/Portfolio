@@ -5,15 +5,36 @@ export interface Project {
     mainRole: string;
     supportingRole?: string;
     timeline: string;
-    process: {
-      challenge: string;
-      solution: string;
-      outcome: string;
-    };
     imageUrl: string;
+    quote?: {
+      text: string;
+      source: string;
+    };
+    projectStats?: {
+      teamSize?: string;
+      duration?: string;
+      platforms?: string[];
+      technologies?: string[];
+    };
+    keyContributions?: string[];
+    mainNarrative?: string;
+    bodyTextLeft?: string;
+    bodyTextRight?: string;
+    mediaShowcase?: Array<{
+      type: 'video' | 'image';
+      url: string;
+      title?: string;
+      description?: string;
+    }>;
+    designDocs?: Array<{
+      title: string;
+      url: string;
+    }>;
     links?: {
       steam?: string;
       youtube?: string;
+      website?: string;
+      github?: string;
     };
   }
   

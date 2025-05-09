@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Project } from '../types';
+import { Project } from '../types/index';
 import { motion } from 'framer-motion';
 import { Stamp as Steam, Youtube } from 'lucide-react';
 

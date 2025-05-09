@@ -1,8 +1,9 @@
 import React, { useLayoutEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowLeft, Youtube } from 'lucide-react';
-import { projects } from '../data/content';
+import { ArrowLeft, Youtube, Award } from 'lucide-react';
+import { projects, achievements } from '../data/content';
+import { Project } from '../types/index';
 
 export default function ProjectDetails(): React.ReactElement {
   const { projectId } = useParams<{ projectId: string }>();
@@ -46,39 +47,71 @@ export default function ProjectDetails(): React.ReactElement {
         />
 
         <div className="max-w-4xl mx-auto">
-          <div className="flex justify-between items-start mb-6">
+          <div className="grid md:grid-cols-2 gap-8 mb-12">
             <div>
-              <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-2 font-['Helvetica_Neue'] tracking-wide">{project.title}</h1>
-              <div className="space-y-1">
-                <p className="text-lg font-medium text-gray-900 dark:text-white font-['Arial'] tracking-wide">Main Role: {project.mainRole}</p>
-                {project.supportingRole && (
-                  <p className="text-lg text-gray-600 dark:text-gray-300 font-['Arial'] tracking-wide">Supporting Role: {project.supportingRole}</p>
+              <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4 font-['Helvetica_Neue'] tracking-wide">Project Details</h2>
+              <div className="space-y-4">
+                {project.projectStats?.teamSize && (
+                  <p className="text-lg text-gray-700 dark:text-gray-300 font-['Arial'] tracking-wide">{project.projectStats.teamSize}</p>
+                )}
+                {project.projectStats?.duration && (
+                  <p className="text-lg text-gray-700 dark:text-gray-300 font-['Arial'] tracking-wide">{project.projectStats.duration}</p>
+                )}
+                {project.projectStats?.platforms && project.projectStats.platforms.length > 0 && (
+                  <p className="text-lg text-gray-700 dark:text-gray-300 font-['Arial'] tracking-wide">Released on {project.projectStats.platforms.join(' & ')}</p>
+                )}
+                {project.projectStats?.technologies && project.projectStats.technologies.length > 0 && (
+                  <div className="flex flex-wrap gap-2">
+                    {project.projectStats.technologies.map((tech, index) => (
+                      <span key={index} className="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full text-sm text-gray-700 dark:text-gray-300">
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
                 )}
               </div>
             </div>
-            <span className="text-base text-gray-500 dark:text-gray-400 font-['Arial'] tracking-wide">{project.timeline}</span>
+            <div>
+              <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4 font-['Helvetica_Neue'] tracking-wide">Key Contributions</h2>
+              <div className="space-y-4">
+                <p className="text-lg font-medium text-gray-900 dark:text-white font-['Arial'] tracking-wide">Main Roles: {project.mainRole}</p>
+                <p className="text-lg text-gray-700 dark:text-gray-300 font-['Arial'] tracking-wide">Secondary Roles: {project.supportingRole}</p>
+                {project.keyContributions && project.keyContributions.length > 0 && (
+                  <ul className="list-disc list-inside space-y-2">
+                    {project.keyContributions.map((contribution, index) => (
+                      <li key={index} className="text-base text-gray-700 dark:text-gray-300 font-['Arial'] tracking-wide">{contribution}</li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+            </div>
           </div>
 
           <div className="space-y-12">
             <div>
               <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4 font-['Helvetica_Neue'] tracking-wide">Overview</h2>
-              <p className="text-base leading-relaxed text-gray-700 dark:text-gray-300 font-['Arial'] tracking-wide">{project.description}</p>
+              <p className="text-base leading-relaxed text-gray-700 dark:text-gray-300 font-['Arial'] tracking-wide whitespace-pre-line">{project.mainNarrative}</p>
             </div>
 
-            <div>
-              <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4 font-['Helvetica_Neue'] tracking-wide">The Challenge</h2>
-              <p className="text-base leading-relaxed text-gray-700 dark:text-gray-300 font-['Arial'] tracking-wide">{project.process.challenge}</p>
-            </div>
-
-            <div>
-              <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4 font-['Helvetica_Neue'] tracking-wide">Solution</h2>
-              <p className="text-base leading-relaxed text-gray-700 dark:text-gray-300 font-['Arial'] tracking-wide">{project.process.solution}</p>
-            </div>
-
-            <div>
-              <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4 font-['Helvetica_Neue'] tracking-wide">Outcome</h2>
-              <p className="text-base leading-relaxed text-gray-700 dark:text-gray-300 font-['Arial'] tracking-wide">{project.process.outcome}</p>
-            </div>
+            {project.id === "project-2" && (
+              <div>
+                <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4 font-['Helvetica_Neue'] tracking-wide">Awards & Recognition</h2>
+                <div className="space-y-4">
+                  {achievements
+                    .filter(achievement => achievement.title.includes("ARID"))
+                    .map((achievement) => (
+                      <div key={achievement.id} className="flex items-start gap-3 p-4 bg-gray-50 dark:bg-gray-700/50 rounded-lg">
+                        <Award className="w-6 h-6 text-yellow-500 mt-1 flex-shrink-0" />
+                        <div>
+                          <h3 className="text-lg font-medium text-gray-900 dark:text-white font-['Arial'] tracking-wide">{achievement.title}</h3>
+                          <p className="text-gray-700 dark:text-gray-300 font-['Arial'] tracking-wide">{achievement.description}</p>
+                          <span className="text-sm text-gray-500 dark:text-gray-400 font-['Arial'] tracking-wide">{achievement.year}</span>
+                        </div>
+                      </div>
+                    ))}
+                </div>
+              </div>
+            )}
           </div>
 
           {(project.links?.steam || project.links?.youtube) && (
@@ -104,6 +137,132 @@ export default function ProjectDetails(): React.ReactElement {
                   <span className="font-['Arial'] tracking-wide">Watch on YouTube</span>
                 </a>
               )}
+            </div>
+          )}
+
+          {project.developmentPhases && (
+            <div className="mt-12 space-y-16">
+              <h2 className="text-3xl font-semibold text-gray-900 dark:text-white mb-8 font-['Helvetica_Neue'] tracking-wide">Development Process</h2>
+              
+              {/* Concepting Phase */}
+              <div className="space-y-6">
+                <h3 className="text-2xl font-semibold text-gray-900 dark:text-white font-['Helvetica_Neue'] tracking-wide">Concepting</h3>
+                {project.developmentPhases.concepting.videoUrl && (
+                  <div className="relative aspect-video rounded-lg overflow-hidden">
+                    <iframe
+                      src={project.developmentPhases.concepting.videoUrl}
+                      className="absolute inset-0 w-full h-full"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                    />
+                  </div>
+                )}
+                <p className="text-base leading-relaxed text-gray-700 dark:text-gray-300 font-['Arial'] tracking-wide">
+                  {project.developmentPhases.concepting.description}
+                </p>
+                {project.developmentPhases.concepting.screenshots.length > 0 && (
+                  <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                    {project.developmentPhases.concepting.screenshots.map((screenshot: string, index: number) => (
+                      <img
+                        key={index}
+                        src={screenshot}
+                        alt={`Concepting phase screenshot ${index + 1}`}
+                        className="w-full aspect-video object-cover rounded-lg"
+                      />
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              {/* Pre-Production Phase */}
+              <div className="space-y-6">
+                <h3 className="text-2xl font-semibold text-gray-900 dark:text-white font-['Helvetica_Neue'] tracking-wide">Pre-Production</h3>
+                {project.developmentPhases.preProduction.videoUrl && (
+                  <div className="relative aspect-video rounded-lg overflow-hidden">
+                    <iframe
+                      src={project.developmentPhases.preProduction.videoUrl}
+                      className="absolute inset-0 w-full h-full"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                    />
+                  </div>
+                )}
+                <p className="text-base leading-relaxed text-gray-700 dark:text-gray-300 font-['Arial'] tracking-wide">
+                  {project.developmentPhases.preProduction.description}
+                </p>
+                {project.developmentPhases.preProduction.screenshots.length > 0 && (
+                  <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                    {project.developmentPhases.preProduction.screenshots.map((screenshot: string, index: number) => (
+                      <img
+                        key={index}
+                        src={screenshot}
+                        alt={`Pre-production phase screenshot ${index + 1}`}
+                        className="w-full aspect-video object-cover rounded-lg"
+                      />
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              {/* Production Phase */}
+              <div className="space-y-6">
+                <h3 className="text-2xl font-semibold text-gray-900 dark:text-white font-['Helvetica_Neue'] tracking-wide">Production</h3>
+                {project.developmentPhases.production.videoUrl && (
+                  <div className="relative aspect-video rounded-lg overflow-hidden">
+                    <iframe
+                      src={project.developmentPhases.production.videoUrl}
+                      className="absolute inset-0 w-full h-full"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                    />
+                  </div>
+                )}
+                <p className="text-base leading-relaxed text-gray-700 dark:text-gray-300 font-['Arial'] tracking-wide">
+                  {project.developmentPhases.production.description}
+                </p>
+                {project.developmentPhases.production.screenshots.length > 0 && (
+                  <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                    {project.developmentPhases.production.screenshots.map((screenshot: string, index: number) => (
+                      <img
+                        key={index}
+                        src={screenshot}
+                        alt={`Production phase screenshot ${index + 1}`}
+                        className="w-full aspect-video object-cover rounded-lg"
+                      />
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              {/* Release Phase */}
+              <div className="space-y-6">
+                <h3 className="text-2xl font-semibold text-gray-900 dark:text-white font-['Helvetica_Neue'] tracking-wide">Release</h3>
+                {project.developmentPhases.release.videoUrl && (
+                  <div className="relative aspect-video rounded-lg overflow-hidden">
+                    <iframe
+                      src={project.developmentPhases.release.videoUrl}
+                      className="absolute inset-0 w-full h-full"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                    />
+                  </div>
+                )}
+                <p className="text-base leading-relaxed text-gray-700 dark:text-gray-300 font-['Arial'] tracking-wide">
+                  {project.developmentPhases.release.description}
+                </p>
+                {project.developmentPhases.release.screenshots.length > 0 && (
+                  <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                    {project.developmentPhases.release.screenshots.map((screenshot: string, index: number) => (
+                      <img
+                        key={index}
+                        src={screenshot}
+                        alt={`Release phase screenshot ${index + 1}`}
+                        className="w-full aspect-video object-cover rounded-lg"
+                      />
+                    ))}
+                  </div>
+                )}
+              </div>
             </div>
           )}
 

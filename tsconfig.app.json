@@ -7,7 +7,7 @@
     "skipLibCheck": true,
 
     /* Bundler mode */
-    "moduleResolution": "bundler",
+    "moduleResolution": "Node",
     "allowImportingTsExtensions": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
@@ -22,7 +22,16 @@
     "noFallthroughCasesInSwitch": true,
     
     /* Type Definitions */
-    "types": ["react", "react-dom", "react-router-dom"]
+    "types": ["react", "react-dom", "react-router-dom"],
+    
+    /* Additional Options */
+    "baseUrl": ".",
+    "paths": {
+      "*": ["src/*"]
+    },
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true
   },
-  "include": ["src"]
+  "include": ["src/**/*"],
+  "exclude": ["node_modules"]
 }
