@@ -1,9 +1,10 @@
 name: Deploy to GitHub Pages
 
+# This workflow only builds and deploys when pushing to main branch
 on:
   push:
-    branches: [ main ]
-  workflow_dispatch:
+    branches: [ main ]  # Only trigger on main branch
+  workflow_dispatch:    # Manual trigger option
 
 permissions:
   contents: read
