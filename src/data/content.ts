@@ -31,7 +31,10 @@ I value collaboration and believe that great games are built by teams who share 
     "Unity",
     "Unreal Engine",
     "Prototyping",
-    "User Research"
+    "User Research",
+    "OSINT",
+    "Network Security",
+    "Penetration Testing"
   ],
   contact: {
     email: "mail@feiko.org",
