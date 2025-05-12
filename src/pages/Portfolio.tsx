@@ -3,6 +3,7 @@ import ProjectCard from '../components/ProjectCard';
 import SmallProjectCard from '../components/SmallProjectCard';
 import { projects, achievements, smallProjects } from '../data/content';
 import { Award } from 'lucide-react';
+import ScrollDownButton from '../components/ScrollDownButton';
 
 export default function Portfolio() {
   return (
@@ -37,6 +38,8 @@ export default function Portfolio() {
           </div>
         </div>
       </motion.div>
+
+      <ScrollDownButton />
 
       {/* Portfolio Section */}
       <motion.div
