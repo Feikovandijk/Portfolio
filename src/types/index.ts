@@ -10,7 +10,8 @@ export interface AboutContent {
     contact: {
       email: string;
       linkedin: string;
-      twitter: string;
+      github: string;
+      ctftime: string;
     };
   }
   

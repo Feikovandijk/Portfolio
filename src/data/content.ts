@@ -13,33 +13,41 @@ I value collaboration and believe that great games are built by teams who share 
   images: [
     {
       url: "https://images.squarespace-cdn.com/content/v1/665f0ae5b7fe1e7c8f450174/4aed8881-5205-492a-887d-694b9ce8a94b/Snapchat-486029659.jpg?format=2500w",
-      alt: "Feiko climbing outdoors"
+      alt: ""
     },
     {
       url: "https://images.squarespace-cdn.com/content/v1/665f0ae5b7fe1e7c8f450174/b93f7105-8eb4-45cc-adb4-afa4bd71f50b/IMG20231016161926.jpg?format=2500w",
-      alt: "Feiko in a creative environment"
+      alt: ""
     },
     {
       url: "https://images.squarespace-cdn.com/content/v1/665f0ae5b7fe1e7c8f450174/c196bf3b-d27d-4086-9a83-afcd466f065f/GLOW-2024-20-EDIT.jpg?format=2500w",
-      alt: "Feiko at a gaming event"
+      alt: ""
     }
   ],
   skills: [
+    "Technical Design",
     "Systems Design",
-    "Level Design",
     "Player Experience",
     "Unity",
     "Unreal Engine",
-    "Prototyping",
+    "P4",
+    "Git",
+    "Teamcity",
+    "Jenkins",
+    "AWS",
+    "Jira",
+    "Google Analytics",
+    "C#",
+    "Python",
     "User Research",
     "OSINT",
-    "Network Security",
     "Penetration Testing"
   ],
   contact: {
     email: "mail@feiko.org",
-    linkedin: "https://linkedin.com/in/yourusername",
-    twitter: "https://twitter.com/yourusername"
+    linkedin: "https://www.linkedin.com/in/feikovandijk/",
+    github: "https://github.com/Feikovandijk",
+    ctftime: "https://ctftime.org/team/165809"
   }
 };
 
@@ -149,21 +157,32 @@ export const projects: Project[] = [
   },
   {
     id: "project-3",
-    title: "Neon Nights",
-    description: "A cyberpunk-themed puzzle platformer where players manipulate light and shadow to solve environmental challenges.",
-    mainRole: "Technical Designer",
-    supportingRole: "Level Designer",
-    timeline: "2021 - 2022",
-    imageUrl: "https://images.pexels.com/photos/1037999/pexels-photo-1037999.jpeg",
-    quote: { text: "", source: "" },
-    projectStats: {
-      teamSize: "",
-      duration: "",
-      platforms: [],
-      technologies: []
+    title: "Master Thesis",
+    description: "Research on the psychological impact of singleplayer survival games and the influence of multiplayer elements on player behavior.",
+    mainRole: "Researcher",
+    supportingRole: "Data Analysis",
+    timeline: "2022 - 2023",
+    imageUrl: "https://images.squarespace-cdn.com/content/v1/665f0ae5b7fe1e7c8f450174/2db9c798-f40c-4614-b50a-ad618367dda3/Screenshot+2024-10-23+at+13.50.55.png?format=2500w",
+    quote: { 
+      text: "",
+      source: ""
     },
-    keyContributions: [],
-    mainNarrative: "",
+    projectStats: {
+      teamSize: "Individual Research",
+      duration: "6 Months",
+      platforms: ["Academic"],
+      technologies: [
+        "Qualitative Research",
+        "Data Analysis",
+        "Game Design Theory",
+      ]
+    },
+    keyContributions: [
+      "Conducted extensive research on player behavior in survival games",
+      "Analyzed the impact of multiplayer elements on player psychology",
+      "Developed new frameworks for understanding player engagement"
+    ],
+    mainNarrative: "My Master's thesis explored the fascinating intersection of game design and psychology, specifically focusing on how singleplayer survival games affect our minds and how multiplayer elements can change the way we play. The research involved analyzing player behavior, conducting interviews, and developing new frameworks for understanding player engagement in survival games.",
     bodyTextLeft: "",
     bodyTextRight: "",
     mediaShowcase: [],
@@ -175,21 +194,33 @@ export const projects: Project[] = [
   },
   {
     id: "project-4",
-    title: "Quantum Quest",
-    description: "A physics-based puzzle game where players manipulate quantum states to solve increasingly complex challenges.",
-    mainRole: "Game Designer",
-    supportingRole: "Technical Designer",
-    timeline: "2020 - 2021",
-    imageUrl: "https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg",
-    quote: { text: "", source: "" },
-    projectStats: {
-      teamSize: "",
-      duration: "",
-      platforms: [],
-      technologies: []
+    title: "Quantum VR",
+    description: "An immersive VR experience that visualizes quantum mechanics principles through interactive gameplay.",
+    mainRole: "Technical Designer",
+    supportingRole: "Game Designer",
+    timeline: "2021 - 2022",
+    imageUrl: "https://images.squarespace-cdn.com/content/v1/665f0ae5b7fe1e7c8f450174/e0b0d115-69a0-4037-8d2b-be51bd6cc734/QuantumLogo.png?format=2500w",
+    quote: { 
+      text: "A mind-bending journey through the quantum realm that makes complex physics concepts accessible and fun.",
+      source: "VR Gaming Magazine"
     },
-    keyContributions: [],
-    mainNarrative: "",
+    projectStats: {
+      teamSize: "5 Developers",
+      duration: "8 Months",
+      platforms: ["Oculus Quest", "SteamVR"],
+      technologies: [
+        "Unity",
+        "VR Development",
+        "Physics Simulation",
+        "Shader Programming"
+      ]
+    },
+    keyContributions: [
+      "Designed quantum mechanics visualization systems",
+      "Implemented VR interaction mechanics",
+      "Created educational game loops that teach physics concepts"
+    ],
+    mainNarrative: "Quantum VR was an ambitious project that aimed to make quantum mechanics accessible through immersive VR gameplay. As the Technical Designer, I worked on creating intuitive ways to visualize and interact with quantum concepts, making complex physics principles engaging and understandable for players.",
     bodyTextLeft: "",
     bodyTextRight: "",
     mediaShowcase: [],
@@ -236,24 +267,25 @@ export const achievements: Achievement[] = [
 export const smallProjects: SmallProject[] = [
   {
     id: "small-1",
-    title: "Game Jam: Pixel Adventure",
-    description: "A 48-hour game jam project exploring pixel art and retro game mechanics.",
-    tags: ["Game Jam", "Pixel Art", "Unity"],
-    link: "https://itch.io/",
-    imageUrl: "https://images.pexels.com/photos/3165335/pexels-photo-3165335.jpeg"
+    title: "Streamlined Mastermind",
+    description: "A modern take on the classic Mastermind board game, featuring sleek UI and challenging gameplay mechanics.",
+    tags: ["Game Design", "UI/UX", "Unity"],
+    link: "https://www.youtube.com/watch?v=611cwKZvmVE",
+    imageUrl: "https://images.squarespace-cdn.com/content/v1/665f0ae5b7fe1e7c8f450174/4aed8881-5205-492a-887d-694b9ce8a94b/Snapchat-486029659.jpg?format=2500w"
   },
   {
     id: "small-2",
-    title: "VR Prototype: Space Explorer",
-    description: "Early prototype for a VR space exploration game focusing on zero-gravity movement.",
-    tags: ["VR", "Prototype", "Unreal"],
-    link: "https://github.com/"
+    title: "Aztech",
+    description: "An action-adventure game set in an ancient Aztec world, combining historical elements with modern gameplay.",
+    tags: ["Game Design", "Level Design", "Unreal"],
+    link: "https://github.com/",
+    imageUrl: "https://images.squarespace-cdn.com/content/v1/665f0ae5b7fe1e7c8f450174/c2146f6c-2001-4b24-b604-856811e3fd39/aztech+%282%29.png?format=750w"
   },
   {
     id: "small-3",
-    title: "Mobile Game: Color Match",
-    description: "A simple but addictive color-matching puzzle game for mobile platforms.",
-    tags: ["Mobile", "Puzzle", "Unity"],
-    imageUrl: "https://images.pexels.com/photos/1037999/pexels-photo-1037999.jpeg"
+    title: "Demon's Heaven",
+    description: "A challenging platformer with unique demonic mechanics and atmospheric level design.",
+    tags: ["Game Design", "Level Design", "Unity"],
+    imageUrl: "https://images.squarespace-cdn.com/content/v1/665f0ae5b7fe1e7c8f450174/dd9dfecb-c924-45d3-98e9-b958fe6ed948/DemonsHeaven.png?format=750w"
   }
 ];

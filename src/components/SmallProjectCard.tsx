@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
-import { ExternalLink } from 'lucide-react';
+import { ExternalLink, Play } from 'lucide-react';
+import { useState, useRef, useEffect } from 'react';
 
 interface SmallProjectCardProps {
   project: {
@@ -13,13 +14,68 @@ interface SmallProjectCardProps {
 }
 
 export default function SmallProjectCard({ project }: SmallProjectCardProps) {
+  const [showVideo, setShowVideo] = useState(false);
+  const videoRef = useRef<HTMLVideoElement | null>(null);
+  const isStreamlinedMastermind = project.id === "small-1";
+  const isAztech = project.id === "small-2";
+  const isDemonsHeaven = project.id === "small-3";
+
+  const getVideoSrc = () => {
+    if (isStreamlinedMastermind) return "assets/StreamlinedMastermindTrailer.mp4";
+    if (isAztech) return "assets/AztechTrailer.mp4";
+    if (isDemonsHeaven) return "assets/DemonsHeavenTrailer.mp4";
+    return "";
+  };
+
+  const getThumbnailSrc = () => {
+    if (isStreamlinedMastermind) return "assets/Streamlined.png";
+    if (isAztech) return "assets/Aztech.png";
+    if (isDemonsHeaven) return "assets/DemonsHeaven.png";
+    return project.imageUrl;
+  };
+
+  useEffect(() => {
+    if (showVideo && videoRef.current) {
+      videoRef.current.play();
+    }
+  }, [showVideo]);
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       className="bg-white dark:bg-gray-800 rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow"
     >
-      {project.imageUrl && (
+      {(isStreamlinedMastermind || isAztech || isDemonsHeaven) ? (
+        <div className="mb-4 aspect-video overflow-hidden rounded-lg relative">
+          {showVideo ? (
+            <video
+              ref={videoRef}
+              src={getVideoSrc()}
+              title={project.title}
+              className="w-full h-full object-cover"
+              controls
+              playsInline
+            />
+          ) : (
+            <>
+              <img
+                src={getThumbnailSrc()}
+                alt={project.title}
+                className="w-full h-full object-cover"
+              />
+              <button
+                onClick={() => setShowVideo(true)}
+                className="absolute inset-0 flex items-center justify-center bg-black/30 hover:bg-black/40 transition-colors"
+              >
+                <div className="w-16 h-16 rounded-full bg-white/90 flex items-center justify-center">
+                  <Play size={32} className="text-gray-900 ml-1" />
+                </div>
+              </button>
+            </>
+          )}
+        </div>
+      ) : project.imageUrl ? (
         <div className="mb-4 aspect-video overflow-hidden rounded-lg">
           <img
             src={project.imageUrl}
@@ -27,7 +83,7 @@ export default function SmallProjectCard({ project }: SmallProjectCardProps) {
             className="w-full h-full object-cover"
           />
         </div>
-      )}
+      ) : null}
       <h3 className="text-lg font-medium text-gray-900 dark:text-white font-['Helvetica_Neue'] tracking-wide mb-2">
         {project.title}
       </h3>
@@ -44,7 +100,7 @@ export default function SmallProjectCard({ project }: SmallProjectCardProps) {
           </span>
         ))}
       </div>
-      {project.link && (
+      {project.link && !isStreamlinedMastermind && !isAztech && !isDemonsHeaven && (
         <a
           href={project.link}
           target="_blank"

@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Mail, Linkedin, Github } from 'lucide-react';
+import { Mail, Linkedin, Github, Flag } from 'lucide-react';
 import { aboutContent } from '../data/content';
 
 export default function About() {
@@ -98,8 +98,19 @@ export default function About() {
               <span>LinkedIn</span>
             </a>
           )}
+          {aboutContent.contact.ctftime && (
+            <a
+              href={aboutContent.contact.ctftime}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors font-['Arial'] tracking-wide"
+            >
+              <Flag size={20} />
+              <span>CTFTime</span>
+            </a>
+          )}
           <a
-            href="https://github.com/Feikovandijk"
+            href={aboutContent.contact.github}
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors font-['Arial'] tracking-wide"
