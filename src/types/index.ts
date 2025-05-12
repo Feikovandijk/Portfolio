@@ -60,6 +60,9 @@ export interface AboutContent {
     links: {
       steam?: string;
       youtube?: string;
+      website?: string;
+      researchgate?: string;
+      blog?: string;
     };
     developmentPhases?: DevelopmentPhases;
   }

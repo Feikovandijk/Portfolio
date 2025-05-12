@@ -157,39 +157,53 @@ export const projects: Project[] = [
   },
   {
     id: "project-3",
-    title: "Master Thesis",
-    description: "Research on the psychological impact of singleplayer survival games and the influence of multiplayer elements on player behavior.",
-    mainRole: "Researcher",
-    supportingRole: "Data Analysis",
-    timeline: "2022 - 2023",
+    title: "Master's Thesis - Singleplayer to Co-op: How Does the Survival Game Experience Shift?",
+    description: "A comprehensive research study investigating how multiplayer integration impacts the core experience of solitude and challenge in singleplayer survival games.",
+    mainRole: "Lead Researcher",
+    supportingRole: "Data Analysis & Academic Writing",
+    timeline: "2023 - 2024",
     imageUrl: "https://images.squarespace-cdn.com/content/v1/665f0ae5b7fe1e7c8f450174/2db9c798-f40c-4614-b50a-ad618367dda3/Screenshot+2024-10-23+at+13.50.55.png?format=2500w",
     quote: { 
-      text: "",
-      source: ""
+      text: "Adding multiplayer isn't just about adding features; it's a fundamental design decision that impacts the game's emotional and systemic core.",
+      source: "Master's Thesis Research"
     },
     projectStats: {
       teamSize: "Individual Research",
-      duration: "6 Months",
-      platforms: ["Academic"],
+      duration: "9 Months",
+      platforms: [],
       technologies: [
         "Qualitative Research",
-        "Data Analysis",
-        "Game Design Theory",
+        "Quantitative Research",
+        "Semi-Structured Interviews",
+        "Gameplay Analysis",
+        "MaxQDA",
       ]
     },
     keyContributions: [
-      "Conducted extensive research on player behavior in survival games",
-      "Analyzed the impact of multiplayer elements on player psychology",
-      "Developed new frameworks for understanding player engagement"
+      "Investigated how integrating multiplayer impacts the core feeling of solitude in singleplayer survival games",
+      "Designed and conducted qualitative research, interviewing 14 players and analyzing their gameplay experiences",
+      "Managed participant recruitment and data collection, gathering insights from over 64 gameplay sessions",
+      "Analyzed player feedback and gameplay to identify key emotional and systemic shifts between solo and co-op play",
     ],
-    mainNarrative: "My Master's thesis explored the fascinating intersection of game design and psychology, specifically focusing on how singleplayer survival games affect our minds and how multiplayer elements can change the way we play. The research involved analyzing player behavior, conducting interviews, and developing new frameworks for understanding player engagement in survival games.",
-    bodyTextLeft: "",
-    bodyTextRight: "",
+    mainNarrative: `Survival games excel at creating tension through isolation and vulnerability. As developers, we know the power of solitude in this genre. But what happens when we introduce co-op? How does adding other players change the emotional core and the systemic balance we carefully designed for a solo experience? My Master's thesis dove into this exact question.
+
+Using Arid, The Long Dark, and Green Hell as case studies, I explored how players feel and play differently when shifting from solo to multiplayer survival. Through analyzing gameplay recordings and conducting in-depth interviews, I focused on the player's perception of solitude, risk, and immersion.
+
+The research highlighted a crucial trade-off:
+• In Singleplayer: Solitude amplifies immersion, tension, and the satisfaction of overcoming challenges alone. Players often value these intense, personal moments of struggle and triumph, connecting deeply with the game world. Negative emotions like vulnerability aren't necessarily bad; they often deepen engagement, much like the "Sad Film Paradox."
+• In Multiplayer: The desire for social interaction is a key driver. Co-op offers shared experiences and camaraderie, reducing feelings of isolation. However, this social safety net often leads players to take more risks and allows teams to overcome systemic challenges (like resource management or progression hurdles) much faster through distributed labor (e.g., "base builders" vs. "explorers" in Green Hell). This can fundamentally alter the game's intended pacing, challenge, and atmospheric tension.
+
+Coming from a hands-on development background (especially on Arid), applying academic research methods was a new challenge. It required a different kind of iteration – refining questions, analyzing subjective data, and structuring arguments rigorously. It reinforced how valuable diverse feedback is, whether from players or academic peers.
+
+Ultimately, the findings suggest that adding multiplayer isn't just about adding features; it's a fundamental design decision that impacts the game's emotional and systemic core. It requires intentional design – whether that means scaling difficulty, forcing temporary isolation in co-op, or even choosing to preserve the unique power of the solitary experience, as seen with The Long Dark. The goal is to ensure multiplayer enhances rather than dilutes the core survival fantasy you aim to deliver.`,
+    bodyTextLeft: "Research Institution: Breda University of Applied Sciences\nDegree: Master of Science in Game Technology\nCore Focus: Player Experience, Solitude vs. Social Play, Multiplayer Impact, Survival Genre Mechanics",
+    bodyTextRight: "Case Studies: Arid, The Long Dark, Green Hell\nMethods: Qualitative Research, Semi-Structured Interviews, Gameplay Recording & Analysis",
     mediaShowcase: [],
     designDocs: [],
     links: {
-      steam: "https://store.steampowered.com/",
-      youtube: "https://youtube.com/"
+      youtube: "",
+      researchgate: "https://www.researchgate.net/publication/381547877_Implementing_Multiplayer_in_Single_Player_games_Analysis_of_Multiplayer_Integration_in_Singleplayer_Survival_Games",
+      blog: "https://blog.feikovandijk.com/balancing-solitude-and-social-play-design-implications-for-survival-games/"
     }
   },
   {

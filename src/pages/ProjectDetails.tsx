@@ -69,6 +69,30 @@ export default function ProjectDetails(): React.ReactElement {
                     ))}
                   </div>
                 )}
+                {project.id === "project-3" && (
+                  <div className="flex gap-4 mt-4">
+                    {project.links?.researchgate && (
+                      <a
+                        href={project.links.researchgate}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center justify-center gap-2 px-4 py-2 bg-blue-800 text-white rounded-lg hover:bg-blue-900 transition-colors text-sm font-medium"
+                      >
+                        <span className="font-['Arial'] tracking-wide">View on ResearchGate</span>
+                      </a>
+                    )}
+                    {project.links?.blog && (
+                      <a
+                        href={project.links.blog}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center justify-center gap-2 px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors text-sm font-medium"
+                      >
+                        <span className="font-['Arial'] tracking-wide">Read blog post</span>
+                      </a>
+                    )}
+                  </div>
+                )}
               </div>
             </div>
             <div>
@@ -114,7 +138,7 @@ export default function ProjectDetails(): React.ReactElement {
             )}
           </div>
 
-          {(project.links?.steam || project.links?.youtube) && (
+          {(project.links?.steam || project.links?.youtube || project.links?.blog || project.links?.researchgate) && (
             <div className="flex gap-6 mt-12 pt-6 border-t border-gray-200 dark:border-gray-700">
               {project.links?.steam && (
                 <a
@@ -135,6 +159,26 @@ export default function ProjectDetails(): React.ReactElement {
                 >
                   <Youtube size={20} />
                   <span className="font-['Arial'] tracking-wide">Watch on YouTube</span>
+                </a>
+              )}
+              {project.links?.blog && (
+                <a
+                  href={project.links.blog}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors font-medium"
+                >
+                  <span className="font-['Arial'] tracking-wide">Read blog post</span>
+                </a>
+              )}
+              {project.links?.researchgate && (
+                <a
+                  href={project.links.researchgate}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-blue-800 text-white rounded-lg hover:bg-blue-900 transition-colors font-medium"
+                >
+                  <span className="font-['Arial'] tracking-wide">View on ResearchGate</span>
                 </a>
               )}
             </div>
