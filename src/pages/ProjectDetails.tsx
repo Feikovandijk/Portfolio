@@ -3,7 +3,6 @@ import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowLeft, Youtube, Award } from 'lucide-react';
 import { projects, achievements } from '../data/content';
-import { Project } from '../types/index';
 
 export default function ProjectDetails(): React.ReactElement {
   const { projectId } = useParams<{ projectId: string }>();
@@ -138,7 +137,7 @@ export default function ProjectDetails(): React.ReactElement {
             )}
           </div>
 
-          {(project.links?.steam || project.links?.youtube || project.links?.blog || project.links?.researchgate) && (
+          {(project.links?.steam || project.links?.youtube || (project.id !== "project-3" && (project.links?.blog || project.links?.researchgate))) && (
             <div className="flex gap-6 mt-12 pt-6 border-t border-gray-200 dark:border-gray-700">
               {project.links?.steam && (
                 <a
@@ -161,7 +160,7 @@ export default function ProjectDetails(): React.ReactElement {
                   <span className="font-['Arial'] tracking-wide">Watch on YouTube</span>
                 </a>
               )}
-              {project.links?.blog && (
+              {project.id !== "project-3" && project.links?.blog && (
                 <a
                   href={project.links.blog}
                   target="_blank"
@@ -171,7 +170,7 @@ export default function ProjectDetails(): React.ReactElement {
                   <span className="font-['Arial'] tracking-wide">Read blog post</span>
                 </a>
               )}
-              {project.links?.researchgate && (
+              {project.id !== "project-3" && project.links?.researchgate && (
                 <a
                   href={project.links.researchgate}
                   target="_blank"
