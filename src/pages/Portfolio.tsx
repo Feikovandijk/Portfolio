@@ -83,14 +83,14 @@ export default function Portfolio() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5 }}
-                  className="flex items-center gap-3 p-4 bg-gradient-to-r from-gray-50 to-gray-100 dark:from-gray-700/50 dark:to-gray-800/50 rounded-lg border border-gray-200 dark:border-gray-700"
+                  className="flex items-center gap-3 p-4 bg-gradient-to-r from-white to-gray-50 dark:from-gray-700/50 dark:to-gray-800/50 rounded-lg border border-gray-100 dark:border-gray-700 shadow-sm hover:shadow-md transition-all duration-300"
                 >
                   <div className="flex-shrink-0 w-10 h-10 rounded-full bg-yellow-100 dark:bg-yellow-900/30 flex items-center justify-center">
                     <Award className="w-5 h-5 text-yellow-500" />
                   </div>
                   <div>
                     <h3 className="text-base font-medium text-gray-900 dark:text-white font-['Helvetica_Neue'] tracking-wide">{achievement.title}</h3>
-                    <p className="text-sm text-gray-600 dark:text-gray-300 font-['Arial'] tracking-wide">{achievement.description}</p>
+                    <p className="text-sm text-gray-700 dark:text-gray-300 font-['Arial'] tracking-wide">{achievement.description}</p>
                     <span className="text-xs text-gray-500 dark:text-gray-400 font-['Arial'] tracking-wide">{achievement.year}</span>
                   </div>
                 </motion.div>
