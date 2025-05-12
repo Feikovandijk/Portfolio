@@ -1,4 +1,5 @@
-import { Linkedin, BookOpen } from 'lucide-react';
+import { Linkedin, Github, Flag, Mail } from 'lucide-react';
+import { aboutContent } from '../data/content';
 
 export default function Footer() {
   return (
@@ -10,22 +11,42 @@ export default function Footer() {
           </div>
           <div className="flex items-center gap-6">
             <a
-              href="https://linkedin.com/in/yourusername"
-              target="_blank"
-              rel="noopener noreferrer"
+              href={`mailto:${aboutContent.contact.email}`}
               className="flex items-center gap-2 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors"
             >
-              <Linkedin size={20} />
-              <span>LinkedIn</span>
+              <Mail size={20} />
+              <span>Email</span>
             </a>
+            {aboutContent.contact.linkedin && (
+              <a
+                href={aboutContent.contact.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors"
+              >
+                <Linkedin size={20} />
+                <span>LinkedIn</span>
+              </a>
+            )}
+            {aboutContent.contact.ctftime && (
+              <a
+                href={aboutContent.contact.ctftime}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors"
+              >
+                <Flag size={20} />
+                <span>CTFTime</span>
+              </a>
+            )}
             <a
-              href="https://yourblog.com"
+              href={aboutContent.contact.github}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors"
             >
-              <BookOpen size={20} />
-              <span>Blog</span>
+              <Github size={20} />
+              <span>GitHub</span>
             </a>
           </div>
         </div>

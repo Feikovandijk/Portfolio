@@ -73,10 +73,7 @@ export const projects: Project[] = [
     bodyTextRight: "",
     mediaShowcase: [],
     designDocs: [],
-    links: {
-      steam: "https://store.steampowered.com/",
-      youtube: "https://youtube.com/"
-    }
+    links: {}
   },
   {
     id: "project-2",
@@ -117,8 +114,7 @@ export const projects: Project[] = [
     mediaShowcase: [],
     designDocs: [],
     links: {
-      steam: "https://store.steampowered.com/",
-      youtube: "https://youtube.com/"
+      steam: "https://store.steampowered.com/app/1463730/Arid/"
     },
     developmentPhases: {
       concepting: {
@@ -157,9 +153,9 @@ export const projects: Project[] = [
   },
   {
     id: "project-3",
-    title: "Master's Thesis - Singleplayer to Co-op: How Does the Survival Game Experience Shift?",
-    description: "A comprehensive research study investigating how multiplayer integration impacts the core experience of solitude and challenge in singleplayer survival games.",
-    mainRole: "Lead Researcher",
+    title: "Master's Thesis",
+    description: "A research study investigating how multiplayer integration impacts the core experience of solitude and challenge in singleplayer survival games.",
+    mainRole: "User Researcher",
     supportingRole: "Data Analysis & Academic Writing",
     timeline: "2023 - 2024",
     imageUrl: "https://images.squarespace-cdn.com/content/v1/665f0ae5b7fe1e7c8f450174/2db9c798-f40c-4614-b50a-ad618367dda3/Screenshot+2024-10-23+at+13.50.55.png?format=2500w",
@@ -201,7 +197,6 @@ Ultimately, the findings suggest that adding multiplayer isn't just about adding
     mediaShowcase: [],
     designDocs: [],
     links: {
-      youtube: "",
       researchgate: "https://www.researchgate.net/publication/381547877_Implementing_Multiplayer_in_Single_Player_games_Analysis_of_Multiplayer_Integration_in_Singleplayer_Survival_Games",
       blog: "https://blog.feikovandijk.com/balancing-solitude-and-social-play-design-implications-for-survival-games/"
     }
@@ -239,9 +234,7 @@ Ultimately, the findings suggest that adding multiplayer isn't just about adding
     bodyTextRight: "",
     mediaShowcase: [],
     designDocs: [],
-    links: {
-      steam: "https://store.steampowered.com/"
-    }
+    links: {}
   }
 ];
 

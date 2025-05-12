@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import ProjectCard from '../components/ProjectCard';
 import SmallProjectCard from '../components/SmallProjectCard';
 import { projects, achievements, smallProjects } from '../data/content';
+import { Award } from 'lucide-react';
 
 export default function Portfolio() {
   return (
@@ -65,27 +66,30 @@ export default function Portfolio() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5, delay: 0.4 }}
-        className="bg-white dark:bg-gray-800 py-24"
+        className="bg-white dark:bg-gray-800 py-16"
       >
         <div className="max-w-7xl mx-auto px-8 lg:px-12">
           <div className="text-center mb-8">
             <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-2 font-['Helvetica_Neue'] tracking-wide">Achievements & Recognitions</h2>
           </div>
 
-          <div className="space-y-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {achievements.map((achievement) => (
               <motion.div
                 key={achievement.id}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
-                className="bg-gray-50 dark:bg-gray-700 rounded-lg p-4 shadow-sm"
+                className="flex items-center gap-3 p-4 bg-gradient-to-r from-gray-50 to-gray-100 dark:from-gray-700/50 dark:to-gray-800/50 rounded-lg border border-gray-200 dark:border-gray-700"
               >
-                <div className="flex justify-between items-start">
+                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-yellow-100 dark:bg-yellow-900/30 flex items-center justify-center">
+                  <Award className="w-5 h-5 text-yellow-500" />
+                </div>
+                <div>
                   <h3 className="text-base font-medium text-gray-900 dark:text-white font-['Helvetica_Neue'] tracking-wide">{achievement.title}</h3>
+                  <p className="text-sm text-gray-600 dark:text-gray-300 font-['Arial'] tracking-wide">{achievement.description}</p>
                   <span className="text-xs text-gray-500 dark:text-gray-400 font-['Arial'] tracking-wide">{achievement.year}</span>
                 </div>
-                <p className="text-sm text-gray-600 dark:text-gray-300 mt-1 font-['Arial'] tracking-wide">{achievement.description}</p>
               </motion.div>
             ))}
           </div>

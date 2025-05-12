@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Project } from '../types/index';
 import { motion } from 'framer-motion';
-import { Stamp as Steam, Youtube } from 'lucide-react';
+import { Stamp as Steam, Youtube, ArrowRight } from 'lucide-react';
 
 interface ProjectCardProps {
   project: Project;
@@ -13,21 +13,24 @@ export default function ProjectCard({ project }: ProjectCardProps) {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden group"
+      className="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden group hover:shadow-xl transition-all duration-300"
     >
-      <Link to={`/project/${project.id}`}>
-        <img
-          src={project.imageUrl}
-          alt={project.title}
-          className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
-        />
+      <Link to={`/project/${project.id}`} className="block relative">
+        <div className="relative overflow-hidden">
+          <img
+            src={project.imageUrl}
+            alt={project.title}
+            className="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-105"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+        </div>
       </Link>
       <div className="p-6">
         <div className="flex justify-between items-start mb-4">
           <div>
             <Link
               to={`/project/${project.id}`}
-              className="text-xl font-semibold text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+              className="text-xl font-semibold text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors group-hover:text-blue-600 dark:group-hover:text-blue-400"
             >
               {project.title}
             </Link>
@@ -41,14 +44,15 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           <span className="text-sm text-gray-500 dark:text-gray-400">{project.timeline}</span>
         </div>
         
-        <p className="text-gray-700 dark:text-gray-300 mb-6">{project.description}</p>
+        <p className="text-gray-700 dark:text-gray-300 mb-6 line-clamp-3">{project.description}</p>
 
         <div className="flex justify-between items-center">
           <Link
             to={`/project/${project.id}`}
-            className="inline-flex items-center justify-center px-4 py-2 bg-white dark:bg-gray-800 border-2 border-blue-600 dark:border-blue-400 text-blue-600 dark:text-blue-400 rounded-lg hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-colors font-medium"
+            className="inline-flex items-center justify-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium group-hover:gap-3"
           >
             View Details
+            <ArrowRight size={16} className="transition-transform duration-300 group-hover:translate-x-1" />
           </Link>
 
           <div className="flex gap-4">
@@ -57,10 +61,11 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                 href={project.links.steam}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-[#171a21] text-white rounded-lg hover:bg-[#2a475e] transition-colors font-medium"
                 title="Available on Steam"
               >
-                <Steam size={24} />
+                <Steam size={20} />
+                <span>Steam</span>
               </a>
             )}
             {project.links?.youtube && (
