@@ -1,13 +1,31 @@
 import { Link } from 'react-router-dom';
 import { Project } from '../types/index';
 import { motion } from 'framer-motion';
-import { Stamp as Steam, Youtube, ArrowRight } from 'lucide-react';
+import { Stamp as Steam, Youtube, ArrowRight, Play } from 'lucide-react';
+import { useState, useRef, useEffect } from 'react';
 
 interface ProjectCardProps {
   project: Project;
 }
 
 export default function ProjectCard({ project }: ProjectCardProps) {
+  const [showVideo, setShowVideo] = useState(false);
+  const videoRef = useRef<HTMLVideoElement | null>(null);
+  const isArid = project.id === "project-2";
+  const isQuantum = project.id === "project-4";
+
+  const getVideoSrc = () => {
+    if (isArid) return "/assets/AridBlockD.mp4";
+    if (isQuantum) return "/assets/quantum.mp4";
+    return "";
+  };
+
+  useEffect(() => {
+    if (showVideo && videoRef.current) {
+      videoRef.current.play();
+    }
+  }, [showVideo]);
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -15,16 +33,48 @@ export default function ProjectCard({ project }: ProjectCardProps) {
       transition={{ duration: 0.5 }}
       className="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden group hover:shadow-xl transition-all duration-300"
     >
-      <Link to={`/project/${project.id}`} className="block relative">
-        <div className="relative overflow-hidden">
-          <img
-            src={project.imageUrl}
-            alt={project.title}
-            className="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-105"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-        </div>
-      </Link>
+      <div className="relative">
+        {(isArid || isQuantum) ? (
+          showVideo ? (
+            <video
+              ref={videoRef}
+              src={getVideoSrc()}
+              title={project.title}
+              className="w-full h-56 object-cover"
+              controls
+              muted
+              autoPlay
+              playsInline
+            />
+          ) : (
+            <div className="relative">
+              <img
+                src={project.imageUrl}
+                alt={project.title}
+                className="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              <button
+                onClick={() => setShowVideo(true)}
+                className="absolute inset-0 flex items-center justify-center bg-black/30 hover:bg-black/40 transition-colors z-10"
+              >
+                <div className="w-16 h-16 rounded-full bg-white/90 flex items-center justify-center">
+                  <Play size={32} className="text-gray-900 ml-1" />
+                </div>
+              </button>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            </div>
+          )
+        ) : (
+          <Link to={`/project/${project.id}`} className="block relative">
+            <img
+              src={project.imageUrl}
+              alt={project.title}
+              className="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+          </Link>
+        )}
+      </div>
       <div className="p-6">
         <div className="flex justify-between items-start mb-4">
           <div>

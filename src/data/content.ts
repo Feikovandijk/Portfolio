@@ -217,35 +217,46 @@ Ultimately, the findings suggest that adding multiplayer isn't just about adding
   },
   {
     id: "project-4",
-    title: "Quantum VR",
-    description: "An immersive VR experience that visualizes quantum mechanics principles through interactive gameplay.",
-    mainRole: "Technical Designer",
-    supportingRole: "Game Designer",
-    timeline: "2021 - 2022",
+    title: "Quantum",
+    description: "An immersive VR puzzle game where players navigate an impossible, non-euclidean laboratory to repair a futuristic machine and unravel its secrets.",
+    mainRole: "Game Designer",
+    supportingRole: "Technical Designer", 
+    timeline: "2019 - 2020",
     imageUrl: "https://images.squarespace-cdn.com/content/v1/665f0ae5b7fe1e7c8f450174/e0b0d115-69a0-4037-8d2b-be51bd6cc734/QuantumLogo.png?format=2500w",
-    quote: { 
-      text: "A mind-bending journey through the quantum realm that makes complex physics concepts accessible and fun.",
+    quote: {
+      text: "A mind-bending journey through impossible spaces that challenges perception and rewards clever thinking.",
       source: "VR Gaming Magazine"
     },
     projectStats: {
-      teamSize: "5 Developers",
-      duration: "3 Months",
-      platforms: ["Oculus Quest", "SteamVR"],
+      teamSize: "Team 32 Marmalade 2 (BUas IGAD Y2)",
+      duration: "2 Months",
+      platforms: ["VR"],
       technologies: [
         "Unity",
         "VR Development",
-        "Physics Simulation",
-        "Shader Programming"
+        "Non-Euclidean Geometry",
+        "Physics Simulation"
       ]
     },
     keyContributions: [
-      "Designed quantum mechanics visualization systems",
-      "Implemented VR interaction mechanics",
-      "Created educational game loops that teach physics concepts"
+      "Designed and implemented the core Entanglement Gun mechanic, allowing players to link objects and manipulate them simultaneously",
+      "Created non-Euclidean spaces that challenged player perception while maintaining intuitive navigation",
+      "Developed puzzle systems that leveraged VR's physical interaction capabilities",
+      "Balanced exploration and puzzle-solving elements to create a rewarding progression system"
     ],
-    mainNarrative: "Quantum VR was an ambitious project that aimed to make quantum mechanics accessible through immersive VR gameplay. As the Technical Designer, I worked on creating intuitive ways to visualize and interact with quantum concepts, making complex physics principles engaging and understandable for players.",
-    bodyTextLeft: "",
-    bodyTextRight: "",
+    mainNarrative: `Quantum is an immersive VR puzzle game that challenges players to navigate an impossible, multi-dimensional laboratory. Trapped within a seemingly simple 3x3m room, players discover that doors lead to logic-defying spaces, and everyday objects like drawers can conceal entire new worlds, leveraging TARDIS-like, non-Euclidean geometry.
+
+The game's core mechanic revolves around the Entanglement Gun, a tool that empowers players to link any two objects, causing them to move in unison. This innovative mechanic allows for creative puzzle-solving by manipulating disparate parts of the environment simultaneously.
+
+As the Game Designer, I focused on creating an experience that emphasized physical movement and interaction within mind-bending environments where layouts shift and perception is challenged. The design philosophy centered on three key pillars: engaging movement within VR, fostering exploration and discovery in surreal spaces, and providing players with a powerful sense of agency through the unique entanglement mechanic.
+
+The primary objective is to locate missing components and restore power to a vital machine, requiring players to utilize the entanglement mechanic and their observational skills to overcome environmental challenges. The aim was to make players feel clever and empowered as they unraveled the game's quantum mysteries.
+
+Quantum was the first project where I acted as vision owner, where I was responsible for the overall design of the game. Overall, Quantum was a great experience for me. The combination of being vision holder and working on an experimental VR game opened my eyes to the possibilities of game design, specifically in VR environments.
+
+Eventually we dropped the project because we did not see the VR concept as viable for market, especially considering VR in gaming is limited and a niche for gamers.  `,
+    bodyTextLeft: "Project Context: BUas IGAD Year 2 Project\nTeam: Team 32 Marmalade 2\nDuration: December 2019 - January 2020",
+    bodyTextRight: "Key Focus: VR Puzzle Design, Non-Euclidean Spaces, Physics-based Interactions",
     mediaShowcase: [],
     designDocs: [],
     links: {}
