@@ -132,7 +132,7 @@ export const projects: Project[] = [
     },
     developmentPhases: {
       concepting: {
-        videoUrl: "https://www.youtube.com/embed/your-concept-video-id",
+        videoUrl: "/PortfolioProject/assets/AridBlockA.mp4",
         description: "The concepting phase of Arid began with a simple question: 'What if we made a survival game set in the driest place on Earth?' This phase was marked by extensive research into the Atacama Desert, its unique challenges, and the psychological aspects of survival in such an extreme environment. We explored various gameplay mechanics that would emphasize the harsh conditions while maintaining engaging gameplay.",
         screenshots: [
           "https://images.pexels.com/photos/3165335/pexels-photo-3165335.jpeg",
@@ -140,7 +140,7 @@ export const projects: Project[] = [
         ]
       },
       preProduction: {
-        videoUrl: "https://www.youtube.com/embed/your-preprod-video-id",
+        videoUrl: "/PortfolioProject/assets/AridBlockB.mp4",
         description: "During pre-production, we focused on establishing the core gameplay loops and technical foundations. This included prototyping the survival mechanics, weather systems, and base building features. We also began developing our art style, aiming for a balance between realism and stylized visuals that would work well with our technical constraints.",
         screenshots: [
           "https://images.pexels.com/photos/3165335/pexels-photo-3165335.jpeg",
@@ -156,7 +156,7 @@ export const projects: Project[] = [
         ]
       },
       release: {
-        videoUrl: "https://www.youtube.com/embed/your-release-video-id",
+        videoUrl: "/PortfolioProject/assets/AridBlockD.mp4",
         description: "The release phase was marked by intense optimization, bug fixing, and polish. We conducted extensive playtesting sessions and implemented feedback from our community. The launch exceeded our expectations, with over 200,000 downloads in the first month. The success led to opportunities for console ports and additional content updates.",
         screenshots: [
           "https://images.pexels.com/photos/3165335/pexels-photo-3165335.jpeg",

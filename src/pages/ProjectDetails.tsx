@@ -219,12 +219,20 @@ export default function ProjectDetails(): React.ReactElement {
                 <h3 className="text-2xl font-semibold text-gray-900 dark:text-white font-['Helvetica_Neue'] tracking-wide">Concepting</h3>
                 {project.developmentPhases.concepting.videoUrl && (
                   <div className="relative aspect-video rounded-lg overflow-hidden">
-                    <iframe
-                      src={project.developmentPhases.concepting.videoUrl}
-                      className="absolute inset-0 w-full h-full"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                    />
+                    {project.developmentPhases.concepting.videoUrl.includes('youtube.com/embed') ? (
+                      <iframe
+                        src={project.developmentPhases.concepting.videoUrl}
+                        className="absolute inset-0 w-full h-full"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                      />
+                    ) : (
+                      <video
+                        src={project.developmentPhases.concepting.videoUrl}
+                        className="absolute inset-0 w-full h-full object-cover"
+                        controls
+                      />
+                    )}
                   </div>
                 )}
                 <p className="text-base leading-relaxed text-gray-700 dark:text-gray-300 font-['Arial'] tracking-wide">
