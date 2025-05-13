@@ -231,6 +231,8 @@ export default function ProjectDetails(): React.ReactElement {
                         src={project.developmentPhases.concepting.videoUrl}
                         className="absolute inset-0 w-full h-full object-cover"
                         controls
+                        autoPlay={false}
+                        preload="none"
                       />
                     )}
                   </div>
@@ -257,12 +259,22 @@ export default function ProjectDetails(): React.ReactElement {
                 <h3 className="text-2xl font-semibold text-gray-900 dark:text-white font-['Helvetica_Neue'] tracking-wide">Pre-Production</h3>
                 {project.developmentPhases.preProduction.videoUrl && (
                   <div className="relative aspect-video rounded-lg overflow-hidden">
-                    <iframe
-                      src={project.developmentPhases.preProduction.videoUrl}
-                      className="absolute inset-0 w-full h-full"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                    />
+                    {project.developmentPhases.preProduction.videoUrl.includes('youtube.com/embed') ? (
+                      <iframe
+                        src={project.developmentPhases.preProduction.videoUrl}
+                        className="absolute inset-0 w-full h-full"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                      />
+                    ) : (
+                      <video
+                        src={project.developmentPhases.preProduction.videoUrl}
+                        className="absolute inset-0 w-full h-full object-cover"
+                        controls
+                        autoPlay={false}
+                        preload="none"
+                      />
+                    )}
                   </div>
                 )}
                 <p className="text-base leading-relaxed text-gray-700 dark:text-gray-300 font-['Arial'] tracking-wide">
@@ -287,12 +299,22 @@ export default function ProjectDetails(): React.ReactElement {
                 <h3 className="text-2xl font-semibold text-gray-900 dark:text-white font-['Helvetica_Neue'] tracking-wide">Production</h3>
                 {project.developmentPhases.production.videoUrl && (
                   <div className="relative aspect-video rounded-lg overflow-hidden">
-                    <iframe
-                      src={project.developmentPhases.production.videoUrl}
-                      className="absolute inset-0 w-full h-full"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                    />
+                    {project.developmentPhases.production.videoUrl.includes('youtube.com/embed') ? (
+                      <iframe
+                        src={project.developmentPhases.production.videoUrl}
+                        className="absolute inset-0 w-full h-full"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                      />
+                    ) : (
+                      <video
+                        src={project.developmentPhases.production.videoUrl}
+                        className="absolute inset-0 w-full h-full object-cover"
+                        controls
+                        autoPlay={false}
+                        preload="none"
+                      />
+                    )}
                   </div>
                 )}
                 <p className="text-base leading-relaxed text-gray-700 dark:text-gray-300 font-['Arial'] tracking-wide">
@@ -317,12 +339,22 @@ export default function ProjectDetails(): React.ReactElement {
                 <h3 className="text-2xl font-semibold text-gray-900 dark:text-white font-['Helvetica_Neue'] tracking-wide">Release</h3>
                 {project.developmentPhases.release.videoUrl && (
                   <div className="relative aspect-video rounded-lg overflow-hidden">
-                    <iframe
-                      src={project.developmentPhases.release.videoUrl}
-                      className="absolute inset-0 w-full h-full"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                    />
+                    {project.developmentPhases.release.videoUrl.includes('youtube.com/embed') ? (
+                      <iframe
+                        src={project.developmentPhases.release.videoUrl}
+                        className="absolute inset-0 w-full h-full"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                      />
+                    ) : (
+                      <video
+                        src={project.developmentPhases.release.videoUrl}
+                        className="absolute inset-0 w-full h-full object-cover"
+                        controls
+                        autoPlay={false}
+                        preload="none"
+                      />
+                    )}
                   </div>
                 )}
                 <p className="text-base leading-relaxed text-gray-700 dark:text-gray-300 font-['Arial'] tracking-wide">
