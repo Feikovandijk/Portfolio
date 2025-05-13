@@ -160,13 +160,17 @@ export default function ProjectDetails(): React.ReactElement {
                       </div>
                     ))}
                 </div>
+                <div className="mt-8 text-center">
+                  <p className="text-gray-500 dark:text-gray-400 font-['Arial'] tracking-wide mb-2">Keep reading to learn about the development process</p>
+                  <ChevronDown className="w-8 h-8 text-gray-400 dark:text-gray-500 mx-auto animate-pulse" />
+                </div>
               </div>
             )}
           </div>
 
           {(project.links?.steam || project.links?.youtube || (project.id !== "project-3" && (project.links?.blog || project.links?.researchgate))) && (
             <div className="flex gap-6 mt-12 pt-6 border-t border-gray-200 dark:border-gray-700">
-              {project.links?.steam && (
+              {project.links?.steam && project.id !== "project-2" && (
                 <a
                   href={project.links.steam}
                   target="_blank"
@@ -220,12 +224,12 @@ export default function ProjectDetails(): React.ReactElement {
                 {project.developmentPhases.concepting.videoUrl && (
                   <div className="relative aspect-video rounded-lg overflow-hidden">
                     {project.developmentPhases.concepting.videoUrl.includes('youtube.com/embed') ? (
-                      <iframe
-                        src={project.developmentPhases.concepting.videoUrl}
-                        className="absolute inset-0 w-full h-full"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen
-                      />
+                    <iframe
+                      src={project.developmentPhases.concepting.videoUrl}
+                      className="absolute inset-0 w-full h-full"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                    />
                     ) : (
                       <video
                         src={project.developmentPhases.concepting.videoUrl}
@@ -260,12 +264,12 @@ export default function ProjectDetails(): React.ReactElement {
                 {project.developmentPhases.preProduction.videoUrl && (
                   <div className="relative aspect-video rounded-lg overflow-hidden">
                     {project.developmentPhases.preProduction.videoUrl.includes('youtube.com/embed') ? (
-                      <iframe
-                        src={project.developmentPhases.preProduction.videoUrl}
-                        className="absolute inset-0 w-full h-full"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen
-                      />
+                    <iframe
+                      src={project.developmentPhases.preProduction.videoUrl}
+                      className="absolute inset-0 w-full h-full"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                    />
                     ) : (
                       <video
                         src={project.developmentPhases.preProduction.videoUrl}
@@ -300,12 +304,12 @@ export default function ProjectDetails(): React.ReactElement {
                 {project.developmentPhases.production.videoUrl && (
                   <div className="relative aspect-video rounded-lg overflow-hidden">
                     {project.developmentPhases.production.videoUrl.includes('youtube.com/embed') ? (
-                      <iframe
-                        src={project.developmentPhases.production.videoUrl}
-                        className="absolute inset-0 w-full h-full"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen
-                      />
+                    <iframe
+                      src={project.developmentPhases.production.videoUrl}
+                      className="absolute inset-0 w-full h-full"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                    />
                     ) : (
                       <video
                         src={project.developmentPhases.production.videoUrl}
@@ -340,12 +344,12 @@ export default function ProjectDetails(): React.ReactElement {
                 {project.developmentPhases.release.videoUrl && (
                   <div className="relative aspect-video rounded-lg overflow-hidden">
                     {project.developmentPhases.release.videoUrl.includes('youtube.com/embed') ? (
-                      <iframe
-                        src={project.developmentPhases.release.videoUrl}
-                        className="absolute inset-0 w-full h-full"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen
-                      />
+                    <iframe
+                      src={project.developmentPhases.release.videoUrl}
+                      className="absolute inset-0 w-full h-full"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                    />
                     ) : (
                       <video
                         src={project.developmentPhases.release.videoUrl}
