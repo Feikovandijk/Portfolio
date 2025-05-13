@@ -16,6 +16,12 @@ export default defineConfig({
   server: {
     port: 3000,
     strictPort: true,
-    host: false
+    host: false,
+    headers: {
+      "Content-Security-Policy": "default-src 'self'; img-src 'self' data: https:; media-src 'self' https:; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline';",
+      "X-Content-Type-Options": "nosniff",
+      "X-Frame-Options": "DENY",
+      "X-XSS-Protection": "1; mode=block"
+    }
   }
 });
