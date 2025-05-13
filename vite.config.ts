@@ -18,7 +18,7 @@ export default defineConfig({
     strictPort: true,
     host: false,
     headers: {
-      "Content-Security-Policy": "default-src 'self'; img-src 'self' data: https:; media-src 'self' https:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline'; connect-src 'self' https: https://www.google-analytics.com https://region1.google-analytics.com; frame-ancestors 'none';",
+      "Content-Security-Policy": "default-src 'self'; img-src 'self' data: https:; media-src 'self' https:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://region1.google-analytics.com; style-src 'self' 'unsafe-inline'; connect-src 'self' https: https://www.google-analytics.com https://region1.google-analytics.com; frame-ancestors 'none';",
       "X-Content-Type-Options": "nosniff",
       "X-Frame-Options": "DENY",
       "X-XSS-Protection": "1; mode=block"

@@ -13,31 +13,36 @@ export default function GoogleAnalytics() {
 
   useEffect(() => {
     // Initialize Google Analytics
-    const script1 = document.createElement('script');
-    script1.async = true;
-    script1.src = 'https://www.googletagmanager.com/gtag/js?id=G-K0RDBKYRZP';
-    document.head.appendChild(script1);
+    const loadGoogleAnalytics = async () => {
+      try {
+        // Load the gtag script
+        const script = document.createElement('script');
+        script.src = 'https://www.googletagmanager.com/gtag/js?id=G-K0RDBKYRZP';
+        script.async = true;
+        document.head.appendChild(script);
 
-    const script2 = document.createElement('script');
-    script2.innerHTML = `
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-K0RDBKYRZP');
-    `;
-    document.head.appendChild(script2);
-
-    return () => {
-      document.head.removeChild(script1);
-      document.head.removeChild(script2);
+        // Initialize gtag
+        window.dataLayer = window.dataLayer || [];
+        window.gtag = function gtag() {
+          window.dataLayer.push(arguments);
+        };
+        window.gtag('js', new Date());
+        window.gtag('config', 'G-K0RDBKYRZP');
+      } catch (error) {
+        console.error('Error loading Google Analytics:', error);
+      }
     };
+
+    loadGoogleAnalytics();
   }, []);
 
   useEffect(() => {
     // Track page views
-    window.gtag('config', 'G-K0RDBKYRZP', {
-      page_path: location.pathname + location.search,
-    });
+    if (window.gtag) {
+      window.gtag('config', 'G-K0RDBKYRZP', {
+        page_path: location.pathname + location.search,
+      });
+    }
   }, [location]);
 
   return null;
