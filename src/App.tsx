@@ -4,12 +4,10 @@ import Footer from './components/Footer';
 import About from './pages/About';
 import Portfolio from './pages/Portfolio';
 import ProjectDetails from './pages/ProjectDetails';
-import GoogleAnalytics from './components/GoogleAnalytics';
 
 function App() {
   return (
     <Router>
-      <GoogleAnalytics />
       <div className="min-h-screen bg-gray-50 dark:bg-gray-900 flex flex-col">
         <Navigation />
         <div className="flex-grow">
