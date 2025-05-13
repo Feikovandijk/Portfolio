@@ -195,10 +195,6 @@ export default function ProjectDetails(): React.ReactElement {
                       </div>
                     ))}
                 </div>
-                <div className="mt-8 text-center">
-                  <p className="text-gray-500 dark:text-gray-400 font-['Arial'] tracking-wide mb-2">Keep reading to learn about the development process</p>
-                  <ChevronDown className="w-8 h-8 text-gray-400 dark:text-gray-500 mx-auto animate-pulse" />
-                </div>
               </div>
             )}
           </div>
@@ -249,10 +245,17 @@ export default function ProjectDetails(): React.ReactElement {
             </div>
           )}
 
-          {project.developmentPhases && (
+          {project.developmentPhases && project.id !== "project-2" && (
             <div className="mt-12 space-y-16">
               <h2 className="text-3xl font-semibold text-gray-900 dark:text-white mb-8 font-['Helvetica_Neue'] tracking-wide">Development Process</h2>
               
+              {/* TEMPORARILY HIDDEN: "Read more" prompt for development process
+              <div className="mt-8 text-center">
+                <p className="text-gray-500 dark:text-gray-400 font-['Arial'] tracking-wide mb-2">Keep reading to learn about the development process</p>
+                <ChevronDown className="w-8 h-8 text-gray-400 dark:text-gray-500 mx-auto animate-pulse" />
+              </div>
+              */}
+
               {/* Concepting Phase */}
               <div className="space-y-6">
                 <h3 className="text-2xl font-semibold text-gray-900 dark:text-white font-['Helvetica_Neue'] tracking-wide">Concepting</h3>
