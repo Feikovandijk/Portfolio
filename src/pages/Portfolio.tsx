@@ -38,7 +38,7 @@ export default function Portfolio() {
               <div className="flex justify-center lg:justify-end">
                 <div className="relative w-64 h-64 lg:w-80 lg:h-80">
                   <img
-                    src="https://images.squarespace-cdn.com/content/v1/665f0ae5b7fe1e7c8f450174/4d23a754-d90f-4bad-a50e-00cc334df3cc/Screenshot+2024-06-20+at+12.47.38.png?format=2500w"
+                    src="/public/assets/feikohome.png"
                     alt="Profile"
                     className="absolute inset-0 w-full h-full object-cover rounded-full shadow-2xl"
                   />
