@@ -1,0 +1,9 @@
+# Top-level configuration
+name = "portfolio" # IMPORTANT: Replace with your actual project name on Cloudflare
+compatibility_date = "2024-05-13" # Use a recent date, like today's date or the date you start
+
+# Configuration for 'wrangler pages deploy'
+[pages_build_output_dir]
+# This tells 'wrangler pages deploy' where to find the static assets
+# after your build command (npm run build) has run.
+main = "./dist"

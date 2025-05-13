@@ -1,15 +1,28 @@
-import React, { useLayoutEffect } from 'react';
+import React, { useLayoutEffect, useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowLeft, Youtube, Award } from 'lucide-react';
+import { ArrowLeft, Youtube, Award, ChevronDown } from 'lucide-react';
 import { projects, achievements } from '../data/content';
 
 export default function ProjectDetails(): React.ReactElement {
   const { projectId } = useParams<{ projectId: string }>();
   const project = projects.find((p) => p.id === projectId);
+  const [showScrollArrow, setShowScrollArrow] = useState(true);
 
   useLayoutEffect(() => {
     window.scrollTo(0, 0);
+  }, []);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const isAtBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 100;
+      setShowScrollArrow(!isAtBottom);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Check initial state
+
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   if (!project) {
@@ -30,6 +43,20 @@ export default function ProjectDetails(): React.ReactElement {
       transition={{ duration: 0.5 }}
       className="min-h-screen bg-white dark:bg-gray-800"
     >
+      {/* Scroll indicator arrow */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: showScrollArrow ? 1 : 0 }}
+        transition={{ duration: 0.3 }}
+        className="fixed bottom-8 right-8 z-50"
+      >
+        <ChevronDown
+          size={48}
+          className="text-gray-400 dark:text-gray-500 cursor-pointer hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
+          onClick={() => window.scrollTo({ top: document.documentElement.scrollHeight, behavior: 'smooth' })}
+        />
+      </motion.div>
+
       <div className="max-w-7xl mx-auto px-4 py-12 sm:px-6 lg:px-8 pt-24">
         <Link
           to="/portfolio"
@@ -57,7 +84,7 @@ export default function ProjectDetails(): React.ReactElement {
                   <p className="text-lg text-gray-700 dark:text-gray-300 font-['Arial'] tracking-wide">{project.projectStats.duration}</p>
                 )}
                 {project.projectStats?.platforms && project.projectStats.platforms.length > 0 && (
-                  <p className="text-lg text-gray-700 dark:text-gray-300 font-['Arial'] tracking-wide">Released on {project.projectStats.platforms.join(' & ')}</p>
+                  <p className="text-lg text-gray-700 dark:text-gray-300 font-['Arial'] tracking-wide">{project.projectStats.platforms.join(' & ')}</p>
                 )}
                 {project.projectStats?.technologies && project.projectStats.technologies.length > 0 && (
                   <div className="flex flex-wrap gap-2">

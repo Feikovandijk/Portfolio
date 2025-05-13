@@ -62,13 +62,27 @@ export const projects: Project[] = [
     imageUrl: "/PortfolioProject/assets/Arid2.png",
     quote: { text: "", source: "" },
     projectStats: {
-      teamSize: "",
-      duration: "",
-      platforms: [],
-      technologies: []
+      teamSize: "5 Developers",
+      duration: "16 Months",
+      platforms: ["Unreleased"],
+      technologies: [
+        "Unreal Engine 5",
+        "Perforce",
+        "Jira",
+        "Teamcity",
+        "Google Analytics",
+        "AWS"
+      ]
     },
-    keyContributions: [],
-    mainNarrative: "",
+    keyContributions: [
+      "Designed and implemented new core gameplay systems that enriched the player's sense of immersion and supported dynamic storytelling within the game's existing IP",
+      "Established Viscacha Studios' legal and financial structure, securing a strong foundation for sustainable growth",
+      "Worked closely with multidisciplinary teams to prototype, refine, and implement new gameplay features, ensuring alignment with project vision across design, art, and engineering departments",
+      "Led the development of pitch materials, production schedules, and budget forecasts, securing funding to support ongoing development",
+      "Represented Viscacha Studios and Arid 2.0 at major conferences like GDC, Gamescom, and INDIGO, establishing valuable industry connections and expanding the studio's visibility",
+      "Utilized tools like Perforce, Asana, Jira, and Jenkins to maintain project momentum and alignment across a distributed team"
+    ],
+    mainNarrative: "This dual role involved not only designing immersive survival mechanics but also establishing the business structure, securing funding, and building essential industry relationships, all while actively driving the sequel's development.",
     bodyTextLeft: "",
     bodyTextRight: "",
     mediaShowcase: [],
@@ -215,7 +229,7 @@ Ultimately, the findings suggest that adding multiplayer isn't just about adding
     },
     projectStats: {
       teamSize: "5 Developers",
-      duration: "8 Months",
+      duration: "3 Months",
       platforms: ["Oculus Quest", "SteamVR"],
       technologies: [
         "Unity",
