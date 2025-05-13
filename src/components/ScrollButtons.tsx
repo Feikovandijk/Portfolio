@@ -3,7 +3,6 @@ import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
 
 export default function ScrollButtons() {
-  const [currentSection, setCurrentSection] = useState(0);
   const [sections, setSections] = useState<HTMLElement[]>([]);
 
   useEffect(() => {
@@ -35,7 +34,6 @@ export default function ScrollButtons() {
 
     // Scroll to next section
     nextSection.scrollIntoView({ behavior: 'smooth' });
-    setCurrentSection(nextIndex);
   };
 
   return (
