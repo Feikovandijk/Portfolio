@@ -8,4 +8,14 @@ export default defineConfig({
     exclude: ["lucide-react"],
   },
   base: "/",
+  build: {
+    target: "esnext",
+    minify: "terser",
+    sourcemap: true
+  },
+  server: {
+    port: 3000,
+    strictPort: true,
+    host: false
+  }
 });
