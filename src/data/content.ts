@@ -41,7 +41,7 @@ I value collaboration and believe that great games are built by teams who share 
     "Python",
     "User Research",
     "OSINT",
-    "Penetration Testing"
+    "CTF Competitions"
   ],
   contact: {
     email: "mail@feiko.org",
