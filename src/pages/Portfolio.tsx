@@ -64,9 +64,11 @@ export default function Portfolio() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 h-full">
               {projects.map((project) => (
-                <ProjectCard key={project.id} project={project} />
+                <div key={project.id} className="h-full">
+                  <ProjectCard project={project} />
+                </div>
               ))}
             </div>
           </div>

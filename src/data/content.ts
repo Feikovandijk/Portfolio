@@ -59,6 +59,7 @@ export const projects: Project[] = [
     mainRole: "Lead Game Design, Business Development",
     supportingRole: "Technical Design",
     timeline: "2023 - 2025",
+    tags: ["Unreleased", "Unreal Engine", "Game Design", "Business Development", "Technical Design"],
     imageUrl: "/assets/Arid2.png",
     quote: { text: "", source: "" },
     projectStats: {
@@ -66,7 +67,7 @@ export const projects: Project[] = [
       duration: "16 Months",
       platforms: ["Unreleased"],
       technologies: [
-        "Unreal Engine 5",
+        "Unreal Engine",
         "Perforce",
         "Jira",
         "Teamcity",
@@ -92,10 +93,11 @@ export const projects: Project[] = [
   {
     id: "project-2",
     title: "ARID",
-    description: "A gritty, exploration-survival experience set in the Atacama Desert; the driest place on earth.",
+    description: "A gritty, exploration-survival experience set in the Atacama Desert; the driest place on earth.\n\n\nDesigned core gameplay features such as weather systems, sun damage, buffs & debuffs.",
     mainRole: "Design Lead, Technical Designer",
     supportingRole: "Analytics & Marketing",
     timeline: "2020 - 2022",
+    tags: ["Released","Unreal Engine", "Game Design", "Technical Design", "Analytics", "Marketing"],
     imageUrl: "/assets/Arid.png",
     quote: { 
       text: "The biggest threat to my survival in Arid, apart from the relentless sun, is my own malfunctioning brain.",
@@ -172,6 +174,7 @@ export const projects: Project[] = [
     mainRole: "User Researcher",
     supportingRole: "Data Analysis & Academic Writing",
     timeline: "2023 - 2024",
+    tags: ["Research", "Game Design", "User Experience", "Academic Writing"],
     imageUrl: "https://images.squarespace-cdn.com/content/v1/665f0ae5b7fe1e7c8f450174/2db9c798-f40c-4614-b50a-ad618367dda3/Screenshot+2024-10-23+at+13.50.55.png?format=2500w",
     quote: { 
       text: "Adding multiplayer isn't just about adding features; it's a fundamental design decision that impacts the game's emotional and systemic core.",
@@ -222,6 +225,7 @@ Ultimately, the findings suggest that adding multiplayer isn't just about adding
     mainRole: "Game Designer",
     supportingRole: "Technical Designer", 
     timeline: "2019 - 2020",
+    tags: ["VR", "Unity", "Game Design", "Technical Design", "Puzzle Design"],
     imageUrl: "https://images.squarespace-cdn.com/content/v1/665f0ae5b7fe1e7c8f450174/e0b0d115-69a0-4037-8d2b-be51bd6cc734/QuantumLogo.png?format=2500w",
     quote: {
       text: "A mind-bending journey through impossible spaces that challenges perception and rewards clever thinking.",

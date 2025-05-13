@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Project } from '../types/index';
 import { motion } from 'framer-motion';
-import { Stamp as Steam, Youtube, ArrowRight, Play } from 'lucide-react';
+import { Stamp as Steam, Youtube, ArrowRight, Play, BookOpen } from 'lucide-react';
 import { useState, useRef, useEffect } from 'react';
 
 interface ProjectCardProps {
@@ -31,7 +31,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden group hover:shadow-xl transition-all duration-300"
+      className="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden group hover:shadow-xl transition-all duration-300 flex flex-col h-full"
     >
       <div className="relative">
         {(isArid || isQuantum) ? (
@@ -75,7 +75,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           </Link>
         )}
       </div>
-      <div className="p-6">
+      <div className="p-6 flex flex-col flex-grow">
         <div className="flex justify-between items-start mb-4">
           <div>
             <Link
@@ -96,7 +96,20 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         
         <p className="text-gray-700 dark:text-gray-300 mb-6 line-clamp-3">{project.description}</p>
 
-        <div className="flex justify-between items-center">
+        {project.tags && project.tags.length > 0 && (
+          <div className="flex flex-wrap gap-2 mb-4">
+            {project.tags.map((tag) => (
+              <span
+                key={tag}
+                className="text-xs bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 px-2 py-1 rounded-full font-['Arial'] tracking-wide"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+        )}
+
+        <div className="flex justify-between items-center mt-auto">
           <Link
             to={`/project/${project.id}`}
             className="inline-flex items-center justify-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium group-hover:gap-3"
@@ -116,6 +129,18 @@ export default function ProjectCard({ project }: ProjectCardProps) {
               >
                 <Steam size={20} />
                 <span>Steam</span>
+              </a>
+            )}
+            {project.links?.researchgate && (
+              <a
+                href={project.links.researchgate}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-[#00d0a1] text-white rounded-lg hover:bg-[#00b38f] transition-colors font-medium"
+                title="View on ResearchGate"
+              >
+                <BookOpen size={20} />
+                <span>ResearchGate</span>
               </a>
             )}
             {project.links?.youtube && (

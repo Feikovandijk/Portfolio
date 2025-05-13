@@ -35,6 +35,7 @@ export interface AboutContent {
     mainRole: string;
     supportingRole: string;
     timeline: string;
+    tags?: string[];
     process?: {
       challenge: string;
       solution: string;
@@ -81,4 +82,11 @@ export interface AboutContent {
     tags: string[];
     link?: string;
     imageUrl?: string;
+  }
+
+  export interface Links {
+    steam?: string;
+    youtube?: string;
+    researchgate?: string;
+    blog?: string;
   }
