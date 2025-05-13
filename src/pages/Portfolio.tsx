@@ -38,7 +38,7 @@ export default function Portfolio() {
               <div className="flex justify-center lg:justify-end">
                 <div className="relative w-64 h-64 lg:w-80 lg:h-80">
                   <img
-                    src="/public/assets/feikohome.png"
+                    src="/assets/feikohome.png"
                     alt="Profile"
                     className="absolute inset-0 w-full h-full object-cover rounded-full shadow-2xl"
                   />

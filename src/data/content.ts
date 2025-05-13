@@ -12,15 +12,15 @@ I also have a deep interest in understanding what makes games truly click. My Ma
 I value collaboration and believe that great games are built by teams who share ideas and support each other. When I'm not immersed in game development, you'll likely find me outdoors, climbing rocks and embracing new adventures.`,
   images: [
     {
-      url: "/public/assets/feikoclimb.jpg",
+      url: "/assets/feikoclimb.jpg",
       alt: ""
     },
     {
-      url: "/public/assets/feikoballs.jpg",
+      url: "/assets/feikoballs.jpg",
       alt: ""
     },
     {
-      url: "/public/assets/feikofancy.jpg",
+      url: "/assets/feikofancy.jpg",
       alt: ""
     }
   ],
