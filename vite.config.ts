@@ -14,9 +14,9 @@ const cspPlugin = {
           "default-src 'self'",
           "img-src 'self' data: https:",
           "media-src 'self' https:",
-          "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://region1.google-analytics.com",
+          "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://region1.google-analytics.com https://*.google-analytics.com",
           "style-src 'self' 'unsafe-inline'",
-          "connect-src 'self' https: https://www.google-analytics.com https://region1.google-analytics.com",
+          "connect-src 'self' https: https://www.google-analytics.com https://region1.google-analytics.com https://*.google-analytics.com",
           "frame-ancestors 'none'"
         ].join("; ")
       );
