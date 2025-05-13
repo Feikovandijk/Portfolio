@@ -31,7 +31,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden group hover:shadow-xl transition-all duration-300 flex flex-col h-full"
+      className="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden group hover:shadow-xl transition-all duration-300 h-full flex flex-col"
     >
       <div className="relative">
         {(isArid || isQuantum) ? (
@@ -109,7 +109,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           </div>
         )}
 
-        <div className="flex justify-between items-center mt-auto">
+        <div className="flex justify-between items-center mt-auto pt-4">
           <Link
             to={`/project/${project.id}`}
             className="inline-flex items-center justify-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium group-hover:gap-3"
