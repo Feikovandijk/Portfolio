@@ -292,7 +292,7 @@ export const smallProjects: SmallProject[] = [
     description: "A modern take on the classic Mastermind board game, featuring sleek UI and challenging gameplay mechanics.",
     tags: ["Game Design", "UI/UX", "Unreal"],
     link: "https://www.youtube.com/watch?v=611cwKZvmVE",
-    imageUrl: "/public/assets/Streamlined.png"
+    imageUrl: "/assets/Streamlined.png"
   },
   {
     id: "small-2",
@@ -300,13 +300,13 @@ export const smallProjects: SmallProject[] = [
     description: "An action-adventure game set in an ancient Aztec world, combining historical elements with modern gameplay.",
     tags: ["Game Design", "Level Design", "Unreal"],
     link: "https://github.com/",
-    imageUrl: "/public/assets/Aztech.png"
+    imageUrl: "/assets/Aztech.png"
   },
   {
     id: "small-3",
     title: "Demon's Heaven",
     description: "A challenging platformer with unique demonic mechanics and atmospheric level design.",
     tags: ["Game Design", "Level Design", "Unreal"],
-    imageUrl: "/public/assets/DemonsHeaven.png"
+    imageUrl: "/assets/DemonsHeaven.png"
   }
 ];

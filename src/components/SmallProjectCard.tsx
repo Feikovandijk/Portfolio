@@ -21,16 +21,16 @@ export default function SmallProjectCard({ project }: SmallProjectCardProps) {
   const isDemonsHeaven = project.id === "small-3";
 
   const getVideoSrc = () => {
-    if (isStreamlinedMastermind) return "assets/StreamlinedMastermindTrailer.mp4";
-    if (isAztech) return "assets/AztechTrailer.mp4";
-    if (isDemonsHeaven) return "assets/DemonsHeavenTrailer.mp4";
+    if (isStreamlinedMastermind) return "/assets/StreamlinedMastermindTrailer.mp4";
+    if (isAztech) return "/assets/AztechTrailer.mp4";
+    if (isDemonsHeaven) return "/assets/DemonsHeavenTrailer.mp4";
     return "";
   };
 
   const getThumbnailSrc = () => {
-    if (isStreamlinedMastermind) return "assets/Streamlined.png";
-    if (isAztech) return "assets/Aztech.png";
-    if (isDemonsHeaven) return "assets/DemonsHeaven.png";
+    if (isStreamlinedMastermind) return "/assets/Streamlined.png";
+    if (isAztech) return "/assets/Aztech.png";
+    if (isDemonsHeaven) return "/assets/DemonsHeaven.png";
     return project.imageUrl;
   };
 

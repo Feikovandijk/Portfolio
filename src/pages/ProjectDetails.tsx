@@ -73,26 +73,42 @@ export default function ProjectDetails(): React.ReactElement {
         />
 
         <div className="max-w-4xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-8 mb-12">
-            <div>
-              <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4 font-['Helvetica_Neue'] tracking-wide">Project Details</h2>
-              <div className="space-y-4">
+          <div className="grid md:grid-cols-2 gap-12 mb-12">
+            {/* Project Details Card */}
+            <div className="bg-gray-50 dark:bg-gray-700/50 rounded-xl p-6">
+              <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-6 font-['Helvetica_Neue'] tracking-wide">Project Details</h2>
+              <div className="space-y-6">
                 {project.projectStats?.teamSize && (
-                  <p className="text-lg text-gray-700 dark:text-gray-300 font-['Arial'] tracking-wide">{project.projectStats.teamSize}</p>
+                  <div className="flex items-center gap-3">
+                    <span className="w-2 h-2 rounded-full bg-blue-600 dark:bg-blue-400"></span>
+                    <p className="text-lg text-gray-700 dark:text-gray-300 font-['Arial'] tracking-wide">{project.projectStats.teamSize}</p>
+                  </div>
                 )}
                 {project.projectStats?.duration && (
-                  <p className="text-lg text-gray-700 dark:text-gray-300 font-['Arial'] tracking-wide">{project.projectStats.duration}</p>
+                  <div className="flex items-center gap-3">
+                    <span className="w-2 h-2 rounded-full bg-blue-600 dark:bg-blue-400"></span>
+                    <p className="text-lg text-gray-700 dark:text-gray-300 font-['Arial'] tracking-wide">{project.projectStats.duration}</p>
+                  </div>
                 )}
                 {project.projectStats?.platforms && project.projectStats.platforms.length > 0 && (
-                  <p className="text-lg text-gray-700 dark:text-gray-300 font-['Arial'] tracking-wide">{project.projectStats.platforms.join(' & ')}</p>
+                  <div className="flex items-center gap-3">
+                    <span className="w-2 h-2 rounded-full bg-blue-600 dark:bg-blue-400"></span>
+                    <p className="text-lg text-gray-700 dark:text-gray-300 font-['Arial'] tracking-wide">{project.projectStats.platforms.join(' & ')}</p>
+                  </div>
                 )}
                 {project.projectStats?.technologies && project.projectStats.technologies.length > 0 && (
-                  <div className="flex flex-wrap gap-2">
-                    {project.projectStats.technologies.map((tech, index) => (
-                      <span key={index} className="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full text-sm text-gray-700 dark:text-gray-300">
-                        {tech}
-                      </span>
-                    ))}
+                  <div className="space-y-3">
+                    <div className="flex items-center gap-3">
+                      <span className="w-2 h-2 rounded-full bg-blue-600 dark:bg-blue-400"></span>
+                      <p className="text-lg text-gray-700 dark:text-gray-300 font-['Arial'] tracking-wide">Technologies</p>
+                    </div>
+                    <div className="flex flex-wrap gap-2 pl-5">
+                      {project.projectStats.technologies.map((tech, index) => (
+                        <span key={index} className="px-3 py-1 bg-white dark:bg-gray-600 rounded-full text-sm text-gray-700 dark:text-gray-300 shadow-sm">
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
                   </div>
                 )}
                 {project.id === "project-3" && (
@@ -121,17 +137,36 @@ export default function ProjectDetails(): React.ReactElement {
                 )}
               </div>
             </div>
-            <div>
-              <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4 font-['Helvetica_Neue'] tracking-wide">Key Contributions</h2>
-              <div className="space-y-4">
-                <p className="text-lg font-medium text-gray-900 dark:text-white font-['Arial'] tracking-wide">Main Roles: {project.mainRole}</p>
-                <p className="text-lg text-gray-700 dark:text-gray-300 font-['Arial'] tracking-wide">Secondary Roles: {project.supportingRole}</p>
+
+            {/* Key Contributions Card */}
+            <div className="bg-gray-50 dark:bg-gray-700/50 rounded-xl p-6">
+              <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-6 font-['Helvetica_Neue'] tracking-wide">Key Contributions</h2>
+              <div className="space-y-6">
+                <div className="space-y-3">
+                  <div className="flex items-center gap-3">
+                    <span className="w-2 h-2 rounded-full bg-blue-600 dark:bg-blue-400"></span>
+                    <p className="text-lg font-medium text-gray-900 dark:text-white font-['Arial'] tracking-wide">Main Roles: {project.mainRole}</p>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <span className="w-2 h-2 rounded-full bg-blue-600 dark:bg-blue-400"></span>
+                    <p className="text-lg text-gray-700 dark:text-gray-300 font-['Arial'] tracking-wide">Secondary Roles: {project.supportingRole}</p>
+                  </div>
+                </div>
                 {project.keyContributions && project.keyContributions.length > 0 && (
-                  <ul className="list-disc list-inside space-y-2">
-                    {project.keyContributions.map((contribution, index) => (
-                      <li key={index} className="text-base text-gray-700 dark:text-gray-300 font-['Arial'] tracking-wide">{contribution}</li>
-                    ))}
-                  </ul>
+                  <div className="space-y-3">
+                    <div className="flex items-center gap-3">
+                      <span className="w-2 h-2 rounded-full bg-blue-600 dark:bg-blue-400"></span>
+                      <p className="text-lg font-medium text-gray-900 dark:text-white font-['Arial'] tracking-wide">Key Achievements</p>
+                    </div>
+                    <ul className="space-y-3 pl-5">
+                      {project.keyContributions.map((contribution, index) => (
+                        <li key={index} className="flex items-start gap-3 text-base text-gray-700 dark:text-gray-300 font-['Arial'] tracking-wide">
+                          <span className="flex-shrink-0 w-1.5 h-1.5 mt-2 rounded-full bg-gray-400 dark:bg-gray-500"></span>
+                          <span>{contribution}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 )}
               </div>
             </div>
