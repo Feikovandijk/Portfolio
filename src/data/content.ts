@@ -59,7 +59,7 @@ export const projects: Project[] = [
     mainRole: "Lead Game Design, Business Development",
     supportingRole: "Technical Design",
     timeline: "2023 - 2025",
-    imageUrl: "/PortfolioProject/assets/Arid2.png",
+    imageUrl: "/assets/Arid2.png",
     quote: { text: "", source: "" },
     projectStats: {
       teamSize: "5 Developers",
@@ -96,7 +96,7 @@ export const projects: Project[] = [
     mainRole: "Design Lead, Technical Designer",
     supportingRole: "Analytics & Marketing",
     timeline: "2020 - 2022",
-    imageUrl: "/PortfolioProject/assets/Arid.png",
+    imageUrl: "/assets/Arid.png",
     quote: { 
       text: "The biggest threat to my survival in Arid, apart from the relentless sun, is my own malfunctioning brain.",
       source: "Christopher Livingstone, PCGamer"
@@ -290,9 +290,9 @@ export const smallProjects: SmallProject[] = [
     id: "small-1",
     title: "Streamlined Mastermind",
     description: "A modern take on the classic Mastermind board game, featuring sleek UI and challenging gameplay mechanics.",
-    tags: ["Game Design", "UI/UX", "Unity"],
+    tags: ["Game Design", "UI/UX", "Unreal"],
     link: "https://www.youtube.com/watch?v=611cwKZvmVE",
-    imageUrl: "https://images.squarespace-cdn.com/content/v1/665f0ae5b7fe1e7c8f450174/4aed8881-5205-492a-887d-694b9ce8a94b/Snapchat-486029659.jpg?format=2500w"
+    imageUrl: "/public/assets/Streamlined.png"
   },
   {
     id: "small-2",
@@ -300,13 +300,13 @@ export const smallProjects: SmallProject[] = [
     description: "An action-adventure game set in an ancient Aztec world, combining historical elements with modern gameplay.",
     tags: ["Game Design", "Level Design", "Unreal"],
     link: "https://github.com/",
-    imageUrl: "https://images.squarespace-cdn.com/content/v1/665f0ae5b7fe1e7c8f450174/c2146f6c-2001-4b24-b604-856811e3fd39/aztech+%282%29.png?format=750w"
+    imageUrl: "/public/assets/Aztech.png"
   },
   {
     id: "small-3",
     title: "Demon's Heaven",
     description: "A challenging platformer with unique demonic mechanics and atmospheric level design.",
-    tags: ["Game Design", "Level Design", "Unity"],
-    imageUrl: "https://images.squarespace-cdn.com/content/v1/665f0ae5b7fe1e7c8f450174/dd9dfecb-c924-45d3-98e9-b958fe6ed948/DemonsHeaven.png?format=750w"
+    tags: ["Game Design", "Level Design", "Unreal"],
+    imageUrl: "/public/assets/DemonsHeaven.png"
   }
 ];

@@ -237,6 +237,7 @@ export default function ProjectDetails(): React.ReactElement {
                         controls
                         autoPlay={false}
                         preload="none"
+                        muted
                       />
                     )}
                   </div>
@@ -277,6 +278,7 @@ export default function ProjectDetails(): React.ReactElement {
                         controls
                         autoPlay={false}
                         preload="none"
+                        muted
                       />
                     )}
                   </div>
@@ -317,6 +319,7 @@ export default function ProjectDetails(): React.ReactElement {
                         controls
                         autoPlay={false}
                         preload="none"
+                        muted
                       />
                     )}
                   </div>
@@ -357,6 +360,7 @@ export default function ProjectDetails(): React.ReactElement {
                         controls
                         autoPlay={false}
                         preload="none"
+                        muted
                       />
                     )}
                   </div>

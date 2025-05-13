@@ -34,6 +34,12 @@ export default function SmallProjectCard({ project }: SmallProjectCardProps) {
     return project.imageUrl;
   };
 
+  const getItchLink = () => {
+    if (isStreamlinedMastermind) return "https://buas.itch.io/streamlinedmastermind";
+    if (isAztech) return "https://feikovandijk.itch.io/aztech";
+    return "";
+  };
+
   useEffect(() => {
     if (showVideo && videoRef.current) {
       videoRef.current.play();
@@ -44,7 +50,7 @@ export default function SmallProjectCard({ project }: SmallProjectCardProps) {
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      className="bg-white dark:bg-gray-800 rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow"
+      className="bg-white dark:bg-gray-800 rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow flex flex-col h-full"
     >
       {(isStreamlinedMastermind || isAztech || isDemonsHeaven) ? (
         <div className="mb-4 aspect-video overflow-hidden rounded-lg relative">
@@ -55,6 +61,8 @@ export default function SmallProjectCard({ project }: SmallProjectCardProps) {
               title={project.title}
               className="w-full h-full object-cover"
               controls
+              muted
+              autoPlay
               playsInline
             />
           ) : (
@@ -100,17 +108,21 @@ export default function SmallProjectCard({ project }: SmallProjectCardProps) {
           </span>
         ))}
       </div>
-      {project.link && !isStreamlinedMastermind && !isAztech && !isDemonsHeaven && (
-        <a
-          href={project.link}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center text-sm text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 font-['Arial'] tracking-wide"
-        >
-          <span>View Project</span>
-          <ExternalLink size={14} className="ml-1" />
-        </a>
-      )}
+      <div className="mt-auto">
+        {(isStreamlinedMastermind || isAztech) && (
+          <div className="flex justify-center">
+            <a
+              href={getItchLink()}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center text-sm text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 font-['Arial'] tracking-wide"
+            >
+              <span>Play on itch.io</span>
+              <ExternalLink size={14} className="ml-1" />
+            </a>
+          </div>
+        )}
+      </div>
     </motion.div>
   );
 } 
