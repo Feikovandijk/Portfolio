@@ -4,8 +4,21 @@ import Footer from './components/Footer';
 import About from './pages/About';
 import Portfolio from './pages/Portfolio';
 import ProjectDetails from './pages/ProjectDetails';
+import { useEffect } from 'react';
 
 function App() {
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = 'https://analytics.feiko.org/script.js';
+    script.defer = true;
+    script.setAttribute('data-website-id', '65ba0a72-ac69-4f2b-a2f6-8383a1f6589f');
+    document.body.appendChild(script);
+
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
+
   return (
     <Router>
       <div className="min-h-screen bg-gray-50 dark:bg-gray-900 flex flex-col">
