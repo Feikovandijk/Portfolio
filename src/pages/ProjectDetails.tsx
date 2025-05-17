@@ -4,6 +4,14 @@ import { motion } from 'framer-motion';
 import { ArrowLeft, Youtube, Award, ChevronDown } from 'lucide-react';
 import { projects, achievements } from '../data/content';
 
+declare global {
+  interface Window {
+    umami?: { // Use optional chaining in case the script hasn't loaded yet
+      track: (name: string, data?: object) => void;
+    };
+  }
+}
+
 export default function ProjectDetails(): React.ReactElement {
   const { projectId } = useParams<{ projectId: string }>();
   const project = projects.find((p) => p.id === projectId);
@@ -14,6 +22,11 @@ export default function ProjectDetails(): React.ReactElement {
   }, []);
 
   useEffect(() => {
+    // Track project detail view
+    if (window.umami && project) {
+      window.umami.track('View Project', { project: project.title, projectId: projectId });
+    }
+
     const handleScroll = () => {
       const isAtBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 100;
       setShowScrollArrow(!isAtBottom);
@@ -23,7 +36,7 @@ export default function ProjectDetails(): React.ReactElement {
     handleScroll(); // Check initial state
 
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [projectId, project]); // Re-run effect if projectId or project changes
 
   if (!project) {
     return (
