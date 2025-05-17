@@ -175,7 +175,7 @@ export const projects: Project[] = [
     supportingRole: "Data Analysis & Academic Writing",
     timeline: "2023 - 2024",
     tags: ["Research", "Game Design", "User Experience", "Academic Writing"],
-    imageUrl: "https://images.squarespace-cdn.com/content/v1/665f0ae5b7fe1e7c8f450174/2db9c798-f40c-4614-b50a-ad618367dda3/Screenshot+2024-10-23+at+13.50.55.png?format=2500w",
+    imageUrl: "/assets/buasthesis.png",
     quote: { 
       text: "Adding multiplayer isn't just about adding features; it's a fundamental design decision that impacts the game's emotional and systemic core.",
       source: "Master's Thesis Research"
@@ -226,7 +226,7 @@ Ultimately, the findings suggest that adding multiplayer isn't just about adding
     supportingRole: "Technical Designer", 
     timeline: "2019 - 2020",
     tags: ["VR", "Unity", "Game Design", "Technical Design", "Puzzle Design"],
-    imageUrl: "https://images.squarespace-cdn.com/content/v1/665f0ae5b7fe1e7c8f450174/e0b0d115-69a0-4037-8d2b-be51bd6cc734/QuantumLogo.png?format=2500w",
+    imageUrl: "/assets/QuantumLogo.png",
     quote: {
       text: "A mind-bending journey through impossible spaces that challenges perception and rewards clever thinking.",
       source: "VR Gaming Magazine"
