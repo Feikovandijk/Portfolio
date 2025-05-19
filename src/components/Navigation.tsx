@@ -19,7 +19,7 @@ export default function Navigation() {
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex items-center">
-            <Link to="/portfolio" className="text-xl font-semibold text-gray-900 dark:text-white">
+            <Link to="/portfolio" className="text-xl font-semibold text-gray-900 dark:text-white" data-nav-item="Logo">
               Feiko van Dijk - Technical & Game Designer
             </Link>
           </div>
@@ -32,12 +32,14 @@ export default function Navigation() {
                   ? 'text-blue-600 dark:text-blue-400' 
                   : 'text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white'
               } transition-colors duration-200`}
+              data-nav-item="Home"
             >
               Home
             </Link>
             <a
               href="https://blog.feikovandijk.com"
               className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors duration-200"
+              data-nav-item="Blog"
             >
               Blog
             </a>
@@ -48,6 +50,7 @@ export default function Navigation() {
                   ? 'text-blue-600 dark:text-blue-400' 
                   : 'text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white'
               } transition-colors duration-200`}
+              data-nav-item="About"
             >
               About
             </Link>
@@ -59,6 +62,7 @@ export default function Navigation() {
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"
+              data-nav-item="Menu Toggle"
             >
               <Menu size={24} />
             </button>
@@ -76,6 +80,7 @@ export default function Navigation() {
                     : 'text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 hover:text-gray-900 dark:hover:text-white'
                 }`}
                 onClick={() => setIsMenuOpen(false)}
+                data-nav-item="Mobile Home"
               >
                 Home
               </Link>
@@ -83,6 +88,7 @@ export default function Navigation() {
                 href="https://blog.feikovandijk.com"
                 className="block px-3 py-2 rounded-md text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 hover:text-gray-900 dark:hover:text-white"
                 onClick={() => setIsMenuOpen(false)}
+                data-nav-item="Mobile Blog"
               >
                 Blog
               </a>
@@ -94,6 +100,7 @@ export default function Navigation() {
                     : 'text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 hover:text-gray-900 dark:hover:text-white'
                 }`}
                 onClick={() => setIsMenuOpen(false)}
+                data-nav-item="Mobile About"
               >
                 About
               </Link>
