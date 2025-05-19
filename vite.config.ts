@@ -18,7 +18,7 @@ export default defineConfig({
     strictPort: true,
     host: false,
     headers: {
-      "Content-Security-Policy": "default-src 'self'; img-src 'self' data: https:; media-src 'self' https:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://analytics.feiko.org; script-src-elem 'self' 'unsafe-inline' https://analytics.feiko.org; style-src 'self' 'unsafe-inline'; connect-src 'self' https:; frame-ancestors 'none';",
+      "Content-Security-Policy": "default-src 'self'; img-src 'self' data: https:; media-src 'self' https:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://analytics.feiko.org; script-src-elem 'self' 'unsafe-inline' 'unsafe-eval' https://analytics.feiko.org; style-src * 'unsafe-inline'; connect-src 'self' https:; frame-ancestors 'none';",
       "X-Content-Type-Options": "nosniff",
       "X-Frame-Options": "DENY",
       "X-XSS-Protection": "1; mode=block"

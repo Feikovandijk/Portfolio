@@ -4,14 +4,6 @@ import { motion } from 'framer-motion';
 import { ArrowLeft, Youtube, Award, ChevronDown } from 'lucide-react';
 import { projects, achievements } from '../data/content';
 
-declare global {
-  interface Window {
-    umami?: { // Use optional chaining in case the script hasn't loaded yet
-      track: (name: string, data?: object) => void;
-    };
-  }
-}
-
 export default function ProjectDetails(): React.ReactElement {
   const { projectId } = useParams<{ projectId: string }>();
   const project = projects.find((p) => p.id === projectId);
