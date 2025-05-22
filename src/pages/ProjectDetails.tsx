@@ -191,12 +191,12 @@ export default function ProjectDetails(): React.ReactElement {
               <p className="text-base leading-relaxed text-gray-700 dark:text-gray-300 font-['Arial'] tracking-wide whitespace-pre-line">{project.mainNarrative}</p>
             </div>
 
-            {project.id === "project-2" && (
+            {project.achievementIds && project.achievementIds.length > 0 && (
               <div>
                 <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4 font-['Helvetica_Neue'] tracking-wide">Awards & Recognition</h2>
                 <div className="space-y-4">
                   {achievements
-                    .filter(achievement => achievement.title.includes("ARID"))
+                    .filter(achievement => project.achievementIds?.includes(achievement.id))
                     .map((achievement) => (
                       <div key={achievement.id} className="flex items-start gap-3 p-4 bg-gray-50 dark:bg-gray-700/50 rounded-lg">
                         <Award className="w-6 h-6 text-yellow-500 mt-1 flex-shrink-0" />

@@ -66,6 +66,7 @@ export interface AboutContent {
       blog?: string;
     };
     developmentPhases?: DevelopmentPhases;
+    achievementIds?: string[];
   }
   
   export interface Achievement {

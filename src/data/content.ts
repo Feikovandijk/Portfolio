@@ -88,7 +88,8 @@ export const projects: Project[] = [
     bodyTextRight: "",
     mediaShowcase: [],
     designDocs: [],
-    links: {}
+    links: {},
+    achievementIds: []
   },
   {
     id: "project-2",
@@ -132,6 +133,7 @@ export const projects: Project[] = [
     links: {
       steam: "https://store.steampowered.com/app/1463730/Arid/"
     },
+    achievementIds: ["achievement-1", "achievement-2", "achievement-3"],
     developmentPhases: {
       concepting: {
         videoUrl: "https://www.youtube.com/embed/I-pEr80L0Qg",
@@ -216,7 +218,8 @@ Ultimately, the findings suggest that adding multiplayer isn't just about adding
     links: {
       researchgate: "https://www.researchgate.net/publication/381547877_Implementing_Multiplayer_in_Single_Player_games_Analysis_of_Multiplayer_Integration_in_Singleplayer_Survival_Games",
       blog: "https://blog.feikovandijk.com/balancing-solitude-and-social-play-design-implications-for-survival-games/"
-    }
+    },
+    achievementIds: []
   },
   {
     id: "project-4",
@@ -263,7 +266,8 @@ Eventually we dropped the project because we did not see the VR concept as viabl
     bodyTextRight: "Key Focus: VR Puzzle Design, Non-Euclidean Spaces, Physics-based Interactions",
     mediaShowcase: [],
     designDocs: [],
-    links: {}
+    links: {},
+    achievementIds: []
   }
 ];
 
