@@ -8,14 +8,14 @@ import ScrollButtons from '../components/ScrollButtons';
 export default function Portfolio() {
   return (
     <div className="pt-16">
-      {/* Work in Progress Banner */}
+{/*       {/* Work in Progress Banner }
       <div className="bg-yellow-100 dark:bg-yellow-900/30 border-b border-yellow-200 dark:border-yellow-800">
         <div className="max-w-7xl mx-auto px-4 py-3 sm:px-6 lg:px-8">
           <p className="text-center text-sm text-yellow-800 dark:text-yellow-200 font-['Arial'] tracking-wide">
             Work in Progress. Some content is still under construction & bugs might be present
           </p>
         </div>
-      </div>
+      </div> */}
 
       <section>
         <motion.div
