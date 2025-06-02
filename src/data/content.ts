@@ -53,44 +53,6 @@ I value collaboration and believe that great games are built by teams who share 
 
 export const projects: Project[] = [
   {
-    id: "project-1",
-    title: "Arid 2.0",
-    description: "Development of an untitled sequel to Arid, alongside founding and expanding Viscacha Studios.",
-    mainRole: "Lead Game Design, Business Development",
-    supportingRole: "Technical Design",
-    timeline: "2023 - 2025",
-    tags: ["Unreleased", "Unreal Engine", "Game Design", "Business Development", "Technical Design"],
-    imageUrl: "/assets/Arid2.png",
-    quote: { text: "", source: "" },
-    projectStats: {
-      teamSize: "5 Developers",
-      duration: "16 Months",
-      platforms: ["Unreleased"],
-      technologies: [
-        "Unreal Engine",
-        "Perforce",
-        "Jira",
-        "Teamcity",
-        "Google Analytics",
-        "AWS"
-      ]
-    },
-    keyContributions: [
-      "Designed and implemented new core gameplay systems that enriched the player's sense of immersion and supported dynamic storytelling within the game's existing IP",
-      "Established Viscacha Studios' legal and financial structure, securing a strong foundation for sustainable growth",
-      "Worked closely with multidisciplinary teams to prototype, refine, and implement new gameplay features, ensuring alignment with project vision across design, art, and engineering departments",
-      "Led the development of pitch materials, production schedules, and budget forecasts, securing funding to support ongoing development",
-      "Represented Viscacha Studios and Arid 2.0 at major conferences like GDC, Gamescom, and INDIGO, establishing valuable industry connections and expanding the studio's visibility",
-      "Utilized tools like Perforce, Asana, Jira, and Jenkins to maintain project momentum and alignment across a distributed team"
-    ],
-    mainNarrative: "This dual role involved not only designing immersive survival mechanics but also establishing the business structure, securing funding, and building essential industry relationships, all while actively driving the sequel's development.",
-    bodyTextLeft: "",
-    bodyTextRight: "",
-    mediaShowcase: [],
-    designDocs: [],
-    links: {}
-  },
-  {
     id: "project-2",
     title: "ARID",
     description: "A gritty, exploration-survival experience set in the Atacama Desert; the driest place on earth.\n\n\nDesigned core gameplay features such as weather systems, sun damage, buffs & debuffs.",
@@ -166,6 +128,44 @@ export const projects: Project[] = [
         ]
       }
     }
+  },
+  {
+    id: "project-1",
+    title: "Arid 2.0",
+    description: "Development of an untitled sequel to Arid, alongside founding and expanding Viscacha Studios.",
+    mainRole: "Lead Game Design, Business Development",
+    supportingRole: "Technical Design",
+    timeline: "2023 - 2025",
+    tags: ["Unreleased", "Unreal Engine", "Game Design", "Business Development", "Technical Design"],
+    imageUrl: "/assets/Arid2.png",
+    quote: { text: "", source: "" },
+    projectStats: {
+      teamSize: "5 Developers",
+      duration: "16 Months",
+      platforms: ["Unreleased"],
+      technologies: [
+        "Unreal Engine",
+        "Perforce",
+        "Jira",
+        "Teamcity",
+        "Google Analytics",
+        "AWS"
+      ]
+    },
+    keyContributions: [
+      "Designed and implemented new core gameplay systems that enriched the player's sense of immersion and supported dynamic storytelling within the game's existing IP",
+      "Established Viscacha Studios' legal and financial structure, securing a strong foundation for sustainable growth",
+      "Worked closely with multidisciplinary teams to prototype, refine, and implement new gameplay features, ensuring alignment with project vision across design, art, and engineering departments",
+      "Led the development of pitch materials, production schedules, and budget forecasts, securing funding to support ongoing development",
+      "Represented Viscacha Studios and Arid 2.0 at major conferences like GDC, Gamescom, and INDIGO, establishing valuable industry connections and expanding the studio's visibility",
+      "Utilized tools like Perforce, Asana, Jira, and Jenkins to maintain project momentum and alignment across a distributed team"
+    ],
+    mainNarrative: "This dual role involved not only designing immersive survival mechanics but also establishing the business structure, securing funding, and building essential industry relationships, all while actively driving the sequel's development.",
+    bodyTextLeft: "",
+    bodyTextRight: "",
+    mediaShowcase: [],
+    designDocs: [],
+    links: {}
   },
   {
     id: "project-3",
