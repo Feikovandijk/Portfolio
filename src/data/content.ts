@@ -215,7 +215,7 @@ Ultimately, the findings suggest that adding multiplayer isn't just about adding
     designDocs: [],
     links: {
       researchgate: "https://www.researchgate.net/publication/381547877_Implementing_Multiplayer_in_Single_Player_games_Analysis_of_Multiplayer_Integration_in_Singleplayer_Survival_Games",
-      blog: "https://blog.feikovandijk.com/balancing-solitude-and-social-play-design-implications-for-survival-games/"
+      blog: "https://blog.feikovandijk.com/solitude/"
     }
   },
   {
