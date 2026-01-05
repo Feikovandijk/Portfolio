@@ -2,8 +2,8 @@ import type { AboutContent, Project, Achievement, SmallProject } from '../types/
 
 export const aboutContent: AboutContent = {
   name: "Hi! I'm Feiko.",
-  title: "Game & Technical Designer",
-  bio: `I'm a technical and game designer who loves turning challenges into engaging experiences. I've been lucky enough to have worked on a variety of projects, from coding to crafting gameplay, and each one has taught me something new. As a generalist, I'm quick to learn, adapt, and use my diverse experience to help shape any project into something fantastic.
+  title: "Technical Designer & DevOps Engineer",
+  bio: `I'm a technical Designer and DevOps Engineer who loves turning challenges into engaging experiences. I've been lucky enough to have worked on a variety of projects, from coding to crafting gameplay, and each one has taught me something new. As a generalist, I'm quick to learn, adapt, and use my diverse experience to help shape any project into something fantastic.
 
 I'm naturally curious, whether I'm solving tricky software issues or diving into hands-on challenges like car projects and home renovations (and occasionally 'fixing' something that wasn't broken keeps life interesting). Every unconventional project is an opportunity to learn something new.
 
@@ -59,9 +59,9 @@ export const projects: Project[] = [
     mainRole: "Design Lead, Technical Designer",
     supportingRole: "Analytics & Marketing",
     timeline: "2020 - 2022",
-    tags: ["Released","Unreal Engine", "Game Design", "Technical Design", "Analytics", "Marketing"],
+    tags: ["Released", "Unreal Engine", "Game Design", "Technical Design", "Analytics", "Marketing"],
     imageUrl: "/assets/Arid.png",
-    quote: { 
+    quote: {
       text: "The biggest threat to my survival in Arid, apart from the relentless sun, is my own malfunctioning brain.",
       source: "Christopher Livingstone, PCGamer"
     },
@@ -176,7 +176,7 @@ export const projects: Project[] = [
     timeline: "2023 - 2024",
     tags: ["Research", "Game Design", "User Experience", "Academic Writing"],
     imageUrl: "/assets/buasthesis.png",
-    quote: { 
+    quote: {
       text: "Adding multiplayer isn't just about adding features; it's a fundamental design decision that impacts the game's emotional and systemic core.",
       source: "Master's Thesis Research"
     },
@@ -223,7 +223,7 @@ Ultimately, the findings suggest that adding multiplayer isn't just about adding
     title: "Quantum",
     description: "An immersive VR puzzle game where players navigate an impossible, non-euclidean laboratory to repair a futuristic machine and unravel its secrets.",
     mainRole: "Game Designer",
-    supportingRole: "Technical Designer", 
+    supportingRole: "Technical Designer",
     timeline: "2019 - 2020",
     tags: ["VR", "Unity", "Game Design", "Technical Design", "Puzzle Design"],
     imageUrl: "/assets/QuantumLogo.png",

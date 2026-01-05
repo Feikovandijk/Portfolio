@@ -22,7 +22,7 @@ export default function Portfolio() {
                   Hi, I'm Feiko.
                 </h1>
                 <p className="text-lg leading-8 text-gray-600 dark:text-gray-300 font-['Arial'] tracking-wide">
-                  I'm a <strong>Technical & Game Designer</strong> from the Netherlands, passionate about creating engaging & moving experiences that bring people together.
+                  I'm a <strong>Technical Designer & DevOps engineer</strong> from the Netherlands, passionate about creating engaging & moving experiences that bring people together.
                   With over 2 years of industry experience, I hold a MSc in Games Research and a BSc in Game Development. <strong>Below, you can find my portfolio, highlighting some of my work.</strong>
                 </p>
               </div>
@@ -51,7 +51,7 @@ export default function Portfolio() {
             <div className="text-center mb-16">
               <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4 font-['Helvetica_Neue'] tracking-wide">Portfolio</h2>
               <p className="text-xl text-gray-600 dark:text-gray-300 font-['Arial'] tracking-wide">
-                A showcase of my game design projects
+                A showcase of my development projects
               </p>
             </div>
 
