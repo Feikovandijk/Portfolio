@@ -93,7 +93,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           </div>
           <span className="text-sm text-gray-500 dark:text-gray-400">{project.timeline}</span>
         </div>
-        
+
         <p className="text-gray-700 dark:text-gray-300 mb-6 line-clamp-3">{project.description}</p>
 
         {project.tags && project.tags.length > 0 && (

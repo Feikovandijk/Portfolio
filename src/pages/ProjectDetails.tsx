@@ -152,10 +152,12 @@ export default function ProjectDetails(): React.ReactElement {
                     <span className="w-2 h-2 rounded-full bg-blue-600 dark:bg-blue-400"></span>
                     <p className="text-lg font-medium text-gray-900 dark:text-white font-['Arial'] tracking-wide">Main Roles: {project.mainRole}</p>
                   </div>
-                  <div className="flex items-center gap-3">
-                    <span className="w-2 h-2 rounded-full bg-blue-600 dark:bg-blue-400"></span>
-                    <p className="text-lg text-gray-700 dark:text-gray-300 font-['Arial'] tracking-wide">Secondary Roles: {project.supportingRole}</p>
-                  </div>
+                  {project.supportingRole && (
+                    <div className="flex items-center gap-3">
+                      <span className="w-2 h-2 rounded-full bg-blue-600 dark:bg-blue-400"></span>
+                      <p className="text-lg text-gray-700 dark:text-gray-300 font-['Arial'] tracking-wide">Secondary Roles: {project.supportingRole}</p>
+                    </div>
+                  )}
                 </div>
                 {project.keyContributions && project.keyContributions.length > 0 && (
                   <div className="space-y-3">
@@ -253,7 +255,7 @@ export default function ProjectDetails(): React.ReactElement {
           {project.developmentPhases && project.id !== "project-2" && (
             <div className="mt-12 space-y-16">
               <h2 className="text-3xl font-semibold text-gray-900 dark:text-white mb-8 font-['Helvetica_Neue'] tracking-wide">Development Process</h2>
-              
+
               {/* TEMPORARILY HIDDEN: "Read more" prompt for development process
               <div className="mt-8 text-center">
                 <p className="text-gray-500 dark:text-gray-400 font-['Arial'] tracking-wide mb-2">Keep reading to learn about the development process</p>
@@ -267,12 +269,12 @@ export default function ProjectDetails(): React.ReactElement {
                 {project.developmentPhases.concepting.videoUrl && (
                   <div className="relative aspect-video rounded-lg overflow-hidden">
                     {project.developmentPhases.concepting.videoUrl.includes('youtube.com/embed') ? (
-                    <iframe
-                      src={project.developmentPhases.concepting.videoUrl}
-                      className="absolute inset-0 w-full h-full"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                    />
+                      <iframe
+                        src={project.developmentPhases.concepting.videoUrl}
+                        className="absolute inset-0 w-full h-full"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                      />
                     ) : (
                       <video
                         src={project.developmentPhases.concepting.videoUrl}
@@ -308,12 +310,12 @@ export default function ProjectDetails(): React.ReactElement {
                 {project.developmentPhases.preProduction.videoUrl && (
                   <div className="relative aspect-video rounded-lg overflow-hidden">
                     {project.developmentPhases.preProduction.videoUrl.includes('youtube.com/embed') ? (
-                    <iframe
-                      src={project.developmentPhases.preProduction.videoUrl}
-                      className="absolute inset-0 w-full h-full"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                    />
+                      <iframe
+                        src={project.developmentPhases.preProduction.videoUrl}
+                        className="absolute inset-0 w-full h-full"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                      />
                     ) : (
                       <video
                         src={project.developmentPhases.preProduction.videoUrl}
@@ -349,12 +351,12 @@ export default function ProjectDetails(): React.ReactElement {
                 {project.developmentPhases.production.videoUrl && (
                   <div className="relative aspect-video rounded-lg overflow-hidden">
                     {project.developmentPhases.production.videoUrl.includes('youtube.com/embed') ? (
-                    <iframe
-                      src={project.developmentPhases.production.videoUrl}
-                      className="absolute inset-0 w-full h-full"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                    />
+                      <iframe
+                        src={project.developmentPhases.production.videoUrl}
+                        className="absolute inset-0 w-full h-full"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                      />
                     ) : (
                       <video
                         src={project.developmentPhases.production.videoUrl}
@@ -390,12 +392,12 @@ export default function ProjectDetails(): React.ReactElement {
                 {project.developmentPhases.release.videoUrl && (
                   <div className="relative aspect-video rounded-lg overflow-hidden">
                     {project.developmentPhases.release.videoUrl.includes('youtube.com/embed') ? (
-                    <iframe
-                      src={project.developmentPhases.release.videoUrl}
-                      className="absolute inset-0 w-full h-full"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                    />
+                      <iframe
+                        src={project.developmentPhases.release.videoUrl}
+                        className="absolute inset-0 w-full h-full"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                      />
                     ) : (
                       <video
                         src={project.developmentPhases.release.videoUrl}
