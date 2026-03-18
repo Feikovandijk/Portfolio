@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Project } from '../types/index';
 import { motion } from 'framer-motion';
-import { Stamp as Steam, Youtube, ArrowRight, Play, BookOpen } from 'lucide-react';
+import { Stamp as Steam, Youtube, ArrowRight, Play, BookOpen, Github } from 'lucide-react';
 import { useState, useRef, useEffect } from 'react';
 
 interface ProjectCardProps {
@@ -70,7 +70,16 @@ export default function ProjectCard({ project }: ProjectCardProps) {
               src={project.imageUrl}
               alt={project.title}
               className="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-105"
+              onError={(e) => {
+                const target = e.currentTarget;
+                target.style.display = 'none';
+                const placeholder = target.nextElementSibling as HTMLElement;
+                if (placeholder) placeholder.style.display = 'flex';
+              }}
             />
+            <div className="w-full h-56 bg-gradient-to-br from-gray-700 to-gray-900 dark:from-gray-800 dark:to-gray-950 items-center justify-center hidden">
+              <span className="text-gray-400 text-sm font-['Arial'] tracking-wide">{project.title}</span>
+            </div>
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           </Link>
         )}
@@ -141,6 +150,18 @@ export default function ProjectCard({ project }: ProjectCardProps) {
               >
                 <BookOpen size={20} />
                 <span>ResearchGate</span>
+              </a>
+            )}
+            {project.links?.github && (
+              <a
+                href={project.links.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition-colors font-medium"
+                title="View on GitHub"
+              >
+                <Github size={20} />
+                <span>GitHub</span>
               </a>
             )}
             {project.links?.youtube && (

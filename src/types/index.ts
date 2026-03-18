@@ -1,3 +1,8 @@
+export interface SkillCategory {
+  category: string;
+  items: string[];
+}
+
 export interface AboutContent {
   name: string;
   title: string;
@@ -6,7 +11,7 @@ export interface AboutContent {
     url: string;
     alt: string;
   }>;
-  skills: string[];
+  skills: SkillCategory[];
   contact: {
     email: string;
     linkedin: string;
@@ -62,6 +67,7 @@ export interface Project {
     steam?: string;
     youtube?: string;
     website?: string;
+    github?: string;
     researchgate?: string;
     blog?: string;
   };
@@ -87,6 +93,7 @@ export interface SmallProject {
 export interface Links {
   steam?: string;
   youtube?: string;
+  github?: string;
   researchgate?: string;
   blog?: string;
 }
