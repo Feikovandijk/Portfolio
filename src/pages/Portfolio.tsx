@@ -22,7 +22,7 @@ export default function Portfolio() {
                   Hi, I'm Feiko.
                 </h1>
                 <p className="text-lg leading-8 text-gray-600 dark:text-gray-300 font-['Arial'] tracking-wide">
-                  I'm a <strong>Kubernetes Engineer & Technical Designer</strong> from the Netherlands. I design and operate production-grade cloud-native platforms — and I've shipped commercial games with 200,000+ downloads.
+                  I'm a <strong>Kubernetes Engineer & Game Designer</strong> from the Netherlands. I design and operate production-grade cloud-native platforms — and I've shipped commercial games with 200,000+ downloads.
                   With a MSc in Games Research and a BSc in Game Development, I bring the same systems thinking to infrastructure as I do to game design. <strong>Below, you can find my portfolio, highlighting some of my work.</strong>
                 </p>
               </div>

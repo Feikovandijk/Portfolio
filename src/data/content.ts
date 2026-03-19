@@ -2,7 +2,7 @@ import type { AboutContent, Project, Achievement, SmallProject } from '../types/
 
 export const aboutContent: AboutContent = {
   name: "Hi! I'm Feiko.",
-  title: "Kubernetes Engineer & Technical Designer",
+  title: "Kubernetes Engineer & Game Designer",
   bio: `I'm a Kubernetes Engineer and Technical Designer with a background that spans cloud-native infrastructure and game development. On the platform side, I design and operate production Kubernetes environments — working with tools like CloudNativePG (CNPG), Terraform, Flux, ArgoCD, Renovate, and Barman to build reliable, GitOps-driven, self-healing infrastructure. On the game side, I've shipped commercial titles, led cross-functional teams, and dug deep into player behavior research.
 
 I find the two worlds complement each other more than people expect. The systematic thinking behind a Kubernetes HA cluster and the design of a game's weather system are the same craft: defining states, transitions, failure modes, and feedback loops. I bring that mindset to both.
@@ -53,57 +53,6 @@ I value collaboration and believe that great products — games or platforms —
 };
 
 export const projects: Project[] = [
-  {
-    id: "project-5",
-    title: "Production Kubernetes Platform",
-    description: "Designed and operated a production-grade Kubernetes platform with GitOps workflows, automated database management, and cloud-native tooling — built to be self-healing, observable, and developer-friendly.",
-    mainRole: "Kubernetes Engineer",
-    supportingRole: "Platform Engineer",
-    timeline: "2024 - Present",
-    tags: ["Active", "Kubernetes", "GitOps", "PostgreSQL", "Terraform", "Infrastructure"],
-    imageUrl: "/assets/k8s-platform.png",
-    quote: { text: "", source: "" },
-    projectStats: {
-      teamSize: "Platform Team",
-      duration: "Ongoing",
-      platforms: ["Kubernetes"],
-      technologies: [
-        "Kubernetes",
-        "CloudNativePG (CNPG)",
-        "Terraform",
-        "Flux",
-        "ArgoCD",
-        "Renovate",
-        "Barman",
-        "Helm",
-        "PostgreSQL",
-        "GitOps"
-      ]
-    },
-    keyContributions: [
-      "Designed and maintained production Kubernetes clusters, implementing GitOps workflows with Flux and ArgoCD to keep deployments declarative and auditable",
-      "Operated CloudNativePG (CNPG) for high-availability PostgreSQL — managing replication, failover, and backup/restore pipelines with Barman",
-      "Provisioned and managed cloud infrastructure with Terraform, ensuring reproducible, version-controlled environments",
-      "Automated dependency updates across the fleet with Renovate, reducing toil and keeping the platform patched without manual intervention",
-      "Built observability and alerting into the platform to catch failure modes early and reduce MTTR"
-    ],
-    mainNarrative: `Running production infrastructure on Kubernetes is fundamentally a design problem. You're defining state machines: what healthy looks like, what degraded looks like, and how the system recovers without human intervention. That framing — shaped by years of game systems design — is how I approach platform engineering.
-
-This platform was built with GitOps at its core. Every cluster state, every application deployment, every database configuration lives in version control. Flux handles continuous reconciliation; ArgoCD provides the deployment layer with full visibility into drift. Renovate keeps the dependency graph current automatically, so upgrades stop being events and start being non-events.
-
-The database layer is where production systems often get fragile. CloudNativePG (CNPG) handles high-availability PostgreSQL natively in Kubernetes — managing primaries, replicas, and automatic failover. Barman backs the whole thing up, with tested restore procedures so we actually know recovery works before we need it.
-
-Terraform provisions the underlying infrastructure declaratively. No snowflake environments, no undocumented manual steps — the platform is reproducible from scratch.
-
-What I find most interesting is where the game development background shows up in infrastructure work: designing for failure modes rather than just happy paths, thinking about feedback loops and observability the same way a designer thinks about player feedback, and treating runbooks like design documents — things that should be clear enough that someone new can follow them without guessing.`,
-    bodyTextLeft: "",
-    bodyTextRight: "",
-    mediaShowcase: [],
-    designDocs: [],
-    links: {
-      github: "https://github.com/Feikovandijk"
-    }
-  },
   {
     id: "project-2",
     title: "ARID",
