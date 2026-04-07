@@ -1,4 +1,4 @@
-import type { AboutContent, Project, Achievement, SmallProject } from '../types/index';
+import type { AboutContent, Project, Achievement, SmallProject, Experience } from '../types/index';
 
 export const aboutContent: AboutContent = {
   name: "Hi! I'm Feiko.",
@@ -265,6 +265,25 @@ Eventually we dropped the project because we did not see the VR concept as viabl
     mediaShowcase: [],
     designDocs: [],
     links: {}
+  }
+];
+
+export const experiences: Experience[] = [
+  {
+    id: "exp-1",
+    title: "Freelance Build & DevOps Engineer",
+    company: "Freelance",
+    period: "TODO - TODO",
+    description: "TODO",
+    tags: ["DevOps", "CI/CD", "Build Systems"]
+  },
+  {
+    id: "exp-2",
+    title: "Technical Designer & Studio Lead",
+    company: "Viscacha Studios",
+    period: "Sept 2021 - Dec 2024",
+    description: "Co-founded Viscacha Studios and led development on Arid and its sequel. Owned core gameplay systems design, managed cross-functional teams, and handled business development including funding applications and conference representation at GDC, Gamescom, and INDIGO.",
+    tags: ["Game Design", "Technical Design", "Studio Lead", "Unreal Engine", "Jenkins", "Perforce"]
   }
 ];
 
