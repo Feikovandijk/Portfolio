@@ -22,15 +22,6 @@ function UmamiPageTracker() {
 
 function App() {
   useEffect(() => {
-    // Umami analytics script loading
-    const script = document.createElement('script');
-    script.src = 'https://analytics.feiko.org/script.js';
-    script.defer = true;
-    script.setAttribute('data-website-id', '65ba0a72-ac69-4f2b-a2f6-8383a1f6589f');
-    if (!document.querySelector('script[src="https://analytics.feiko.org/script.js"]')) {
-        document.body.appendChild(script);
-    }
-
     // Global click listener for link clicks
     const handleLinkClick = (event: MouseEvent) => {
       const target = event.target as HTMLElement;
