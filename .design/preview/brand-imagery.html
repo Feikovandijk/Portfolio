@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<link rel="stylesheet" href="_card.css">
+<style>
+  .shot { position:relative; border-radius: var(--radius-lg); overflow:hidden; border:1px solid var(--border-1); height:130px; }
+  .shot img { width:100%; height:100%; object-fit:cover; display:block; }
+  .shot::after { content:""; position:absolute; inset:0; background: linear-gradient(to top, rgba(11,15,23,.85), transparent 60%); }
+  .shot .cap { position:absolute; left:12px; bottom:10px; z-index:2; font-family:var(--font-mono); font-size:11px; color:#fff; }
+  .por { width:96px; height:96px; border-radius:50%; object-fit:cover; border:2px solid var(--border-2); }
+</style>
+</head><body>
+<div class="label" style="margin-bottom:14px;">Imagery · warm game worlds + cool photography</div>
+<div class="grid-2" style="gap:12px;">
+  <div class="shot"><img src="../assets/Arid2.png" alt=""><span class="cap">game · warm, cinematic, full-bleed</span></div>
+  <div class="shot"><img src="../assets/Streamlined.png" alt=""><span class="cap">protect text w/ bottom gradient</span></div>
+</div>
+<div class="row" style="margin-top:14px;gap:14px;align-items:center;">
+  <img class="por" src="../assets/feikohome.png" alt="">
+  <div style="font-family:var(--font-body);font-size:13px;color:var(--fg-2);line-height:1.5;">Portraits crop to a circle; keep images color-rich, never desaturate to grayscale.</div>
+</div>
+</body></html>

@@ -15,99 +15,96 @@ export default function Navigation() {
   };
 
   return (
-    <nav className="fixed top-0 w-full bg-white/95 dark:bg-gray-800/95 backdrop-blur-sm z-50">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-16">
-          <div className="flex items-center">
-            <Link to="/portfolio" className="text-xl font-semibold text-gray-900 dark:text-white" data-nav-item="Logo">
-              Feiko van Dijk - Technical & Game Designer
-            </Link>
+    <nav className="nav">
+      <div className="wrap nav-inner">
+        <Link to="/portfolio" className="brand" data-nav-item="Logo">
+          <div style={{ textAlign: 'left' }}>
+            <div className="brand-name">Feiko van Dijk</div>
+            <div className="brand-role">kubernetes engineer · game designer</div>
           </div>
+        </Link>
 
-          <div className="hidden sm:flex items-center space-x-8">
-            <Link
-              to="/portfolio"
-              className={`${
-                isActive('/portfolio') 
-                  ? 'text-blue-600 dark:text-blue-400' 
-                  : 'text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white'
-              } transition-colors duration-200`}
-              data-nav-item="Home"
-            >
-              Home
-            </Link>
-            <a
-              href="https://blog.feikovandijk.com"
-              className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors duration-200"
-              data-nav-item="Blog"
-            >
-              Blog
-            </a>
-            <Link
-              to="/about"
-              className={`${
-                isActive('/about') 
-                  ? 'text-blue-600 dark:text-blue-400' 
-                  : 'text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white'
-              } transition-colors duration-200`}
-              data-nav-item="About"
-            >
-              About
-            </Link>
+        {/* Desktop Links */}
+        <div className="hidden sm:flex items-center space-x-2">
+          <Link
+            to="/portfolio"
+            className={`nav-link ${isActive('/portfolio') ? 'active' : ''}`}
+            data-nav-item="Home"
+          >
+            Work
+          </Link>
+          <a
+            href="https://blog.feikovandijk.com"
+            className="nav-link"
+            target="_blank"
+            rel="noopener noreferrer"
+            data-nav-item="Blog"
+          >
+            Blog
+          </a>
+          <Link
+            to="/about"
+            className={`nav-link ${isActive('/about') ? 'active' : ''}`}
+            data-nav-item="About"
+          >
+            About
+          </Link>
+          <div style={{ marginLeft: 6 }}>
             <ThemeToggle />
-          </div>
-
-          <div className="sm:hidden flex items-center space-x-4">
-            <ThemeToggle />
-            <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"
-              data-nav-item="Menu Toggle"
-            >
-              <Menu size={24} />
-            </button>
           </div>
         </div>
 
-        {isMenuOpen && (
-          <div className="sm:hidden">
-            <div className="pt-2 pb-3 space-y-1">
-              <Link
-                to="/portfolio"
-                className={`block px-3 py-2 rounded-md ${
-                  isActive('/portfolio')
-                    ? 'bg-blue-50 dark:bg-blue-900/50 text-blue-600 dark:text-blue-400'
-                    : 'text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 hover:text-gray-900 dark:hover:text-white'
-                }`}
-                onClick={() => setIsMenuOpen(false)}
-                data-nav-item="Mobile Home"
-              >
-                Home
-              </Link>
-              <a
-                href="https://blog.feikovandijk.com"
-                className="block px-3 py-2 rounded-md text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 hover:text-gray-900 dark:hover:text-white"
-                onClick={() => setIsMenuOpen(false)}
-                data-nav-item="Mobile Blog"
-              >
-                Blog
-              </a>
-              <Link
-                to="/about"
-                className={`block px-3 py-2 rounded-md ${
-                  isActive('/about')
-                    ? 'bg-blue-50 dark:bg-blue-900/50 text-blue-600 dark:text-blue-400'
-                    : 'text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 hover:text-gray-900 dark:hover:text-white'
-                }`}
-                onClick={() => setIsMenuOpen(false)}
-                data-nav-item="Mobile About"
-              >
-                About
-              </Link>
-            </div>
-          </div>
-        )}
+        {/* Mobile Menu Button */}
+        <div className="sm:hidden flex items-center space-x-2">
+          <ThemeToggle />
+          <button
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className="icon-btn"
+            aria-label="Toggle menu"
+            data-nav-item="Menu Toggle"
+          >
+            <Menu size={18} />
+          </button>
+        </div>
       </div>
+
+      {/* Mobile Links Dropdown */}
+      {isMenuOpen && (
+        <div className="sm:hidden border-t border-[var(--border-1)] bg-[var(--bg-1)] py-3 px-6 space-y-1">
+          <Link
+            to="/portfolio"
+            className={`block px-3 py-2 rounded-md font-medium transition-colors ${
+              isActive('/portfolio')
+                ? 'bg-[var(--primary-tint)] text-[var(--fg-1)]'
+                : 'text-[var(--fg-2)] hover:bg-[var(--bg-2)] hover:text-[var(--fg-1)]'
+            }`}
+            onClick={() => setIsMenuOpen(false)}
+            data-nav-item="Mobile Home"
+          >
+            Work
+          </Link>
+          <a
+            href="https://blog.feikovandijk.com"
+            className="block px-3 py-2 rounded-md font-medium text-[var(--fg-2)] hover:bg-[var(--bg-2)] hover:text-[var(--fg-1)] transition-colors"
+            onClick={() => setIsMenuOpen(false)}
+            data-nav-item="Mobile Blog"
+          >
+            Blog
+          </a>
+          <Link
+            to="/about"
+            className={`block px-3 py-2 rounded-md font-medium transition-colors ${
+              isActive('/about')
+                ? 'bg-[var(--primary-tint)] text-[var(--fg-1)]'
+                : 'text-[var(--fg-2)] hover:bg-[var(--bg-2)] hover:text-[var(--fg-1)]'
+            }`}
+            onClick={() => setIsMenuOpen(false)}
+            data-nav-item="Mobile About"
+          >
+            About
+          </Link>
+        </div>
+      )}
     </nav>
   );
 }

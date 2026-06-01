@@ -43,10 +43,11 @@ export default function ScrollButtons() {
         animate={{ opacity: 1 }}
         transition={{ delay: 1 }}
         onClick={() => scrollToSection('up')}
-        className="p-3 bg-white dark:bg-gray-800 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700"
+        className="icon-btn"
+        style={{ width: '44px', height: '44px', borderRadius: '50%' }}
         aria-label="Scroll to previous section"
       >
-        <ChevronUp className="w-6 h-6 text-gray-600 dark:text-gray-300" />
+        <ChevronUp className="w-5 h-5" />
       </motion.button>
 
       <motion.button
@@ -54,10 +55,11 @@ export default function ScrollButtons() {
         animate={{ opacity: 1 }}
         transition={{ delay: 1 }}
         onClick={() => scrollToSection('down')}
-        className="p-3 bg-white dark:bg-gray-800 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700"
+        className="icon-btn"
+        style={{ width: '44px', height: '44px', borderRadius: '50%' }}
         aria-label="Scroll to next section"
       >
-        <ChevronDown className="w-6 h-6 text-gray-600 dark:text-gray-300" />
+        <ChevronDown className="w-5 h-5" />
       </motion.button>
     </div>
   );

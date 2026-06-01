@@ -13,6 +13,21 @@ export interface AboutContent {
     github: string;
     ctftime: string;
   };
+  stats?: StatItem[];
+}
+
+export interface StatItem {
+  k: string;
+  v: string;
+}
+
+export interface InfraItem {
+  id: string;
+  title: string;
+  icon: string;
+  desc: string;
+  tags: string[];
+  link: string;
 }
 
 export interface DevelopmentPhase {
@@ -42,6 +57,10 @@ export interface Project {
     outcome: string;
   };
   imageUrl: string;
+  status?: {
+    label: string;
+    tone: 'running' | 'warning' | 'error' | 'info';
+  };
   quote?: {
     text: string;
     source: string;
@@ -56,8 +75,8 @@ export interface Project {
   mainNarrative?: string;
   bodyTextLeft?: string;
   bodyTextRight?: string;
-  mediaShowcase?: any[];
-  designDocs?: any[];
+  mediaShowcase?: unknown[];
+  designDocs?: unknown[];
   links: {
     steam?: string;
     youtube?: string;

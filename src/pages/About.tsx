@@ -3,121 +3,84 @@ import { Mail, Linkedin, Github, Flag } from 'lucide-react';
 import { aboutContent } from '../data/content';
 
 export default function About() {
+  const bioParagraphs = [
+    "I'm a Kubernetes & DevOps engineer who loves turning hard systems into reliable, legible ones. For years that meant games: leading technical design on Arid and shipping a handful of titles. These days it means clusters, pipelines and GitOps, with the same systems thinking underneath.",
+    "I'm naturally curious, whether I'm debugging a failing deploy or diving into hands-on projects like car builds and home renovations (occasionally 'fixing' something that wasn't broken keeps life interesting). Every unconventional project is a chance to learn something new.",
+    "My Master's thesis explored how multiplayer integration changes the emotional core of singleplayer survival games: rigorous, qualitative work that sharpened how I reason about complex systems and trade-offs.",
+    "I value collaboration and believe good systems, like good games, are built by teams who share ideas and back each other up. When I'm not in a terminal, you'll likely find me outdoors, climbing rocks."
+  ];
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className="max-w-[70%] mx-auto px-4 py-24 sm:px-6 lg:px-8"
+      className="section wrap pt-24"
     >
-      <div className="grid grid-cols-1 md:grid-cols-5 gap-8 mb-16">
-        <div className="md:col-span-3">
-          <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-6 font-['Helvetica_Neue'] tracking-wide">Hello!</h1>
-          <div className="space-y-4 mb-12">
-            {aboutContent.bio.split('\n\n').map((paragraph, index) => (
-              <p key={index} className="text-gray-700 dark:text-gray-300 leading-relaxed font-['Arial'] tracking-wide">
-                {paragraph}
-              </p>
+      <div className="kicker">About</div>
+      <h1 className="sec-title" style={{ fontSize: 48, marginBottom: 36 }}>Hello.</h1>
+      
+      <div className="about-grid">
+        <div>
+          <div className="about-bio">
+            {bioParagraphs.map((para, i) => (
+              <p key={i}>{para}</p>
             ))}
           </div>
-
-          <div>
-            <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4 font-['Helvetica_Neue'] tracking-wide">Contact</h2>
-            <p className="text-gray-700 dark:text-gray-300 font-['Arial'] tracking-wide">
-              Please reach out to me at {aboutContent.contact.email}
-            </p>
+          
+          <h3 style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 22, color: "var(--fg-1)", margin: "32px 0 16px" }}>
+            Skills
+          </h3>
+          <div className="skills">
+            {aboutContent.skills.map((skill) => (
+              <span key={skill} className="tag">
+                {skill}
+              </span>
+            ))}
           </div>
-        </div>
-
-        <div className="md:col-span-2">
-          <div className="grid grid-cols-2 gap-4 mb-8">
-            <div className="flex justify-center">
-              <div className="w-4/5 aspect-square rounded-full overflow-hidden shadow-lg">
-                <img
-                  src={aboutContent.images[0].url}
-                  alt={aboutContent.images[0].alt}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
-
-            <div className="flex justify-center">
-              <div className="w-4/5 aspect-square rounded-full overflow-hidden shadow-lg">
-                <img
-                  src={aboutContent.images[1].url}
-                  alt={aboutContent.images[1].alt}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
-          </div>
-
-          <div className="flex justify-center">
-            <div className="w-4/5 aspect-square rounded-full overflow-hidden shadow-lg">
-              <img
-                src={aboutContent.images[2].url}
-                alt={aboutContent.images[2].alt}
-                className="w-full h-full object-cover"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div>
-        <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4 font-['Helvetica_Neue'] tracking-wide">Skills</h2>
-        <div className="flex flex-wrap gap-2">
-          {aboutContent.skills.map((skill) => (
-            <span
-              key={skill}
-              className="bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-3 py-1 rounded-full text-sm font-['Arial'] tracking-wide"
-            >
-              {skill}
-            </span>
-          ))}
-        </div>
-      </div>
-
-      <div className="mt-12">
-        <div className="flex flex-wrap gap-4">
-          <a
-            href={`mailto:${aboutContent.contact.email}`}
-            className="flex items-center gap-2 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors font-['Arial'] tracking-wide"
-          >
-            <Mail size={20} />
-            <span>{aboutContent.contact.email}</span>
-          </a>
-          {aboutContent.contact.linkedin && (
+          
+          <h3 style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 22, color: "var(--fg-1)", margin: "32px 0 14px" }}>
+            Contact
+          </h3>
+          <div className="footer-links" style={{ marginLeft: -12 }}>
+            <a className="footer-link" href={`mailto:${aboutContent.contact.email}`}>
+              <Mail size={17} /> {aboutContent.contact.email}
+            </a>
+            {aboutContent.contact.linkedin && (
+              <a
+                className="footer-link"
+                href={aboutContent.contact.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Linkedin size={17} /> LinkedIn
+              </a>
+            )}
+            {aboutContent.contact.ctftime && (
+              <a
+                className="footer-link"
+                href={aboutContent.contact.ctftime}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Flag size={17} /> CTFTime
+              </a>
+            )}
             <a
-              href={aboutContent.contact.linkedin}
+              className="footer-link"
+              href={aboutContent.contact.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors font-['Arial'] tracking-wide"
             >
-              <Linkedin size={20} />
-              <span>LinkedIn</span>
+              <Github size={17} /> GitHub
             </a>
-          )}
-          {aboutContent.contact.ctftime && (
-            <a
-              href={aboutContent.contact.ctftime}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors font-['Arial'] tracking-wide"
-            >
-              <Flag size={20} />
-              <span>CTFTime</span>
-            </a>
-          )}
-          <a
-            href={aboutContent.contact.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors font-['Arial'] tracking-wide"
-          >
-            <Github size={20} />
-            <span>GitHub</span>
-          </a>
+          </div>
+        </div>
+
+        <div className="about-photos">
+          <img src="/assets/feikoclimb.jpg" alt="Climbing" />
+          <img src="/assets/feikoballs.jpg" alt="" />
+          <img src="/assets/feikofancy.jpg" alt="" />
         </div>
       </div>
     </motion.div>

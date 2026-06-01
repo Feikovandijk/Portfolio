@@ -3,52 +3,41 @@ import { aboutContent } from '../data/content';
 
 export default function Footer() {
   return (
-    <footer className="bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 py-8">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
-          <div className="text-gray-600 dark:text-gray-300">
-            Feiko van Dijk - Technical & Game Designer
-          </div>
-          <div className="flex items-center gap-6">
+    <footer className="footer">
+      <div className="wrap footer-inner">
+        <div className="footer-name">{aboutContent.name} · {aboutContent.title}</div>
+        <div className="footer-links">
+          <a className="footer-link" href={`mailto:${aboutContent.contact.email}`}>
+            <Mail size={17} /> Email
+          </a>
+          {aboutContent.contact.linkedin && (
             <a
-              href={`mailto:${aboutContent.contact.email}`}
-              className="flex items-center gap-2 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors"
-            >
-              <Mail size={20} />
-              <span>Email</span>
-            </a>
-            {aboutContent.contact.linkedin && (
-              <a
-                href={aboutContent.contact.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors"
-              >
-                <Linkedin size={20} />
-                <span>LinkedIn</span>
-              </a>
-            )}
-            {aboutContent.contact.ctftime && (
-              <a
-                href={aboutContent.contact.ctftime}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors"
-              >
-                <Flag size={20} />
-                <span>CTFTime</span>
-              </a>
-            )}
-            <a
-              href={aboutContent.contact.github}
+              className="footer-link"
+              href={aboutContent.contact.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors"
             >
-              <Github size={20} />
-              <span>GitHub</span>
+              <Linkedin size={17} /> LinkedIn
             </a>
-          </div>
+          )}
+          {aboutContent.contact.ctftime && (
+            <a
+              className="footer-link"
+              href={aboutContent.contact.ctftime}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Flag size={17} /> CTFTime
+            </a>
+          )}
+          <a
+            className="footer-link"
+            href={aboutContent.contact.github}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Github size={17} /> GitHub
+          </a>
         </div>
       </div>
     </footer>

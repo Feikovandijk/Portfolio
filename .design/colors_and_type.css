@@ -1,0 +1,252 @@
+/* ============================================================================
+   FEIKO VAN DIJK - DESIGN SYSTEM
+   "Game Systems × Cloud Infrastructure"
+   Foundational color + type tokens.
+
+   Brand fusion: Kubernetes blue (cloud / k8s engineer) + desert amber
+   (gamedev, Arid survival worlds), set on deep terminal slate.
+   Dark-first; a light theme is provided for parity with the portfolio toggle.
+
+   Fonts (Google Fonts):
+     - Space Grotesk  -> display / headings (engineered, characterful)
+     - IBM Plex Sans  -> body / UI text (humanist, technical)
+     - JetBrains Mono -> system / metadata / terminal chrome (devops signal)
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+:root {
+  /* ---- Font families ---------------------------------------------------- */
+  --font-display: 'Space Grotesk', system-ui, sans-serif;
+  --font-body:    'IBM Plex Sans', system-ui, sans-serif;
+  --font-mono:    'JetBrains Mono', ui-monospace, 'SF Mono', monospace;
+
+  /* ---- Brand colors (theme-independent) --------------------------------- */
+  /* Primary - Kubernetes blue */
+  --k8s-blue:        #326CE5;   /* official-ish helm blue, the cloud anchor */
+  --k8s-blue-bright: #5B8DEF;   /* hover / glow */
+  --k8s-blue-deep:   #2453BC;   /* pressed */
+  --k8s-blue-100:    #1B2740;   /* tint surface (dark) */
+
+  /* Accent - desert amber (Arid / gamedev warmth) */
+  --sand:            #E8A24C;   /* warm amber */
+  --sand-bright:     #F3B968;
+  --terracotta:      #C9683A;   /* deep desert rust */
+  --sand-100:        #2A2114;   /* tint surface (dark) */
+
+  /* Status - borrowed from kubectl resource states */
+  --status-running:  #3FB950;   /* Ready / Running (green) */
+  --status-warning:  #D9A441;   /* Pending / Warning (amber) */
+  --status-error:    #F0533F;   /* CrashLoopBackOff / Error (red) */
+  --status-info:     #58A6FF;   /* Info (light blue) */
+
+  /* ---- Radii ------------------------------------------------------------ */
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 20px;
+  --radius-pill: 999px;
+
+  /* ---- Spacing scale (4px base) ----------------------------------------- */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+
+  /* ---- Type scale ------------------------------------------------------- */
+  --text-xs:   12px;
+  --text-sm:   14px;
+  --text-base: 16px;
+  --text-md:   18px;
+  --text-lg:   22px;
+  --text-xl:   28px;
+  --text-2xl:  36px;
+  --text-3xl:  48px;
+  --text-4xl:  64px;
+  --text-5xl:  84px;
+}
+
+/* ============================================================================
+   THEME: DARK (default - the hero theme)
+   ========================================================================== */
+:root,
+[data-theme='dark'] {
+  /* Backgrounds - deep terminal slate */
+  --bg-0: #0B0F17;   /* page canvas (near-black blue) */
+  --bg-1: #11161F;   /* surface / card */
+  --bg-2: #161C28;   /* elevated surface */
+  --bg-3: #1D2533;   /* hover surface */
+  --bg-inset: #090C12;/* terminal / code wells */
+
+  /* Foreground */
+  --fg-1: #E8ECF3;   /* primary text */
+  --fg-2: #9AA4B2;   /* secondary / muted */
+  --fg-3: #5E6A7D;   /* faint / placeholder, mono labels */
+  --fg-inverse: #0B0F17;
+
+  /* Borders & lines */
+  --border-1: rgba(255, 255, 255, 0.08);  /* hairline */
+  --border-2: rgba(255, 255, 255, 0.14);  /* stronger / hover */
+  --border-focus: var(--k8s-blue-bright);
+
+  /* Brand applied */
+  --primary: var(--k8s-blue);
+  --primary-hover: var(--k8s-blue-bright);
+  --primary-tint: var(--k8s-blue-100);
+  --accent: var(--sand);
+  --accent-tint: var(--sand-100);
+
+  /* Elevation - dark-first: glows, not heavy drop shadows */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.40);
+  --shadow-md: 0 6px 20px rgba(0, 0, 0, 0.45);
+  --shadow-lg: 0 18px 50px rgba(0, 0, 0, 0.55);
+  --glow-primary: 0 0 0 1px rgba(50, 108, 229, 0.45), 0 8px 30px rgba(50, 108, 229, 0.28);
+  --glow-accent:  0 0 0 1px rgba(232, 162, 76, 0.40), 0 8px 30px rgba(232, 162, 76, 0.22);
+
+  /* Hatch/grid motif color (k8s hex grid, faint) */
+  --grid-line: rgba(255, 255, 255, 0.035);
+}
+
+/* ============================================================================
+   THEME: LIGHT (parity with the portfolio theme toggle)
+   ========================================================================== */
+[data-theme='light'] {
+  --bg-0: #FFFFFF;
+  --bg-1: #FFFFFF;
+  --bg-2: #F9FAFB;
+  --bg-3: #F3F4F6;
+  --bg-inset: #0B0F17;   /* terminal stays dark even in light mode */
+
+  --fg-1: #111827;
+  --fg-2: #4B5563;
+  --fg-3: #9CA3AF;
+  --fg-inverse: #FFFFFF;
+
+  --border-1: rgba(0, 0, 0, 0.06);
+  --border-2: rgba(0, 0, 0, 0.12);
+  --border-focus: var(--k8s-blue);
+
+  --primary: var(--k8s-blue);
+  --primary-hover: var(--k8s-blue-deep);
+  --primary-tint: #EFF4FE;
+  --accent: var(--terracotta);
+  --accent-tint: #FEF3EB;
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.10);
+  --glow-primary: 0 0 0 1px rgba(50, 108, 229, 0.20), 0 4px 16px rgba(50, 108, 229, 0.10);
+  --glow-accent:  0 0 0 1px rgba(201, 104, 58, 0.18), 0 4px 16px rgba(201, 104, 58, 0.08);
+
+  --grid-line: rgba(13, 20, 33, 0.04);
+}
+
+/* ============================================================================
+   SEMANTIC TYPE ROLES
+   Use these classes (or copy the declarations) instead of raw sizes.
+   ========================================================================== */
+.t-display {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--text-4xl);
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+  color: var(--fg-1);
+  text-wrap: balance;
+}
+.t-h1 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--text-3xl);
+  line-height: 1.06;
+  letter-spacing: -0.018em;
+  color: var(--fg-1);
+  text-wrap: balance;
+}
+.t-h2 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--text-2xl);
+  line-height: 1.12;
+  letter-spacing: -0.015em;
+  color: var(--fg-1);
+}
+.t-h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--text-xl);
+  line-height: 1.18;
+  letter-spacing: -0.01em;
+  color: var(--fg-1);
+}
+.t-h4 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: var(--text-lg);
+  line-height: 1.25;
+  color: var(--fg-1);
+}
+.t-body {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: var(--text-base);
+  line-height: 1.6;
+  color: var(--fg-2);
+  text-wrap: pretty;
+}
+.t-body-lg {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: var(--text-md);
+  line-height: 1.6;
+  color: var(--fg-2);
+  text-wrap: pretty;
+}
+.t-small {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: var(--text-sm);
+  line-height: 1.5;
+  color: var(--fg-2);
+}
+/* Mono "system label" - the devops/terminal signal.
+   Used for metadata, kicker labels, tags, status, kubectl-style chrome. */
+.t-mono {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: var(--text-sm);
+  letter-spacing: 0.01em;
+  color: var(--fg-2);
+}
+.t-label {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: var(--text-xs);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--fg-3);
+}
+.t-code {
+  font-family: var(--font-mono);
+  font-weight: 400;
+  font-size: var(--text-sm);
+  line-height: 1.55;
+  color: var(--fg-1);
+}
+
+/* ============================================================================
+   BASE RESET (opt-in via .ds-root on a wrapper, or apply to body)
+   ========================================================================== */
+.ds-root {
+  background: var(--bg-0);
+  color: var(--fg-1);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}

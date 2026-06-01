@@ -1,444 +1,187 @@
-import React, { useLayoutEffect, useState, useEffect } from 'react';
+import React, { useLayoutEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowLeft, Youtube, Award, ChevronDown } from 'lucide-react';
+import { ArrowLeft, ExternalLink, Award } from 'lucide-react';
 import { projects, achievements } from '../data/content';
 
 export default function ProjectDetails(): React.ReactElement {
   const { projectId } = useParams<{ projectId: string }>();
   const project = projects.find((p) => p.id === projectId);
-  const [showScrollArrow, setShowScrollArrow] = useState(true);
 
   useLayoutEffect(() => {
     window.scrollTo(0, 0);
-  }, []);
-
-  useEffect(() => {
-    // Track project detail view
-    if (window.umami && project) {
-      window.umami.track('View Project', { project: project.title, projectId: projectId });
-    }
-
-    const handleScroll = () => {
-      const isAtBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 100;
-      setShowScrollArrow(!isAtBottom);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Check initial state
-
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [projectId, project]); // Re-run effect if projectId or project changes
+  }, [projectId]);
 
   if (!project) {
     return (
       <div className="max-w-4xl mx-auto px-4 py-24 sm:px-6 lg:px-8 text-center">
-        <h1 className="text-2xl font-bold text-gray-900 dark:text-white font-['Helvetica_Neue'] tracking-wide">Project not found</h1>
-        <Link to="/portfolio" className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 mt-4 inline-block font-['Arial'] tracking-wide">
+        <h1 className="t-h1" style={{ marginBottom: 16 }}>Project not found</h1>
+        <Link to="/portfolio" className="btn btn-primary">
           Return to Portfolio
         </Link>
       </div>
     );
   }
 
+  const s = project.projectStats;
+  const isArid = project.id === 'arid';
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className="min-h-screen bg-white dark:bg-gray-800"
+      className="section wrap pt-24"
     >
-      {/* Scroll indicator arrow */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: showScrollArrow ? 1 : 0 }}
-        transition={{ duration: 0.3 }}
-        className="fixed bottom-8 right-8 z-50"
-      >
-        <ChevronDown
-          size={48}
-          className="text-gray-400 dark:text-gray-500 cursor-pointer hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
-          onClick={() => window.scrollTo({ top: document.documentElement.scrollHeight, behavior: 'smooth' })}
-        />
-      </motion.div>
+      <Link to="/portfolio" className="detail-back">
+        <ArrowLeft size={15} /> back to work
+      </Link>
 
-      <div className="max-w-7xl mx-auto px-4 py-12 sm:px-6 lg:px-8 pt-24">
-        <Link
-          to="/portfolio"
-          className="inline-flex items-center text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 mb-8"
-        >
-          <ArrowLeft className="mr-2" size={20} />
-          <span className="font-['Arial'] tracking-wide">Back to Portfolio</span>
-        </Link>
+      <div className="detail-hero">
+        <img src={project.imageUrl} alt={project.title} />
+        <div className="detail-hero-body">
+          <div className="kicker" style={{ color: 'rgba(255,255,255,.7)' }}>{project.mainRole}</div>
+          <h1 className="detail-title">{project.title}</h1>
+        </div>
+      </div>
 
-        <img
-          src={project.imageUrl}
-          alt={project.title}
-          className="w-full aspect-video object-cover rounded-xl mb-8"
-        />
-
-        <div className="max-w-4xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-12 mb-12">
-            {/* Project Details Card */}
-            <div className="bg-gray-50 dark:bg-gray-700/50 rounded-xl p-6">
-              <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-6 font-['Helvetica_Neue'] tracking-wide">Project Details</h2>
-              <div className="space-y-6">
-                {project.projectStats?.teamSize && (
-                  <div className="flex items-center gap-3">
-                    <span className="w-2 h-2 rounded-full bg-blue-600 dark:bg-blue-400"></span>
-                    <p className="text-lg text-gray-700 dark:text-gray-300 font-['Arial'] tracking-wide">{project.projectStats.teamSize}</p>
-                  </div>
-                )}
-                {project.projectStats?.duration && (
-                  <div className="flex items-center gap-3">
-                    <span className="w-2 h-2 rounded-full bg-blue-600 dark:bg-blue-400"></span>
-                    <p className="text-lg text-gray-700 dark:text-gray-300 font-['Arial'] tracking-wide">{project.projectStats.duration}</p>
-                  </div>
-                )}
-                {project.projectStats?.platforms && project.projectStats.platforms.length > 0 && (
-                  <div className="flex items-center gap-3">
-                    <span className="w-2 h-2 rounded-full bg-blue-600 dark:bg-blue-400"></span>
-                    <p className="text-lg text-gray-700 dark:text-gray-300 font-['Arial'] tracking-wide">{project.projectStats.platforms.join(' & ')}</p>
-                  </div>
-                )}
-                {project.projectStats?.technologies && project.projectStats.technologies.length > 0 && (
-                  <div className="space-y-3">
-                    <div className="flex items-center gap-3">
-                      <span className="w-2 h-2 rounded-full bg-blue-600 dark:bg-blue-400"></span>
-                      <p className="text-lg text-gray-700 dark:text-gray-300 font-['Arial'] tracking-wide">Technologies</p>
-                    </div>
-                    <div className="flex flex-wrap gap-2 pl-5">
-                      {project.projectStats.technologies.map((tech, index) => (
-                        <span key={index} className="px-3 py-1 bg-white dark:bg-gray-600 rounded-full text-sm text-gray-700 dark:text-gray-300 shadow-sm">
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                )}
-                {project.id === "project-3" && (
-                  <div className="flex gap-4 mt-4">
-                    {project.links?.researchgate && (
-                      <a
-                        href={project.links.researchgate}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center justify-center gap-2 px-4 py-2 bg-blue-800 text-white rounded-lg hover:bg-blue-900 transition-colors text-sm font-medium"
-                      >
-                        <span className="font-['Arial'] tracking-wide">View on ResearchGate</span>
-                      </a>
-                    )}
-                    {project.links?.blog && (
-                      <a
-                        href={project.links.blog}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center justify-center gap-2 px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors text-sm font-medium"
-                      >
-                        <span className="font-['Arial'] tracking-wide">Read blog post</span>
-                      </a>
-                    )}
-                  </div>
-                )}
-              </div>
-            </div>
-
-            {/* Key Contributions Card */}
-            <div className="bg-gray-50 dark:bg-gray-700/50 rounded-xl p-6">
-              <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-6 font-['Helvetica_Neue'] tracking-wide">Key Contributions</h2>
-              <div className="space-y-6">
-                <div className="space-y-3">
-                  <div className="flex items-center gap-3">
-                    <span className="w-2 h-2 rounded-full bg-blue-600 dark:bg-blue-400"></span>
-                    <p className="text-lg font-medium text-gray-900 dark:text-white font-['Arial'] tracking-wide">Main Roles: {project.mainRole}</p>
-                  </div>
-                  {project.supportingRole && (
-                    <div className="flex items-center gap-3">
-                      <span className="w-2 h-2 rounded-full bg-blue-600 dark:bg-blue-400"></span>
-                      <p className="text-lg text-gray-700 dark:text-gray-300 font-['Arial'] tracking-wide">Secondary Roles: {project.supportingRole}</p>
-                    </div>
-                  )}
-                </div>
-                {project.keyContributions && project.keyContributions.length > 0 && (
-                  <div className="space-y-3">
-                    <div className="flex items-center gap-3">
-                      <span className="w-2 h-2 rounded-full bg-blue-600 dark:bg-blue-400"></span>
-                      <p className="text-lg font-medium text-gray-900 dark:text-white font-['Arial'] tracking-wide">Key Achievements</p>
-                    </div>
-                    <ul className="space-y-3 pl-5">
-                      {project.keyContributions.map((contribution, index) => (
-                        <li key={index} className="flex items-start gap-3 text-base text-gray-700 dark:text-gray-300 font-['Arial'] tracking-wide">
-                          <span className="flex-shrink-0 w-1.5 h-1.5 mt-2 rounded-full bg-gray-400 dark:bg-gray-500"></span>
-                          <span>{contribution}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
-              </div>
-            </div>
+      <div className="detail-grid">
+        <div>
+          <div className="card-tags" style={{ marginBottom: 24 }}>
+            {project.tags?.map(t => (
+              <span key={t} className="tag">{t}</span>
+            ))}
           </div>
 
-          <div className="space-y-12">
-            <div>
-              <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4 font-['Helvetica_Neue'] tracking-wide">Overview</h2>
-              <p className="text-base leading-relaxed text-gray-700 dark:text-gray-300 font-['Arial'] tracking-wide whitespace-pre-line">{project.mainNarrative}</p>
-            </div>
+          <div className="detail-narr">{project.mainNarrative}</div>
 
-            {project.id === "project-2" && (
-              <div>
-                <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4 font-['Helvetica_Neue'] tracking-wide">Awards & Recognition</h2>
-                <div className="space-y-4">
-                  {achievements
-                    .filter(achievement => achievement.title.includes("ARID"))
-                    .map((achievement) => (
-                      <div key={achievement.id} className="flex items-start gap-3 p-4 bg-gray-50 dark:bg-gray-700/50 rounded-lg">
-                        <Award className="w-6 h-6 text-yellow-500 mt-1 flex-shrink-0" />
-                        <div>
-                          <h3 className="text-lg font-medium text-gray-900 dark:text-white font-['Arial'] tracking-wide">{achievement.title}</h3>
-                          <p className="text-gray-700 dark:text-gray-300 font-['Arial'] tracking-wide">{achievement.description}</p>
-                          <span className="text-sm text-gray-500 dark:text-gray-400 font-['Arial'] tracking-wide">{achievement.year}</span>
-                        </div>
+          {project.quote && project.quote.text ? (
+            <blockquote className="quote">
+              <p>“{project.quote.text}”</p>
+              <cite>{project.quote.source}</cite>
+            </blockquote>
+          ) : null}
+
+          {project.keyContributions && project.keyContributions.length > 0 && (
+            <div style={{ marginTop: 32 }}>
+              <h3 style={{ fontFamily: 'var(--font-display)', fontWeight: 600, fontSize: 22, color: 'var(--fg-1)', margin: '0 0 16px' }}>
+                Key contributions
+              </h3>
+              <ul className="contrib">
+                {project.keyContributions.map((c, i) => (
+                  <li key={i}>{c}</li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          {/* Awards and Recognition on Detail Page */}
+          {isArid && (
+            <div style={{ marginTop: 48 }}>
+              <h3 style={{ fontFamily: 'var(--font-display)', fontWeight: 600, fontSize: 22, color: 'var(--fg-1)', margin: '0 0 20px' }}>
+                Awards & Recognition
+              </h3>
+              <div className="grid-2" style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '16px' }}>
+                {achievements
+                  .filter(achievement => achievement.title.toLowerCase().includes('arid'))
+                  .map((achievement) => (
+                    <div className="ach" key={achievement.id}>
+                      <div className="ach-ico">
+                        <Award size={18} />
                       </div>
-                    ))}
-                </div>
+                      <div>
+                        <div className="ach-title">{achievement.title}</div>
+                        <div className="ach-desc">{achievement.description}</div>
+                        <span className="ach-year">{achievement.year}</span>
+                      </div>
+                    </div>
+                  ))}
               </div>
+            </div>
+          )}
+
+          {/* Links Section */}
+          <div className="flex flex-wrap gap-4" style={{ marginTop: 40, paddingTop: 24, borderTop: '1px solid var(--border-1)' }}>
+            {project.links.steam && (
+              <a
+                href={project.links.steam}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-primary"
+              >
+                <ExternalLink size={16} /> Visit Steam Page
+              </a>
+            )}
+            {project.links.researchgate && (
+              <a
+                href={project.links.researchgate}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-primary"
+              >
+                <ExternalLink size={16} /> View on ResearchGate
+              </a>
+            )}
+            {project.links.blog && (
+              <a
+                href={project.links.blog}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-secondary"
+              >
+                Read Blog Post
+              </a>
             )}
           </div>
-
-          {(project.links?.steam || project.links?.youtube || (project.id !== "project-3" && (project.links?.blog || project.links?.researchgate))) && (
-            <div className="flex gap-6 mt-12 pt-6 border-t border-gray-200 dark:border-gray-700">
-              {project.links?.steam && project.id !== "project-2" && (
-                <a
-                  href={project.links.steam}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium"
-                >
-                  <span className="font-['Arial'] tracking-wide">Steam Page</span>
-                </a>
-              )}
-              {project.links?.youtube && (
-                <a
-                  href={project.links.youtube}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors font-medium"
-                >
-                  <Youtube size={20} />
-                  <span className="font-['Arial'] tracking-wide">Watch on YouTube</span>
-                </a>
-              )}
-              {project.id !== "project-3" && project.links?.blog && (
-                <a
-                  href={project.links.blog}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors font-medium"
-                >
-                  <span className="font-['Arial'] tracking-wide">Read blog post</span>
-                </a>
-              )}
-              {project.id !== "project-3" && project.links?.researchgate && (
-                <a
-                  href={project.links.researchgate}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-blue-800 text-white rounded-lg hover:bg-blue-900 transition-colors font-medium"
-                >
-                  <span className="font-['Arial'] tracking-wide">View on ResearchGate</span>
-                </a>
-              )}
-            </div>
-          )}
-
-          {project.developmentPhases && project.id !== "project-2" && (
-            <div className="mt-12 space-y-16">
-              <h2 className="text-3xl font-semibold text-gray-900 dark:text-white mb-8 font-['Helvetica_Neue'] tracking-wide">Development Process</h2>
-
-              {/* TEMPORARILY HIDDEN: "Read more" prompt for development process
-              <div className="mt-8 text-center">
-                <p className="text-gray-500 dark:text-gray-400 font-['Arial'] tracking-wide mb-2">Keep reading to learn about the development process</p>
-                <ChevronDown className="w-8 h-8 text-gray-400 dark:text-gray-500 mx-auto animate-pulse" />
-              </div>
-              */}
-
-              {/* Concepting Phase */}
-              <div className="space-y-6">
-                <h3 className="text-2xl font-semibold text-gray-900 dark:text-white font-['Helvetica_Neue'] tracking-wide">Concepting</h3>
-                {project.developmentPhases.concepting.videoUrl && (
-                  <div className="relative aspect-video rounded-lg overflow-hidden">
-                    {project.developmentPhases.concepting.videoUrl.includes('youtube.com/embed') ? (
-                      <iframe
-                        src={project.developmentPhases.concepting.videoUrl}
-                        className="absolute inset-0 w-full h-full"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen
-                      />
-                    ) : (
-                      <video
-                        src={project.developmentPhases.concepting.videoUrl}
-                        className="absolute inset-0 w-full h-full object-cover"
-                        controls
-                        autoPlay={false}
-                        preload="none"
-                        muted
-                      />
-                    )}
-                  </div>
-                )}
-                <p className="text-base leading-relaxed text-gray-700 dark:text-gray-300 font-['Arial'] tracking-wide">
-                  {project.developmentPhases.concepting.description}
-                </p>
-                {project.developmentPhases.concepting.screenshots.length > 0 && (
-                  <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-                    {project.developmentPhases.concepting.screenshots.map((screenshot: string, index: number) => (
-                      <img
-                        key={index}
-                        src={screenshot}
-                        alt={`Concepting phase screenshot ${index + 1}`}
-                        className="w-full aspect-video object-cover rounded-lg"
-                      />
-                    ))}
-                  </div>
-                )}
-              </div>
-
-              {/* Pre-Production Phase */}
-              <div className="space-y-6">
-                <h3 className="text-2xl font-semibold text-gray-900 dark:text-white font-['Helvetica_Neue'] tracking-wide">Pre-Production</h3>
-                {project.developmentPhases.preProduction.videoUrl && (
-                  <div className="relative aspect-video rounded-lg overflow-hidden">
-                    {project.developmentPhases.preProduction.videoUrl.includes('youtube.com/embed') ? (
-                      <iframe
-                        src={project.developmentPhases.preProduction.videoUrl}
-                        className="absolute inset-0 w-full h-full"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen
-                      />
-                    ) : (
-                      <video
-                        src={project.developmentPhases.preProduction.videoUrl}
-                        className="absolute inset-0 w-full h-full object-cover"
-                        controls
-                        autoPlay={false}
-                        preload="none"
-                        muted
-                      />
-                    )}
-                  </div>
-                )}
-                <p className="text-base leading-relaxed text-gray-700 dark:text-gray-300 font-['Arial'] tracking-wide">
-                  {project.developmentPhases.preProduction.description}
-                </p>
-                {project.developmentPhases.preProduction.screenshots.length > 0 && (
-                  <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-                    {project.developmentPhases.preProduction.screenshots.map((screenshot: string, index: number) => (
-                      <img
-                        key={index}
-                        src={screenshot}
-                        alt={`Pre-production phase screenshot ${index + 1}`}
-                        className="w-full aspect-video object-cover rounded-lg"
-                      />
-                    ))}
-                  </div>
-                )}
-              </div>
-
-              {/* Production Phase */}
-              <div className="space-y-6">
-                <h3 className="text-2xl font-semibold text-gray-900 dark:text-white font-['Helvetica_Neue'] tracking-wide">Production</h3>
-                {project.developmentPhases.production.videoUrl && (
-                  <div className="relative aspect-video rounded-lg overflow-hidden">
-                    {project.developmentPhases.production.videoUrl.includes('youtube.com/embed') ? (
-                      <iframe
-                        src={project.developmentPhases.production.videoUrl}
-                        className="absolute inset-0 w-full h-full"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen
-                      />
-                    ) : (
-                      <video
-                        src={project.developmentPhases.production.videoUrl}
-                        className="absolute inset-0 w-full h-full object-cover"
-                        controls
-                        autoPlay={false}
-                        preload="none"
-                        muted
-                      />
-                    )}
-                  </div>
-                )}
-                <p className="text-base leading-relaxed text-gray-700 dark:text-gray-300 font-['Arial'] tracking-wide">
-                  {project.developmentPhases.production.description}
-                </p>
-                {project.developmentPhases.production.screenshots.length > 0 && (
-                  <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-                    {project.developmentPhases.production.screenshots.map((screenshot: string, index: number) => (
-                      <img
-                        key={index}
-                        src={screenshot}
-                        alt={`Production phase screenshot ${index + 1}`}
-                        className="w-full aspect-video object-cover rounded-lg"
-                      />
-                    ))}
-                  </div>
-                )}
-              </div>
-
-              {/* Release Phase */}
-              <div className="space-y-6">
-                <h3 className="text-2xl font-semibold text-gray-900 dark:text-white font-['Helvetica_Neue'] tracking-wide">Release</h3>
-                {project.developmentPhases.release.videoUrl && (
-                  <div className="relative aspect-video rounded-lg overflow-hidden">
-                    {project.developmentPhases.release.videoUrl.includes('youtube.com/embed') ? (
-                      <iframe
-                        src={project.developmentPhases.release.videoUrl}
-                        className="absolute inset-0 w-full h-full"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen
-                      />
-                    ) : (
-                      <video
-                        src={project.developmentPhases.release.videoUrl}
-                        className="absolute inset-0 w-full h-full object-cover"
-                        controls
-                        autoPlay={false}
-                        preload="none"
-                        muted
-                      />
-                    )}
-                  </div>
-                )}
-                <p className="text-base leading-relaxed text-gray-700 dark:text-gray-300 font-['Arial'] tracking-wide">
-                  {project.developmentPhases.release.description}
-                </p>
-                {project.developmentPhases.release.screenshots.length > 0 && (
-                  <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-                    {project.developmentPhases.release.screenshots.map((screenshot: string, index: number) => (
-                      <img
-                        key={index}
-                        src={screenshot}
-                        alt={`Release phase screenshot ${index + 1}`}
-                        className="w-full aspect-video object-cover rounded-lg"
-                      />
-                    ))}
-                  </div>
-                )}
-              </div>
-            </div>
-          )}
-
-          <div className="mt-12 text-center">
-            <Link
-              to="/portfolio"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition-colors font-medium"
-            >
-              <ArrowLeft size={20} />
-              <span className="font-['Arial'] tracking-wide">Back to Portfolio</span>
-            </Link>
-          </div>
         </div>
+
+        {/* Sidebar Project Spec */}
+        <aside>
+          {s && (
+            <div className="statbox">
+              <h4>Project spec</h4>
+              <div className="statrow">
+                <span className="k">role</span>
+                <span className="v">{project.mainRole}</span>
+              </div>
+              <div className="statrow">
+                <span className="k">years</span>
+                <span className="v">{project.timeline}</span>
+              </div>
+              <div className="statrow">
+                <span className="k">team</span>
+                <span className="v">{s.teamSize}</span>
+              </div>
+              <div className="statrow">
+                <span className="k">duration</span>
+                <span className="v">{s.duration}</span>
+              </div>
+              {project.status && (
+                <div className="statrow">
+                  <span className="k">state</span>
+                  <span className="v">{project.status.label}</span>
+                </div>
+              )}
+              {s.platforms && s.platforms.length > 0 && (
+                <div className="statrow">
+                  <span className="k">platforms</span>
+                  <span className="v">{s.platforms.join(' · ')}</span>
+                </div>
+              )}
+            </div>
+          )}
+
+          {s?.technologies && s.technologies.length > 0 && (
+            <div className="statbox" style={{ marginTop: 18 }}>
+              <h4>Stack</h4>
+              <div className="card-tags">
+                {s.technologies.map(tech => (
+                  <span key={tech} className="tag">{tech}</span>
+                ))}
+              </div>
+            </div>
+          )}
+        </aside>
       </div>
     </motion.div>
   );

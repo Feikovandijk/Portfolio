@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<link rel="stylesheet" href="_card.css">
+<style>
+  .pcard { background: var(--bg-1); border:1px solid var(--border-1); border-radius: var(--radius-lg);
+    overflow:hidden; box-shadow: var(--shadow-md); width: 340px; }
+  .pcard .media { position:relative; height:155px; }
+  .pcard .media img { width:100%; height:100%; object-fit:cover; display:block; }
+  .pcard .body { padding:18px 20px 20px; }
+  .pcard .kick { font-family:var(--font-mono); font-size:11px; letter-spacing:0.06em; color:var(--fg-3); }
+  .pcard h3 { font-family:var(--font-display); font-weight:600; font-size:21px; color:var(--fg-1); margin-top:4px; letter-spacing:-0.01em; }
+  .pcard p { font-family:var(--font-body); font-size:13.5px; color:var(--fg-2); line-height:1.55; margin-top:9px; }
+  .pcard .rule { height:1px; background:var(--border-1); margin:16px 0 0; }
+  .pcard .foot { display:flex; align-items:center; justify-content:space-between; margin-top:14px; }
+  .pcard .yr { font-family:var(--font-mono); font-size:11px; color:var(--fg-3); }
+  .pcard .more { font-family:var(--font-body); font-size:13px; font-weight:600; color:var(--k8s-blue-bright); }
+</style>
+</head><body>
+<div class="label" style="margin-bottom:14px;">Project card</div>
+<div class="pcard">
+  <div class="media"><img src="../assets/Arid2.png" alt="Arid"></div>
+  <div class="body">
+    <div class="kick">Technical Design · DevOps</div>
+    <h3>Arid</h3>
+    <p>A gritty exploration-survival experience set in the Atacama Desert. 200k+ downloads in its first month.</p>
+    <div class="rule"></div>
+    <div class="foot"><span class="yr">2020 – 2022</span><span class="more">View project →</span></div>
+  </div>
+</div>
+</body></html>

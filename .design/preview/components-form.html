@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<link rel="stylesheet" href="_card.css">
+<style>
+  .field { font-family: var(--font-body); font-size:14px; color: var(--fg-1); background: var(--bg-2);
+    border:1px solid var(--border-1); border-radius: var(--radius-md); padding: 11px 14px; width:100%; outline:none; }
+  .field::placeholder { color: var(--fg-3); }
+  .field.focus { border-color: var(--border-focus); box-shadow: 0 0 0 3px rgba(91,141,239,.18); }
+  .toggle { display:inline-flex; background: var(--bg-2); border:1px solid var(--border-1); border-radius: var(--radius-pill); padding:4px; gap:2px; }
+  .toggle button { font-family:var(--font-mono); font-size:12px; border:none; cursor:pointer; padding:6px 14px; border-radius:var(--radius-pill); background:transparent; color:var(--fg-3); display:inline-flex; align-items:center; gap:6px; }
+  .toggle button.on { background: var(--bg-0); color: var(--fg-1); }
+  .toggle svg { width:14px; height:14px; }
+</style>
+</head><body>
+<div class="label" style="margin-bottom:12px;">Form input</div>
+<input class="field" placeholder="your@email.com">
+<input class="field focus" style="margin-top:10px;" value="mail@feiko.org">
+<div class="label" style="margin:20px 0 12px;">Theme toggle</div>
+<div class="toggle">
+  <button class="on"><i data-lucide="moon"></i> Dark</button>
+  <button><i data-lucide="sun"></i> Light</button>
+</div>
+<script src="https://unpkg.com/lucide@0.344.0/dist/umd/lucide.min.js"></script>
+<script>lucide.createIcons();</script>
+</body></html>
