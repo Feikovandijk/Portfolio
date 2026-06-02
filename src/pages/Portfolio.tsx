@@ -20,19 +20,11 @@ export default function Portfolio() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="relative bg-zinc-50 dark:bg-zinc-900/60 py-24 sm:py-32 border-b border-gray-200 dark:border-gray-800 bg-grid"
+          className="relative bg-white dark:bg-gray-800 py-24 sm:py-32"
         >
           <div className="mx-auto max-w-7xl px-8 lg:px-12 relative z-10">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
               <div className="lg:col-span-7">
-                {/* Category Tag with accent line */}
-                <div className="flex items-center gap-2 mb-6">
-                  <span className="w-5 h-[2px] bg-red-500 rounded-full" />
-                  <span className="text-xs font-semibold tracking-widest text-gray-500 dark:text-gray-400 uppercase font-mono">
-                    Cloud Engineer &middot; Game Designer
-                  </span>
-                </div>
-
                 <h1 className="text-5xl font-extrabold tracking-tight text-gray-900 dark:text-white sm:text-6xl mb-4 font-sans">
                   Hi, I'm <span className="text-blue-600 dark:text-blue-400">Feiko.</span>
                 </h1>
