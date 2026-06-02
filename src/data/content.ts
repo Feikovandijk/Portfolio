@@ -2,8 +2,8 @@ import type { AboutContent, Project, Achievement, SmallProject, Experience } fro
 
 export const aboutContent: AboutContent = {
   name: "Hi! I'm Feiko.",
-  title: "Kubernetes Engineer & Game Designer",
-  bio: `I'm a Kubernetes Engineer and Technical Designer with a background that spans cloud-native infrastructure and game development. On the platform side, I design and operate production Kubernetes environments — working with tools like CloudNativePG (CNPG), Terraform, Flux, ArgoCD, Renovate, and Barman to build reliable, GitOps-driven, self-healing infrastructure. On the game side, I've shipped commercial titles, led cross-functional teams, and dug deep into player behavior research.
+  title: "Cloud Engineer & Game Designer",
+  bio: `I'm a Cloud Engineer and Game Designer with a background that spans cloud-native infrastructure and game development. On the platform side, I design and operate production Kubernetes environments — working with tools like CloudNativePG (CNPG), Terraform, Flux, ArgoCD, Renovate, and Barman to build reliable, GitOps-driven, self-healing infrastructure. On the game side, I've shipped commercial titles, led cross-functional teams, and dug deep into player behavior research.
 
 I find the two worlds complement each other more than people expect. The systematic thinking behind a Kubernetes HA cluster and the design of a game's weather system are the same craft: defining states, transitions, failure modes, and feedback loops. I bring that mindset to both.
 

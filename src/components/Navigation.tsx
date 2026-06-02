@@ -20,7 +20,7 @@ export default function Navigation() {
         <div className="flex justify-between h-16">
           <div className="flex items-center">
             <Link to="/portfolio" className="text-xl font-semibold text-gray-900 dark:text-white" data-nav-item="Logo">
-              Feiko van Dijk - Technical & Game Designer
+              Feiko van Dijk - Cloud Engineer & Game Designer
             </Link>
           </div>
 
