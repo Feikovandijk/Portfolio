@@ -2,8 +2,8 @@ import type { AboutContent, Project, Achievement, SmallProject, Experience } fro
 
 export const aboutContent: AboutContent = {
   name: "Hi! I'm Feiko.",
-  title: "Kubernetes Engineer & Game Designer",
-  bio: `I'm a Kubernetes Engineer and Technical Designer with a background that spans cloud-native infrastructure and game development. On the platform side, I design and operate production Kubernetes environments — working with tools like CloudNativePG (CNPG), Terraform, Flux, ArgoCD, Renovate, and Barman to build reliable, GitOps-driven, self-healing infrastructure. On the game side, I've shipped commercial titles, led cross-functional teams, and dug deep into player behavior research.
+  title: "Cloud Engineer & Game Designer",
+  bio: `I'm a Cloud Engineer and Game Designer with a background that spans cloud-native infrastructure and game development. On the platform side, I design and operate production Kubernetes environments — working with tools like CloudNativePG (CNPG), Terraform, Flux, ArgoCD, Renovate, and Barman to build reliable, GitOps-driven, self-healing infrastructure. On the game side, I've shipped commercial titles, led cross-functional teams, and dug deep into player behavior research.
 
 I find the two worlds complement each other more than people expect. The systematic thinking behind a Kubernetes HA cluster and the design of a game's weather system are the same craft: defining states, transitions, failure modes, and feedback loops. I bring that mindset to both.
 
@@ -270,18 +270,26 @@ Eventually we dropped the project because we did not see the VR concept as viabl
 
 export const experiences: Experience[] = [
   {
+    id: "exp-3",
+    title: "Kubernetes Engineer",
+    company: "Avisi",
+    period: "Mar 2026 - Present",
+    description: "Designing, building, and operating production-grade Kubernetes platforms. Designing cloud-native solutions, managing hybrid-cloud environments, and implementing GitOps workflows for automated application deployment.",
+    tags: ["Kubernetes", "GitOps", "Platform Engineering", "Cloud Native"]
+  },
+  {
     id: "exp-1",
-    title: "Freelance Build & DevOps Engineer",
+    title: "Freelance Technical Designer & Build Engineer",
     company: "Freelance",
-    period: "TODO - TODO",
-    description: "TODO",
-    tags: ["DevOps", "CI/CD", "Build Systems"]
+    period: "Jun 2025 - Present",
+    description: "Providing engineering consulting services specializing in build automation, version control management (Perforce/Git), CI/CD pipelines for game engines, and technical design integration. Automating game compilation, artifact packaging, and multi-platform deployment workflows.",
+    tags: ["Build Automation", "CI/CD", "Game DevOps", "Technical Design"]
   },
   {
     id: "exp-2",
     title: "Technical Designer & Studio Lead",
     company: "Viscacha Studios",
-    period: "Sept 2021 - Dec 2024",
+    period: "Sept 2021 - June 2025",
     description: "Co-founded Viscacha Studios and led development on Arid and its sequel. Owned core gameplay systems design, managed cross-functional teams, and handled business development including funding applications and conference representation at GDC, Gamescom, and INDIGO.",
     tags: ["Game Design", "Technical Design", "Studio Lead", "Unreal Engine", "Jenkins", "Perforce"]
   }

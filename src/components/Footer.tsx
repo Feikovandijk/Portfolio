@@ -7,7 +7,7 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
           <div className="text-gray-600 dark:text-gray-300">
-            Feiko van Dijk - Technical & Game Designer
+            Feiko van Dijk - Cloud Engineer & Game Designer
           </div>
           <div className="flex items-center gap-6">
             <a
