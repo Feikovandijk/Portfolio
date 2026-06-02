@@ -65,15 +65,24 @@ export default function About() {
       </div>
 
       <div>
-        <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4 font-['Helvetica_Neue'] tracking-wide">Skills</h2>
-        <div className="flex flex-wrap gap-2">
-          {aboutContent.skills.map((skill) => (
-            <span
-              key={skill}
-              className="bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-3 py-1 rounded-full text-sm font-['Arial'] tracking-wide"
-            >
-              {skill}
-            </span>
+        <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-6 font-['Helvetica_Neue'] tracking-wide">Skills</h2>
+        <div className="space-y-5">
+          {aboutContent.skills.map((category) => (
+            <div key={category.category}>
+              <h3 className="text-xs font-semibold text-gray-400 dark:text-gray-500 uppercase tracking-widest mb-2 font-['Arial']">
+                {category.category}
+              </h3>
+              <div className="flex flex-wrap gap-2">
+                {category.items.map((skill) => (
+                  <span
+                    key={skill}
+                    className="bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-3 py-1 rounded-full text-sm font-['Arial'] tracking-wide"
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
           ))}
         </div>
       </div>

@@ -1,15 +1,17 @@
-import type { AboutContent, Project, Achievement, SmallProject } from '../types/index';
+import type { AboutContent, Project, Achievement, SmallProject, Experience } from '../types/index';
 
 export const aboutContent: AboutContent = {
   name: "Hi! I'm Feiko.",
-  title: "Technical Designer & DevOps Engineer",
-  bio: `I'm a technical Designer and DevOps Engineer who loves turning challenges into engaging experiences. I've been lucky enough to have worked on a variety of projects, from coding to crafting gameplay, and each one has taught me something new. As a generalist, I'm quick to learn, adapt, and use my diverse experience to help shape any project into something fantastic.
+  title: "Kubernetes Engineer & Game Designer",
+  bio: `I'm a Kubernetes Engineer and Technical Designer with a background that spans cloud-native infrastructure and game development. On the platform side, I design and operate production Kubernetes environments — working with tools like CloudNativePG (CNPG), Terraform, Flux, ArgoCD, Renovate, and Barman to build reliable, GitOps-driven, self-healing infrastructure. On the game side, I've shipped commercial titles, led cross-functional teams, and dug deep into player behavior research.
 
-I'm naturally curious, whether I'm solving tricky software issues or diving into hands-on challenges like car projects and home renovations (and occasionally 'fixing' something that wasn't broken keeps life interesting). Every unconventional project is an opportunity to learn something new.
+I find the two worlds complement each other more than people expect. The systematic thinking behind a Kubernetes HA cluster and the design of a game's weather system are the same craft: defining states, transitions, failure modes, and feedback loops. I bring that mindset to both.
 
-I also have a deep interest in understanding how design changes influences user behavior. My Master's thesis dove into how singleplayer survival games can simulate "real-world" experiences and how multiplayer elements can deeply change and enhance game experiences.
+I'm naturally curious, whether I'm solving tricky infrastructure issues or diving into hands-on challenges like car projects and home renovations (and occasionally 'fixing' something that wasn't broken keeps life interesting). Every unconventional project is an opportunity to learn something new.
 
-I value collaboration and believe that great games are built by teams who share ideas and support each other. When I'm not immersed in game development, you'll likely find me outdoors, climbing rocks and embracing new adventures.`,
+I also have a deep interest in understanding how design changes influence user behavior. My Master's thesis dove into how singleplayer survival games can simulate "real-world" experiences and how multiplayer elements can deeply change and enhance game experiences.
+
+I value collaboration and believe that great products — games or platforms — are built by teams who share ideas and support each other. When I'm not immersed in infrastructure or game development, you'll likely find me outdoors, climbing rocks and embracing new adventures.`,
   images: [
     {
       url: "/assets/feikoclimb.jpg",
@@ -25,23 +27,22 @@ I value collaboration and believe that great games are built by teams who share 
     }
   ],
   skills: [
-    "Technical Design",
-    "Systems Design",
-    "Player Experience",
-    "Unity",
-    "Unreal Engine",
-    "P4",
-    "Git",
-    "Teamcity",
-    "Jenkins",
-    "AWS",
-    "Jira",
-    "Google Analytics",
-    "C#",
-    "Python",
-    "User Research",
-    "OSINT",
-    "CTF Competitions"
+    {
+      category: "Infrastructure & Platform",
+      items: ["Kubernetes", "CloudNativePG (CNPG)", "Terraform", "Flux", "ArgoCD", "Renovate", "Barman", "Helm", "GitOps", "PostgreSQL"]
+    },
+    {
+      category: "Game Development",
+      items: ["Technical Design", "Systems Design", "Player Experience", "Unity", "Unreal Engine", "C#", "Python"]
+    },
+    {
+      category: "DevOps & Tools",
+      items: ["Git", "P4", "Teamcity", "Jenkins", "AWS", "Jira", "Google Analytics"]
+    },
+    {
+      category: "Research & Security",
+      items: ["User Research", "OSINT", "CTF Competitions"]
+    }
   ],
   contact: {
     email: "mail@feiko.org",
@@ -264,6 +265,25 @@ Eventually we dropped the project because we did not see the VR concept as viabl
     mediaShowcase: [],
     designDocs: [],
     links: {}
+  }
+];
+
+export const experiences: Experience[] = [
+  {
+    id: "exp-1",
+    title: "Freelance Build & DevOps Engineer",
+    company: "Freelance",
+    period: "TODO - TODO",
+    description: "TODO",
+    tags: ["DevOps", "CI/CD", "Build Systems"]
+  },
+  {
+    id: "exp-2",
+    title: "Technical Designer & Studio Lead",
+    company: "Viscacha Studios",
+    period: "Sept 2021 - Dec 2024",
+    description: "Co-founded Viscacha Studios and led development on Arid and its sequel. Owned core gameplay systems design, managed cross-functional teams, and handled business development including funding applications and conference representation at GDC, Gamescom, and INDIGO.",
+    tags: ["Game Design", "Technical Design", "Studio Lead", "Unreal Engine", "Jenkins", "Perforce"]
   }
 ];
 
