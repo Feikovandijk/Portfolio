@@ -35,7 +35,7 @@ export default function Portfolio() {
 
                 <p className="text-base sm:text-lg leading-relaxed text-gray-600 dark:text-gray-400 mb-8 max-w-2xl font-sans">
                   I'm a <strong>Cloud Engineer & Game Designer</strong> from the Netherlands. I run production Kubernetes platforms and I've shipped commercial games with over 200,000 downloads.
-                  I have a MSc in Games Research and a BSc in Game Development, and I've found the two worlds overlap a lot more than most people expect. <strong>My portfolio is below.</strong>
+                  I have a MSc in Games Research and a BSc in Game Development, and I've found the two worlds overlap a lot more than most people expect. <strong>See my portfolio below.</strong>
                 </p>
 
                 {/* CTA Buttons */}
