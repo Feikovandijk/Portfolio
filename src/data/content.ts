@@ -270,18 +270,26 @@ Eventually we dropped the project because we did not see the VR concept as viabl
 
 export const experiences: Experience[] = [
   {
+    id: "exp-3",
+    title: "Kubernetes Engineer",
+    company: "Avisi",
+    period: "Mar 2026 - Present",
+    description: "Designing, building, and operating production-grade Kubernetes platforms. Designing cloud-native solutions, managing hybrid-cloud environments, and implementing GitOps workflows for automated application deployment.",
+    tags: ["Kubernetes", "GitOps", "Platform Engineering", "Cloud Native"]
+  },
+  {
     id: "exp-1",
-    title: "Freelance Build & DevOps Engineer",
+    title: "Freelance Technical Designer & DevOps Engineer",
     company: "Freelance",
-    period: "TODO - TODO",
-    description: "TODO",
-    tags: ["DevOps", "CI/CD", "Build Systems"]
+    period: "Jun 2025 - Present",
+    description: "Providing engineering consulting services specializing in Infrastructure as Code (IaC), automated build and release pipelines, Ansible configuration management, and technical design for interactive systems.",
+    tags: ["Infrastructure as Code", "Ansible", "DevOps", "Technical Design"]
   },
   {
     id: "exp-2",
     title: "Technical Designer & Studio Lead",
     company: "Viscacha Studios",
-    period: "Sept 2021 - Dec 2024",
+    period: "Sept 2021 - June 2025",
     description: "Co-founded Viscacha Studios and led development on Arid and its sequel. Owned core gameplay systems design, managed cross-functional teams, and handled business development including funding applications and conference representation at GDC, Gamescom, and INDIGO.",
     tags: ["Game Design", "Technical Design", "Studio Lead", "Unreal Engine", "Jenkins", "Perforce"]
   }
