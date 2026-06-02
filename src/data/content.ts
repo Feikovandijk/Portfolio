@@ -279,11 +279,11 @@ export const experiences: Experience[] = [
   },
   {
     id: "exp-1",
-    title: "Freelance Technical Designer & DevOps Engineer",
+    title: "Freelance Technical Designer & Build Engineer",
     company: "Freelance",
     period: "Jun 2025 - Present",
-    description: "Providing engineering consulting services specializing in Infrastructure as Code (IaC), automated build and release pipelines, Ansible configuration management, and technical design for interactive systems.",
-    tags: ["Infrastructure as Code", "Ansible", "DevOps", "Technical Design"]
+    description: "Providing engineering consulting services specializing in build automation, version control management (Perforce/Git), CI/CD pipelines for game engines, and technical design integration. Automating game compilation, artifact packaging, and multi-platform deployment workflows.",
+    tags: ["Build Automation", "CI/CD", "Game DevOps", "Technical Design"]
   },
   {
     id: "exp-2",
